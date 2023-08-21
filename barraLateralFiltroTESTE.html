@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Sidebar</title>
+    <style>
+        body {
+            background: rgb(189, 186, 186);
+        }
+
+        .sidebar {
+            width: 0;
+            height: 90%;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            transition: 0.5s;
+            border-radius: 0px 60px 60px 0px;
+
+            fill: #FFF;
+            stroke-width: 2px;
+            stroke: #000;
+            filter: drop-shadow(25px 18px 70px rgba(0, 0, 0, 0.60));
+
+            border: solid 1px;
+        }
+
+        .sidebar.active {
+            width: 429px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        button {
+            margin: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <button id="toggleSidebar">Toggle Sidebar</button>
+    <div class="sidebar" id="sidebar">
+        <button id="closeSidebar">Close Sidebar</button>
+        <!-- Outros conteúdos da barra lateral aqui -->
+    </div>
+    <div class="content">
+        <!-- Conteúdo principal aqui -->
+    </div>
+    <script>
+        const toggleButton = document.getElementById("toggleSidebar");
+        const closeSidebarButton = document.getElementById("closeSidebar");
+        const sidebar = document.getElementById("sidebar");
+
+        toggleButton.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        closeSidebarButton.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+        });
+
+
+    </script>
+</body>
+
+</html>

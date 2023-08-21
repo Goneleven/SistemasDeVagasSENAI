@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: url(../img/fundo-de-papel-amassado-branco-artesanato-simples\ 3.png);
+  background-size: cover;
+  overflow-x: hidden;
+
+}
+
+#logoHome {
+  width: 250px;
+  margin: 15px;
+}
+
+.divisoriaHeader {
+  left: 0;
+  width: 100vw;
+  border: solid red;
+}
+
+
+.divisoriaFooter {
+  left: 0;
+  width: 100vw;
+  border: solid red;
+
+}
+
+
+footer {
+  margin-top: auto;
+  background: black;
+}
+
+#footer {
+  position: relative;
+}
+
+#logoSenaiFooter {
+  width: 250px;
+  margin-top: 20px;
+}
+
+.containerLogoFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSenaiFooter {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.mensagemFooter {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+}
