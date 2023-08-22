@@ -2,7 +2,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   background: url(../img/fundo-de-papel-amassado-branco-artesanato-simples\ 3.png);
   background-size: cover;
   overflow-x: hidden;
@@ -13,6 +12,55 @@ body {
   width: 250px;
   margin: 15px;
 }
+
+/* header menu*/
+#caixaDosLinks{
+  text-align: center;
+}
+
+.menu{
+  background: rgb(247, 247, 247);
+
+}
+
+
+
+.navbar-toggler-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#setaMenu{
+  width: 40px;
+}
+
+.navbar{
+  background: rgb(247, 247, 247);
+}
+
+
+
+.linkMenu{
+  text-decoration: none;
+  font-size: 20px;
+  margin: 5px;
+  color: black;
+}
+
+.linkMenu:hover{
+  color: #FD5C63;
+}
+
+
+#botaoMenu{
+  margin-right: 80px;
+}
+
+
+
+
+
 
 .divisoriaHeader {
   left: 0;

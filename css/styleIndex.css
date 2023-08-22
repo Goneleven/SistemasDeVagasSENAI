@@ -53,13 +53,8 @@
   }
   
   .inputInfo {
-    background: rgb(209, 209, 209);
+    background: rgb(164, 164, 164);
     border: solid 1px;
   }
 
-  .divisoriaFooter {
-    left: 0;
-    width: 100vw;
-    border: solid red;
-    margin-top: -25px;
-}
+ 
