@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styleIndex.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Login</title>
+
+</head>
+
+<body>
+
+  <div id="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png" alt=""></a>
+      </div>
+    </nav>
+
+
+    <div class="divisoriaHeader"></div>
+  </div>
+
+
+
+  <main>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 " id="caixateste">
+
+              <h3 class="mb-5" id="tituloLogin">LOGIN</h3>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typeEmailX-2">Número da matricula:</label>
+                <input type="NumeroMatricula"  class="form-control form-control-lg inputInfo" maxlength="8" id="numeroMatriculaLogin"/>
+              </div>
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="typePasswordX-2">CPF:</label>
+                <input  class="form-control form-control-lg inputInfo" maxlength="11" id="cpfLogin"/>
+
+              </div>
+
+              <button id="botaoEntrar">Entrar</button>
+
+
+              <p id="linkCadastroEmpresa"><a href="#" id="linkCadastroEmpresalink"> É uma empresa?</a></p>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+
+
+
+  <footer class="text-center text-white fixed-bottom" style="background-color: #020202;" id="footer">
+    <div class="divisoriaFooter"></div>
+    <div class="container p-4"></div>
+    <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <p class="mensagemFooter">Copyright 2023 © Todos os direitos reservados.</p>
+      <p class="mensagemFooter">Privacy Policy | Terms and Conditions | Cookies and Data Protection</p> 
+     
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</html>

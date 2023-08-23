@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Sidebar</title>
+    <style>
+        /* body {
+            background: rgb(189, 186, 186);
+        }
+
+        .sidebar {
+            width: 0;
+            height: 90%;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            transition: 0.5s;
+            border-radius: 0px 60px 60px 0px;
+
+            fill: #FFF;
+            stroke-width: 2px;
+            stroke: #000;
+            filter: drop-shadow(25px 18px 70px rgba(0, 0, 0, 0.60));
+
+            border: solid 1px;
+        }
+
+        .sidebar.active {
+            width: 429px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        button {
+            margin: 20px;
+        } */
+        
+
+        /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- <button id="toggleSidebar">Toggle Sidebar</button>
+    <div class="sidebar" id="sidebar">
+        <button id="closeSidebar">Close Sidebar</button>
+
+    </div>
+    <div class="content"> -->
+
+        <div class="checklist">
+            <label><input type="checkbox" value="item1"> Item 1</label>
+            <label><input type="checkbox" value="item2"> Item 2</label>
+            <label><input type="checkbox" value="item3"> Item 3</label>
+            <label><input type="checkbox" value="item4"> Item 4</label>
+          </div>
+
+    </div>
+    <script>
+        // const toggleButton = document.getElementById("toggleSidebar");
+        // const closeSidebarButton = document.getElementById("closeSidebar");
+        // const sidebar = document.getElementById("sidebar");
+
+        // toggleButton.addEventListener("click", () => {
+        //     sidebar.classList.toggle("active");
+        // });
+
+        // closeSidebarButton.addEventListener("click", () => {
+        //     sidebar.classList.remove("active");
+        // });
+
+
+        // script.js
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const saveButton = document.getElementById('saveButton');
+  const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+  const checklistDiv = document.querySelector('.checklist');
+
+  saveButton.addEventListener('click', function() {
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        checkbox.parentElement.style.display = 'none'; // Esconde o item selecionado
+      } else {
+        checkbox.parentElement.style.display = 'block'; // Mostra os itens não selecionados
+      }
+    });
+  });
+});
+
+
+
+    </script>
+</body>
+
+</html>
