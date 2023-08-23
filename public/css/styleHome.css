@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:public/css/styleHome.css
 .divisoriaCard {
     left: 0;
     width: 100%;
@@ -24,3 +25,50 @@
     background: #FFF;
     box-shadow: 15px 15px 20px 5px rgba(0, 0, 0, 0.50);
 }
+=======
+.divisoriaCard {
+    left: 0;
+    width: 100%;
+    border: solid red;
+}
+
+.filter-search {
+    padding: 3%;
+
+}
+
+.cardVaga {
+    border-radius: 20px !important;
+    width: 85%;
+    background: #FFF;
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.60);
+
+}
+
+.cardInfo {
+    border-radius: 20px !important;
+    min-height: 80%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 15px 15px 20px 5px rgba(0, 0, 0, 0.50);
+}
+
+.title-and-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+.logo {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1%;
+}
+
+.logoL {
+    margin-left: 1.5%;
+    width: 60px;
+    height: 60px;
+}
+>>>>>>> Stashed changes:css/styleHome.css
