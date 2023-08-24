@@ -9,22 +9,16 @@ server.use(express.json({extended: true}))
 const conexao = "server=.;Database=aluno;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
 router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
-    console.log(getAluno());
     const dadosLogin = req.body;
-    let result = true;
-    res.send(req.body);
-
-});
-
-function getAluno(){
 
     sql.query(conexao, "SELECT * FROM alunos", (error, resultado) => {
                 
-        console.log(resultado);
+        let result = true;
+        res.send(resultado);
 
     })
 
-}
+});
 
 server.use(router);
 

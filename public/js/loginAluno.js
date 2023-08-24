@@ -1,3 +1,4 @@
+
 function loginAluno(){
 
     let matricula = document.getElementById("numeroMatriculaLogin").value;
@@ -22,6 +23,6 @@ const enviarDadosLogin = async(matricula, cpf) =>{
     }
 
     const resLogin = await fetch('http://localhost:3000/sendLoginLeanerData', init);
-    console.log(resLogin);
+    console.log(await resLogin.json());
 
 }
