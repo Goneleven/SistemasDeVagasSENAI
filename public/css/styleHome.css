@@ -25,21 +25,8 @@
     box-shadow: 15px 15px 20px 5px rgba(0, 0, 0, 0.50);
 }
 
-.title-and-logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px; /* Adjust the margin as needed */
-  }
 
-.logo {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 1%;
+#infoVaga{
+    max-height: 120vh;
 }
 
-.logoL {
-    margin-left: 1.5%;
-    width: 60px;
-    height: 60px;
-}
