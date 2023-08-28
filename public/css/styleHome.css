@@ -26,14 +26,7 @@
 }
 
 
-#infoVaga{
-    max-height: 120vh;
-}
 
-#scrollVagas {
-    max-height: 755px;
-    overflow-y: scroll;
-}
 
 .logo {
     width: 35px;
