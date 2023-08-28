@@ -30,3 +30,32 @@
     max-height: 120vh;
 }
 
+#scrollVagas {
+    max-height: 755px;
+    overflow-y: scroll;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 1%;
+}
+
+.logoL {
+    width: 70px;
+    height: 70px;
+    margin-left: 2%;
+    margin-bottom: 0.5%;
+}
+
+.mobilebar {
+    width: 50% !important;
+}
+
+@media (max-width: 768px) {
+    .mobilebar {
+        width: 100% !important;
+    }
+}
+
+
