@@ -19,9 +19,12 @@ body {
 }
 
 .menu{
-  background: rgb(247, 247, 247);
-
+   background: rgb(247, 247, 247);
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
 }
+
 
 
 
