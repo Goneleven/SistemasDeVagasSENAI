@@ -118,11 +118,13 @@ footer {
 }
 
 .scrollVagas {
-  max-height: 755px;
+  max-height: 780px;
   overflow-y: scroll;
+  
 }
 
 .informacoesVagasScroll{
-  max-height: 355px;
+  max-height: 505px;
   overflow-y: scroll;
+  
 }

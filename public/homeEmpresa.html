@@ -13,11 +13,11 @@
   <title>SENAI - Home</title>
 </head>
 
-<body>
+<body onload="closePopup()">
 
   <div id="header">
     <nav class="navbar">
-      <a class="navbar-brand" href="#"><img id="logoHome" src="../img/SENAI_São_Paulo_logo.png" alt="" /></a>
+      <a class="navbar-brand" href="#"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png" alt="" /></a>
       <button class="navbar-toggler navbar-toggler-center" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation" id="botaoMenu">
@@ -268,11 +268,12 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
+            <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
               class="btn btn-danger border border-dark rounded rounded-pill">Candidatar-se</button></div>
         </div>
+          </div>
+
+          
       </div>
     </div>
   </main>
@@ -292,13 +293,14 @@
   </footer>
 </body>
 <script>
+  
   function showPopup() {
     document.getElementById("popupCadastro").style.display = "block";
   }
-
   function closePopup() {
     document.getElementById("popupCadastro").style.display = "none";
   }
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
