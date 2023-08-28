@@ -13,7 +13,7 @@ router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
 
     sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula +" AND cpf = " + req.body.cpf, (error, resultado) => {
         console.log(resultado);
-        res.send(error);
+        res.send(resultado);
 
     })
 
