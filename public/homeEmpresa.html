@@ -63,41 +63,46 @@
               </button>
 
               <div class="form-outline mb-4">
-                <label class="form-label" for="typeEmailX-2">Area de atuação:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <label class="form-label" for="categoriaVaga">Area de Atuação:</label>
+                <input type="text" name="categoriaVaga" placeholder="A vaga é destinada a qual curso?" list="atuacaoCategoria" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <datalist id="atuacaoCategoria">
+                  <option value="Mecânica"></option>
+                  <option value="TI"></option>
+                  <option value="Eletrônica"></option>
+                </datalist>
                 <hr>
-                <label class="form-label" for="typeEmailX-2">Descrição da vaga:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                <hr>
-
-                <label class="form-label" for="typeEmailX-2">Responsabilidade:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                <hr>
-
-                <label class="form-label" for="typeEmailX-2">Jornada/periodo:</label>
-                <label><input type="checkbox" value="item1"> Hibrido</label>
-                <label><input type="checkbox" value="item2"> Home Office</label>
-                <label><input type="checkbox" value="item3"> Presencial</label>
+                <label class="form-label" for="descVaga">Descrição da Vaga:</label>
+                <input type="text" name="descVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" />
                 <hr>
 
-                <label class="form-label" for="typeEmailX-2">Requisitos:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <label class="form-label" for="responsa">Responsabilidade:</label>
+                <input type="text" name="responsa" class="form-control form-control-lg inputInfo inputsDeCadastro" />
                 <hr>
 
-                <label class="form-label" for="typeEmailX-2">Local:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <label class="form-label" for="jornada">Jornada/periodo:</label>
+                <label><input name="jornada" type="checkbox" value="item1"> Hibrido</label>
+                <label><input name="jornada" type="checkbox" value="item2"> Home Office</label>
+                <label><input name="jornada" type="checkbox" value="item3"> Presencial</label>
                 <hr>
 
-                <label class="form-label" for="typeEmailX-2">Salário:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <label class="form-label" for="requirements">Requisitos:</label>
+                <input type="text" name="requirements" class="form-control form-control-lg inputInfo inputsDeCadastro" />
                 <hr>
 
-                <label class="form-label" for="typeEmailX-2">Benefício:</label>
-                <input type="NumeroMatricula" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <label class="form-label" for="localidade">Local:</label>
+                <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <hr>
+
+                <label class="form-label" for="salary">Salário:</label>
+                <input type="number" name="salary" min="600" max="15000" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <hr>
+
+                <label class="form-label" for="benefits">Benefício:</label>
+                <input type="text" name="benefits" class="form-control form-control-lg inputInfo inputsDeCadastro" />
 
 
                 <button type="button" class="border border-dark btn btn-danger rounded m-3">
-                  Publicar vaga
+                  Publicar Vaga
                 </button>
 
               </div>
