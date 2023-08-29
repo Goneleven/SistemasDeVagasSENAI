@@ -23,6 +23,8 @@ const enviarDadosLogin = async(matricula, cpf) =>{
     }
 
     const resLogin = await fetch('http://localhost:3000/sendLoginLeanerData', init);
-    console.log(await resLogin.json());
+    if(resLogin.matricula = matricula){
+        location.href = "perfil.html";
+    }
 
 }
