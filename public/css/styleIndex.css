@@ -58,3 +58,45 @@
   }
 
  
+#scrollCadastro{
+  max-height: 400px;
+  overflow-y: scroll;
+  
+}
+
+#tituloCadastro{
+  font-size: 40px;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+
+
+
+#iconInformacao{
+  width: 30px;
+  cursor: pointer;
+
+  
+}
+
+#infoCard{
+  position: absolute;
+  z-index: 9999;
+}
+
+#botaoCadastrar{
+  width: 114px;
+  height: 47.807px;
+  flex-shrink: 0;
+  margin-top: 30px;
+margin-left: 20px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  background: #DD3B3B;
+
+  color: white;
+  font-size: 15px;
+}
+
