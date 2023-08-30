@@ -141,10 +141,11 @@ footer {
 
 
 .menuLateral {
-  margin-top: 3%;
+  margin-top: 3.5%;
   background-color: white;
   width: 250px;
-  height: 100%;
+  max-height: 950px;
+  height: 90%;
   position: absolute;
   left: -250px;
   border: 2px black solid;
@@ -238,4 +239,12 @@ ul li {
 
 .caixaDoFiltro ul li{
   text-align: left;      
+}
+
+.btnFiltrar{
+
+}
+
+.caixaDoFiltro button{
+  margin-left: 35%
 }
