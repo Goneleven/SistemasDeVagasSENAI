@@ -128,3 +128,114 @@ footer {
   overflow-y: scroll;
   
 }
+
+
+
+/* Barra Lateral css: */
+
+
+  
+.titulo {
+  color: white;
+}
+
+
+.menuLateral {
+  margin-top: 3%;
+  background-color: white;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  left: -250px;
+  border: 2px black solid;
+  border-radius: 0px 50px 50px 0px;
+  z-index: 111;
+  transition: 0.5s;
+}
+
+.menuLateral .btnFecharLateral {
+  position: relative;
+  left: 215px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.menuLateral ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.menuLateral ul li a:hover {
+  background-color: #370707;
+  transition: 0.5s;
+}
+
+.menuLateral ul ul li a {
+  font-size: 16px;
+  font-weight: 300;
+  background-color: gray;
+}
+
+.menuLateral ul ul {
+  display: none;
+}
+
+.menuLateral ul .itens1.mostra {
+  display: block;
+}
+
+.menuLateral ul .itens2.mostra {
+  display: block;
+}
+
+.menuLateral ul .itens3.mostra {
+  display: block;
+}
+
+.menuLateral ul .itens4.mostra {
+  display: block;
+}
+
+.btnLateralBar {
+  top: 15px;
+  left: 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menuLateral.mostra {
+  left: 0;
+}
+
+ul li {
+  list-style: none;
+  margin-left: -19%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.item1, .item2, .item3, .item4 {
+  background-color: #404040;
+  border-radius: 0px 20px 20px 0px;
+  width: 80%;
+  height: 30px;
+  box-shadow: rgb(97, 94, 94) 0px 5px 5px 0px;
+}
+
+.item1, .item2, .item3, .item4 p{
+  padding-left: 5%;
+}
+
+.itens1, .itens2, .itens3, .itens4{
+  padding-right: 45%;
+  padding-top: 5px;
+  
+}
+
+.caixaDoFiltro ul li{
+  text-align: left;      
+}
