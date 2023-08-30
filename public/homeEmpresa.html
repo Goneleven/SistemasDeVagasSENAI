@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
   <title>SENAI - Home</title>
 </head>
 
@@ -72,11 +73,16 @@
                 </datalist>
                 <hr>
                 <label class="form-label" for="descVaga">Descrição da Vaga:</label>
-                <input type="text" name="descVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <div id="editor">
+                  <input type="text" name="descVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                </div>
                 <hr>
 
                 <label class="form-label" for="responsa">Responsabilidade:</label>
-                <input type="text" name="responsa" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <div id="editor1">  
+                  <input type="text" name="responsa" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                </div>
+                <script type="module" src="js/home.js"></script>
                 <hr>
 
                 <label class="form-label" for="jornada">Jornada/periodo:</label>
@@ -86,7 +92,9 @@
                 <hr>
 
                 <label class="form-label" for="requirements">Requisitos:</label>
-                <input type="text" name="requirements" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                <div id="editor2">
+                  <input type="text" name="requirements" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                </div>
                 <hr>
 
                 <label class="form-label" for="localidade">Local:</label>
@@ -98,8 +106,9 @@
                 <hr>
 
                 <label class="form-label" for="benefits">Benefício:</label>
-                <input type="text" name="benefits" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-
+                <div id="editor3">
+                  <input type="text" name="benefits" class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                </div>
 
                 <button type="button" class="border border-dark btn btn-danger rounded m-3">
                   Publicar Vaga
