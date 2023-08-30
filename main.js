@@ -25,6 +25,8 @@ router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
 router.post('/cadastroEmpresaN', (req, res) =>{
 
     const dadosCadastro = req.body;
+    console.log(dadosCadastro);
+    res.send(dadosCadastro);
 
 
 
