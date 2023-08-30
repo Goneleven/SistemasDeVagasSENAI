@@ -200,13 +200,7 @@ footer {
   display: block;
 }
 
-.btnLateralBar {
-  top: 15px;
-  left: 20px;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 
 .menuLateral.mostra {
   left: 0;
@@ -241,10 +235,9 @@ ul li {
   text-align: left;      
 }
 
-.btnFiltrar{
 
-}
 
 .caixaDoFiltro button{
   margin-left: 35%
 }
+
