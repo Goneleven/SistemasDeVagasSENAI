@@ -11,14 +11,23 @@ const conexao = "server=.;Database=alunos;Trusted_connection=yes;Driver={SQL Ser
 router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
     const dadosLogin = req.body;
 
-sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula +" AND cpf = " + req.body.cpf, (error, resultado) => {
-        if(resultado != null){
-            res.send(resultado);
-        }else{
-            res.send(error);
-        }
+    sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula +" AND cpf = " + req.body.cpf, (error, resultado) => {
+            if(resultado != null){
+                res.send(resultado);
+            }else{
+                res.send(error);
+            }
 
-    })
+        })
+
+});
+
+router.post('/cadastroEmpresaN', (req, res) =>{
+
+    const dadosCadastro = req.body;
+
+
+
 
 });
 
