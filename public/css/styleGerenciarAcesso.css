@@ -1,42 +1,41 @@
-
-  .caixa {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: 20px;
-    max-width: 100%; 
-    width: 30%; 
-  }
-  
-  .cabecalho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-  
-  }
-  
-  .seta {
-    border: none;
-    background-color: transparent;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  .conteudo {
-    padding: 0 20px 20px;
-    max-height: 0;
-    overflow: hidden;
-    max-height: 0;
-    overflow: hidden;
-  }
-  
-  .aberto .conteudo {
-    max-height: 100%;
-  }
-  
+.caixa {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.642);
+  overflow: hidden;
+  margin: 20px;
+  max-width: 80%;
+  text-align: center;
+  margin-left: 11%;
+  padding: 20px;
+}
 
 
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eae5e5;
+  cursor: pointer;
+}
+
+
+.seta {
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.conteudo {
+  padding: 0 20px 20px;
+  max-height: 0;
+  overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.aberto .conteudo {
+  max-height: 100%;
+}
