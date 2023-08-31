@@ -247,3 +247,16 @@ ul li {
 margin:30px;
   cursor: pointer;
 }
+
+.centralSenaiMenu {
+  width: auto;
+  height: 60px;
+  border: 1px solid #000;
+  background: #EC1C24;    
+}
+
+.centralLink {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif
+}
