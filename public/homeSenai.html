@@ -111,75 +111,8 @@
       <div class="row justify-content-center mt-5">
         <div class="col">
           <div class="input-group w-md-25 w-100 mx-auto mb-4 d-flex justify-content-center">
-            <button type="button" id="adicionarVagas" class="border border-dark btn btn-danger rounded m-3"
-              onclick="showPopup()">
-              adicionar vagas +
-            </button>
-
-            <div id="popupCadastro" class="popupCadastro">
-
-              <button type="button" id="adicionarVagas" class="border border-dark btn btn-danger rounded m-3"
-                onclick="closePopup()">
-                fechar
-              </button>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="categoriaVaga">Area de Atuação:</label>
-                <input type="text" name="categoriaVaga" placeholder="A vaga é destinada a qual curso?" list="atuacaoCategoria" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                <datalist id="atuacaoCategoria">
-                  <option value="Mecânica"></option>
-                  <option value="TI"></option>
-                  <option value="Eletrônica"></option>
-                </datalist>
-                <hr>
-                <label class="form-label" for="descVaga">Descrição da Vaga:</label>
-                <div id="editor">
-                  <input type="text" name="descVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                </div>
-                <hr>
-
-                <label class="form-label" for="responsa">Responsabilidade:</label>
-                <div id="editor1">  
-                  <input type="text" name="responsa" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                </div>
-                <script type="module" src="js/home.js"></script>
-                <hr>
-
-                <label class="form-label" for="jornada">Jornada/periodo:</label>
-                <label><input name="jornada" type="checkbox" value="item1"> Hibrido</label>
-                <label><input name="jornada" type="checkbox" value="item2"> Home Office</label>
-                <label><input name="jornada" type="checkbox" value="item3"> Presencial</label>
-                <hr>
-
-                <label class="form-label" for="requirements">Requisitos:</label>
-                <div id="editor2">
-                  <input type="text" name="requirements" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                </div>
-                <hr>
-
-                <label class="form-label" for="localidade">Local:</label>
-                <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                <hr>
-
-                <label class="form-label" for="salary">Salário:</label>
-                <input type="number" name="salary" min="600" max="15000" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                <hr>
-
-                <label class="form-label" for="benefits">Benefício:</label>
-                <div id="editor3">
-                  <input type="text" name="benefits" class="form-control form-control-lg inputInfo inputsDeCadastro" />
-                </div>
-
-                <button type="button" class="border border-dark btn btn-danger rounded m-3">
-                  Publicar Vaga
-                </button>
-
-              </div>
-
-
-
-            </div>
-
+        
+            
             <button type="button" class="border border-dark btn btn-danger btn-lg rounded-circle m-3 btnLateralBar " id="botaoFiltro">
               <i class="fas fa-filter"></i>
             </button>
