@@ -120,7 +120,6 @@ footer {
 .scrollVagas {
   max-height: 780px;
   overflow-y: scroll;
-  
 }
 
 .informacoesVagasScroll{
@@ -241,3 +240,7 @@ ul li {
   margin-left: 35%
 }
 
+#lixeira{
+margin:30px;
+  cursor: pointer;
+}
