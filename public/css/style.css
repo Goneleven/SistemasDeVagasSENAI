@@ -260,3 +260,37 @@ margin:30px;
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif
 }
+
+/* pop up vagas */
+
+.popUpVagas{
+  width: 90%;
+  max-height: 550px;
+  border-radius: 2em;
+  text-align: center;
+}
+
+.botaoFecharPupUpMobile{
+  border-radius: 30px;
+  font-size: 15px;
+  width: 30px;
+  position: absolute;
+  position: absolute; 
+  right: 0; 
+  top: 0; 
+  margin: 20px;
+  background: white;
+  border: solid 1px #ff0008;
+}
+
+.scrollVagasPopUp{
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 990px) {
+  .sua-caixa {
+    display: none;
+  }
+}
+  
