@@ -349,7 +349,7 @@
     </div>
 
     <!-- teste pop up -->
-    <dialog class="popUpVagas">
+    <dialog class="popUpVagas hide-on-mobile">
       <button class="botaoFecharPupUpMobile">X</button>
 
       <div class="d-flex align-items-center">
@@ -358,9 +358,7 @@
           id="logoSmall">
       </div>
       <div class="divisoriaCard"></div>
-      
-
-      <div class="scrollVagasPopUp">
+      <div class="scrollVagasPopUp ">
         <div id="funcoesVaga" class="my-3 mx-2">
           <h5 class="card-title">Responsabilidades:</h5>
           <p class="card-text mx-3">qq faz</p>
@@ -453,20 +451,29 @@
 
 
   const cardsPopUp = document.querySelectorAll(".popUpMobile");
-  const modal = document.querySelector("dialog");
-  const buttonfecharPopUp = modal.querySelector("button");
+const modal = document.querySelector("dialog");
+const buttonfecharPopUp = modal.querySelector("button");
 
-  cardsPopUp.forEach(function (div) {
-    div.addEventListener("click", function () {
+cardsPopUp.forEach(function (div) {
+  div.addEventListener("click", function () {
+    if (window.innerWidth <= 991) {
       modal.showModal();
-    });
+    }
   });
+});
 
-  buttonfecharPopUp.addEventListener("click", function () {
+buttonfecharPopUp.addEventListener("click", function () {
+  modal.close();
+});
+
+window.addEventListener('resize', function () {
+  if (window.innerWidth > 991) {
     modal.close();
-  });
+  }
+});
 
-  
+
+
 </script>
 
 
@@ -475,3 +482,6 @@
   integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </html>
+
+
+
