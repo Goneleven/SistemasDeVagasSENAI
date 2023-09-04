@@ -41,6 +41,33 @@
     width: 50% !important;
 }
 
+.containerCandidatos{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    align-items: start;
+}
+
+.containerCandidatos img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    
+}
+
+.containerCandidatos p{
+    margin-top: 3%;
+    margin-left: 10px;
+    font-size: 16px;
+    
+}
+
+.fundoCandidatos{
+    overflow-y: scroll;
+    height: 500px;
+}
+
 @media (max-width: 768px) {
     .mobilebar {
         width: 100% !important;
