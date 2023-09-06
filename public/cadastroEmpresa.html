@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <title>Cadastro Empresas</title>
+
+    <style>
+      
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 65%;
+            
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        input {
+            max-width: 80%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 900px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <nav class="navbar">
+          <a class="navbar-brand" href="#"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png" alt="" /></a>
+          <button class="navbar-toggler navbar-toggler-center" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+            aria-label="Toggle navigation" id="botaoMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+    
+        <div class="collapse menu" id="navbarToggleExternalContent">
+          <div class="" id="caixaDosLinks">
+            <div class="divisoriaHeader"></div>
+            <br />
+            <a class="linkMenu" href="homeAluno.html">Home</a>
+            <hr />
+            <a class="linkMenu" href="perfil.html">Perfil</a>
+            <hr />
+            <a class="linkMenu" href="#">Notificações</a>
+            <hr />
+            <a class="linkMenu" href="#">Configurações</a>
+            <hr />
+            <a class="linkMenu" href="index.html">Sair</a>
+          </div>
+    
+          <div class="divisoriaHeader"></div>
+        </div>
+        <div class="divisoriaHeader"></div>
+      </div>
+
+
+        <div class="container mt-5">
+            <h1 class="text-center">Cadastrar empresas</h1>
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="CNPJ">
+            </div>
+
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="Categoria da empresa"  list="faixa">
+            </div>
+
+            <datalist id="faixa">
+              <option value="Contribuinte">Empresa contribuinte</option>
+              <option value="Não contribuinte">Empresa não contribuinte</option>
+            </datalist>
+           
+          
+            <div class="input-group mb-3">
+                <input type="text" id="senha" class="form-control" placeholder="Senha" readonly>
+
+                <div class="input-group-append" placeholder="Senha">
+                    <button id="gerar" class="btn btn-primary">Gerar Senha</button>
+                </div>
+            </div>
+        </div>
+    <footer class="text-center text-white fixed-bottom" style="background-color: #020202;" id="footer">
+        <div class="divisoriaFooter"></div>
+        <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p class="mensagemFooter">Copyright 2023 © Todos os direitos reservados.</p>
+            <p class="mensagemFooter">Privacy Policy | Terms and Conditions | Cookies and Data Protection</p>
+        </div>
+    </footer>
+</body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const caixaGerarSenha = document.getElementById("senha");
+        const botaoGerador = document.getElementById("gerar");
+    
+        botaoGerador.addEventListener("click", function () {
+            const length = 12; 
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+    
+            let password = "";
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+    
+            caixaGerarSenha.value = password;
+        });
+    
+        caixaGerarSenha.addEventListener("mouseenter", function () {
+            caixaGerarSenha.style.backgroundColor = "#f0f0f0"; 
+            caixaGerarSenha.setAttribute("title", "Clique para copiar"); 
+        });
+    
+        caixaGerarSenha.addEventListener("mouseleave", function () {
+            caixaGerarSenha.style.backgroundColor = "#ffffff";    
+            caixaGerarSenha.removeAttribute("title"); 
+        });
+    
+        caixaGerarSenha.addEventListener("click", function () {
+            caixaGerarSenha.select();
+            document.execCommand("copy");
+            
+        });
+    });
+    
+</script>
+
+</html>
