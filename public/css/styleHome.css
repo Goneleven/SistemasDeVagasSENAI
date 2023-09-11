@@ -66,6 +66,8 @@
 .fundoCandidatos{
     overflow-y: scroll;
     height: 500px;
+    /* position: absolute; */
+    background-color: white;
 }
 
 @media (max-width: 768px) {
