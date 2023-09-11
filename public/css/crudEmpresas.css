@@ -1,0 +1,70 @@
+#caixaInputsCadastro {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 45%;
+    margin: auto;
+}
+
+
+
+h1 {
+    color: #333;
+}
+
+input {
+    max-width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 10px auto;
+    height: 45px;
+}
+
+.botoes {
+    width: 114px;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #DD3B3B;
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.botoes:hover {
+    background-color: #b30000;
+}
+
+@media (max-width: 1000px) {
+    #caixaInputsCadastro {
+        width: 85%;
+    }
+}
+
+
+
+/* pop up de cadastrar vagas*/
+.popupCadastro {
+    top: 100px;
+    left: 35%;
+
+    width: 550px;
+    height: 600px;
+    background-color: rgb(219, 219, 219);
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 999;
+    overflow-y: scroll;
+}
+
+@media (max-width: 768px) {
+    .popupInfoEmpresa {
+        top: 50px;
+        left: 50px;
+        width: 300px;
+        height: 700px;
+    }
+}
+
+
