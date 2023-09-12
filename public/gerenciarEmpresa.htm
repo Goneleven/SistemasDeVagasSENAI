@@ -4,29 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/crudEmpresas.css  " />
+    <link rel="stylesheet" href="css/styleGerenciarAcesso.css  " />
+    <link rel="stylesheet" href="css/styleCentral.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-    <title>update empresa</title>
-    <style>
-        input {
-            max-width: 70%;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin: 10px auto;
-            height: 45px;
-        }
-    </style>
+
+    <title>SENAI - Gerenciamento</title>
 </head>
 
-
-<body >
+<body>
 
     <div id="header">
         <nav class="navbar">
@@ -55,59 +47,58 @@
                 <hr>
                 <div class="divisoriaHeader"></div>
             </div>
+
         </div>
-        <div class="divisoriaHeader"></div>
+        <div class="centralSenaiMenu">
+            <div class="text-center d-flex align-items-center justify-content-center my-3">
+                <div id="gerenciarVagas" class="text-white"><span>丨</span> <a class="centralLink"
+                        href="homeSenai.html">Gerenciar Vagas</a></div>
+                <div id="controleAcesso" class="text-white mx-2"><span>丨</span> <a class="centralLink" href="#">Controle
+                        de Acesso</a> <span>丨</span></div>
+            </div>
+        </div>
     </div>
+    <main>
 
 
-    <div id="caixaInputsCadastro" class="container mt-5" class="caixaInputDeletar">
-        <br>
-        <h1 class="text-center">Qual empresa deseja mudar?</h1>
-        <br>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nome">
+        <div class="caixaOpcoes">
+            <a href="cadastroEmpresa.html">
+                <div class="caixa">
+                    <div class="cabecalho">
+                        <h4>Cadastrar empresa</h4>
+                        <button class="seta">▼</button>
+                    </div>
+                </div>
+            </a>
+            <a href="updade.html">
+                <div class="caixa">
+                    <div class="cabecalho">
+                        <h4>Atualizar informações da empresa</h4>
+                        <button class="seta">▼</button>
+                    </div>
+                </div>
+            </a>
+            <a href="readEmpresa.html">
+                <div class="caixa">
+                    <div class="cabecalho">
+                        <h4>Visualizar empresa</h4>
+                        <button class="seta">▼</button>
+                    </div>
+                </div>
+            </a>
+            <a href="deletarEmpresa.html">
+                <div class="caixa">
+                    <div class="cabecalho">
+                        <h4>Deletar acesso da empresa</h4>
+                        <button class="seta">▼</button>
+                    </div>
+                </div>
         </div>
-      
+        </a>
 
-        <div class="text-center">
-            <br>
-            <button id="gerar" class="botoes">Pesquisar</button>
-        </div>
+    </main>
 
-    </div>
-
-    <div id="caixaInputsCadastro" class="container mt-5" class="caixaInputDeletar">
-        <br>
-        <h1 class="text-center">Informações alteráveis </h1>
-        <br>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nome">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="CNPJ">
-        </div>
-
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Categoria da empresa" list="faixa">
-        </div>
-
-        <datalist id="faixa">
-            <option value="Contribuinte">Empresa contribuinte</option>
-            <option value="Não contribuinte">Empresa não contribuinte</option>
-        </datalist>
-
-
-        <div class="input-group mb-3">
-            <input type="text" id="senha" class="form-control" placeholder="Senha">
-        </div>
-
-        <div class="text-center">
-            <button class="botoes">Salvar</button>
-
-        </div>
-
-    </div>
-    <footer class="text-center text-white fixed-bottom mt-5" style="background-color: #020202" id="footer">
+    <footer class="text-center text-white fixed-bottom" style="background-color: #020202" id="footer">
         <div class="divisoriaFooter"></div>
         <div class="container p-4"></div>
         <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="" />
@@ -121,10 +112,6 @@
         </div>
     </footer>
 </body>
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

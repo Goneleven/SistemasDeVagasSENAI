@@ -39,3 +39,12 @@
 .aberto .conteudo {
   max-height: 100%;
 }
+
+.caixaOpcoes{
+  margin-top: 5%;
+}
+
+a, h4{
+ text-decoration: none;
+
+}

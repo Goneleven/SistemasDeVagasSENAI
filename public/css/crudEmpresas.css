@@ -42,7 +42,9 @@ input {
     }
 }
 
-
+#inputDeletar{
+    margin: auto;
+}
 
 /* pop up de cadastrar vagas*/
 .popupCadastro {
@@ -65,6 +67,7 @@ input {
         width: 300px;
         height: 700px;
     }
+   
 }
 
 

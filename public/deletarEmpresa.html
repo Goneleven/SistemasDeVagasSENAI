@@ -13,15 +13,9 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-    <title>cadastro empresa</title>
+    <title>delete Empresa</title>
     <style>
-        input {
-            max-width: 70%;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin: 10px auto;
-            height: 45px;
-        }
+      
     </style>
 </head>
 
@@ -60,34 +54,18 @@
     </div>
 
 
-    <div id="caixaInputsCadastro" class="container mt-5">
+    <div id="caixaInputsCadastro" class="container mt-5" class="caixaInputDeletar">
         <br>
-        <h1 class="text-center">Cadastrar empresas</h1>
+        <h1 class="text-center">Deletar Empresa</h1>
         <br>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nome">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="CNPJ">
-        </div>
 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Categoria da empresa" list="faixa">
+            <input type="text" class="form-control" placeholder="CNPJ" id="inputDeletar">
         </div>
-
-        <datalist id="faixa">
-            <option value="Contribuinte">Empresa contribuinte</option>
-            <option value="Não contribuinte">Empresa não contribuinte</option>
-        </datalist>
-
-
-        <div class="input-group mb-3">
-            <input type="text" id="senha" class="form-control" placeholder="Senha">
-        </div>
+        <br>
 
         <div class="text-center">
-            <button id="gerar" class="botoes">Gerar Senha</button>
-            <button id="cadastrar" class="botoes">Cadastrar </button>
+            <button id="cadastrar" class="botoes">Deletar</button>
         </div>
 
     </div>
@@ -105,43 +83,6 @@
         </div>
     </footer>
 </body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const caixaGerarSenha = document.getElementById("senha");
-        const botaoGerador = document.getElementById("gerar");
-
-        botaoGerador.addEventListener("click", function () {
-            const length = 12;
-            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
-
-            let password = "";
-            for (let i = 0; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * charset.length);
-                password += charset[randomIndex];
-            }
-
-            caixaGerarSenha.value = password;
-        });
-
-        caixaGerarSenha.addEventListener("mouseenter", function () {
-            caixaGerarSenha.style.backgroundColor = "#f0f0f0";
-            caixaGerarSenha.setAttribute("title", "Clique para copiar");
-        });
-
-        caixaGerarSenha.addEventListener("mouseleave", function () {
-            caixaGerarSenha.style.backgroundColor = "#ffffff";
-            caixaGerarSenha.removeAttribute("title");
-        });
-
-        caixaGerarSenha.addEventListener("click", function () {
-            caixaGerarSenha.select();
-            document.execCommand("copy");
-
-        });
-    });
-</script>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
