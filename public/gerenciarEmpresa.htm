@@ -16,6 +16,17 @@
     <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
 
     <title>SENAI - Gerenciamento</title>
+    <style>
+        .linkCruds {
+            text-decoration: none;
+            color: #020202;
+        }
+
+        .linkCruds:hover {
+            color: red;
+            transition: 0.7s;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,8 +64,7 @@
             <div class="text-center d-flex align-items-center justify-content-center my-3">
                 <div id="gerenciarVagas" class="text-white"><span>丨</span> <a class="centralLink"
                         href="homeSenai.html">Gerenciar Vagas</a></div>
-                <div id="controleAcesso" class="text-white mx-2"><span>丨</span> <a class="centralLink" href="#">Controle
-                        de Acesso</a> <span>丨</span></div>
+                <div id="controleAcesso" class="text-white mx-2"><span>丨</span> <a class="centralLink" href="#">Gerenciar empresa</a> <span>丨</span></div>
             </div>
         </div>
     </div>
@@ -62,37 +72,41 @@
 
 
         <div class="caixaOpcoes">
-            <a href="cadastroEmpresa.html">
-                <div class="caixa">
+
+            <div class="caixa">
+                <a href="cadastroEmpresa.html" class="linkCruds">
                     <div class="cabecalho">
                         <h4>Cadastrar empresa</h4>
                         <button class="seta">▼</button>
                     </div>
-                </div>
-            </a>
-            <a href="updade.html">
-                <div class="caixa">
+                </a>
+            </div>
+            <div class="caixa">
+                <a href="readEmpresa.html" class="linkCruds">
                     <div class="cabecalho">
-                        <h4>Atualizar informações da empresa</h4>
+                        <h4>Pesquisar empresa</h4>
                         <button class="seta">▼</button>
                     </div>
-                </div>
-            </a>
-            <a href="readEmpresa.html">
-                <div class="caixa">
+                </a>
+            </div>
+            <div class="caixa">
+                <a href="updade.html" class="linkCruds">
                     <div class="cabecalho">
-                        <h4>Visualizar empresa</h4>
+                        <h4>Aualizar informações</h4>
                         <button class="seta">▼</button>
                     </div>
-                </div>
-            </a>
-            <a href="deletarEmpresa.html">
-                <div class="caixa">
+                </a>
+            </div>
+            <div class="caixa">
+                <a href="deletarEmpresa.html" class="linkCruds">
                     <div class="cabecalho">
-                        <h4>Deletar acesso da empresa</h4>
+                        <h4>Remover empresa</h4>
                         <button class="seta">▼</button>
                     </div>
-                </div>
+                </a>
+            </div>
+
+
         </div>
         </a>
 

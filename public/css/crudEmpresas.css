@@ -19,7 +19,6 @@ input {
     margin: 10px auto;
     height: 45px;
 }
-
 .botoes {
     width: 114px;
     height: 40px;
@@ -60,6 +59,8 @@ input {
     overflow-y: scroll;
 }
 
+
+
 @media (max-width: 768px) {
     .popupInfoEmpresa {
         top: 50px;
@@ -67,7 +68,7 @@ input {
         width: 300px;
         height: 700px;
     }
-   
+
 }
 
 

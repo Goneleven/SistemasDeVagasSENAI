@@ -118,7 +118,7 @@ footer {
 }
 
 .scrollVagas {
-  max-height: 780px;
+  max-height: 400px;
   overflow-y: scroll;
 }
 
