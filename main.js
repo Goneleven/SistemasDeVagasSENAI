@@ -29,7 +29,19 @@ router.post('/registroEmpresas', (req, res) =>{
 
     let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '"+ dadosCadastro.categoriaEmpresa + "')";
 
-    sql.query(conexao, insert, (error, resultado) => {
+    let get = "SELECT * FROM empresa where cnpj = '" + dadosCadastro.cnpj + "'";
+
+    
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+
+        if(resultado.length >= 1){
+            console.log('isto já existe');
+        }else{
+            sql.query(conexao, insert, (error, resultado) => {
+
+            })
+        }
 
     })
 
