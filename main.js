@@ -6,7 +6,7 @@ const cors = require("cors");
 server.use(cors());
 server.use(express.json({extended: true}))
 
-const conexao = "server=.;Database=empresas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
+const conexao = "server=.;Database=divulgacaoVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
 router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
     const dadosLogin = req.body;
@@ -22,12 +22,12 @@ router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
 
 });
 
-router.post('/cadastroEmpresaN', (req, res) =>{
+router.post('/registroEmpresas', (req, res) =>{
 
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
 
-    let insert = "INSERT INTO Empresass(nome, email, telefone, cep, cidade, setor) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.email + "', '" + dadosCadastro.telefone + "', '"+ dadosCadastro.cep + "', '"+ dadosCadastro.cidade + "','"+ dadosCadastro.setor + "')";
+    let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '"+ dadosCadastro.categoriaEmpresa + "')";
 
     sql.query(conexao, insert, (error, resultado) => {
 
