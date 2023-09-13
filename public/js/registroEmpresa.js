@@ -4,7 +4,9 @@ function registrarEmpresa(){
     let cnpj = document.getElementById("cnpj").value;
     let categoriaEmpresa = document.getElementById("categoriaEmpresa").value;
     let senha = document.getElementById('senha').value;
-    if()
+    if(nome == undefined || cnpj == undefined || categoriaEmpresa == undefined || senha == undefined){
+        
+    }
     sendData(nome, cnpj, categoriaEmpresa, senha);
 
 }
