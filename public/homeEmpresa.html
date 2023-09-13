@@ -17,7 +17,7 @@
 </head>
 
 
-<body onload="closePopup()">
+<body onload="closePopup(), closePopupCandidatos()">
 
   <div id="header">
     <nav class="navbar">
@@ -351,9 +351,68 @@
         </div>
         <div class="col-md-6 d-none d-lg-block infoVaga">
 
-          
+
           <div class="card border border-dark mb-3 cardInfo">
             <div class="card-body">
+
+              <div id="popupCandidatos" class="popupCandidatos">
+
+                <button onclick="closePopupCandidatos()"> X </button>
+                <div class="fundoCandidatos">
+                  <div class="containerCandidatos">
+                    <p>Mario Bros</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>King do Discord</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Porco do Minecraft</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Sans</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Kirby</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Pikmin Azul</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Pikmin Azul</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Pikmin Azul</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Pikmin Azul</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                  <div class="containerCandidatos">
+                    <p>Pikmin Azul</p>
+                    <img src="img/logoEmpresa.png" width="10%">
+                  </div>
+
+                </div>
+              </div>
+
+
               <h3 class="card-title text-center my-2">Estagiário de TI</h3>
               <div class="divisoriaCard"></div>
               <div id="empresaVaga" class="my-4 mx-2">
@@ -414,9 +473,14 @@
                   <p class="card-text mx-3">São Paulo</p>
                 </div>
               </div>
+
+
+
+
             </div>
-            <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><a href="homeCandidatos.html"><button type="submit"
-                class="btn btn-danger border border-dark rounded rounded-pill">ver candidatos</button></a></div>
+            <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit" onclick="showPopupCandidatos()"
+                class="btn btn-danger border border-dark rounded rounded-pill btnVerCandidatos" >ver candidatos</button>
+            </div>
           </div>
         </div>
 
@@ -477,7 +541,7 @@
 
 
       <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
-          class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button></div>
+          class="btn btn-danger border border-dark rounded rounded-pill" onclick="showPopupCandidatos()">Candidatos</button></div>
       </div>
     </dialog>
 
@@ -531,6 +595,8 @@
   const modal = document.querySelector("dialog");
   const buttonfecharPopUp = modal.querySelector("button");
 
+  const btnVerCandidato = document.querySelectorAll(".btnVerCandidatos");
+
   cardsPopUp.forEach(function (div) {
     div.addEventListener("click", function () {
       if (window.innerWidth <= 991) {
@@ -557,6 +623,15 @@
   function closePopup() {
     document.getElementById("popupCadastro").style.display = "none";
   }
+
+
+  function showPopupCandidatos() {
+    document.getElementById("popupCandidatos").style.display = "block";
+  }
+  function closePopupCandidatos() {
+    document.getElementById("popupCandidatos").style.display = "none";
+  }
+
 </script>
 
 

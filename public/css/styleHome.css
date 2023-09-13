@@ -66,7 +66,7 @@
 .fundoCandidatos{
     overflow-y: scroll;
     height: 500px;
-    /* position: absolute; */
+    position: absolute;
     background-color: white;
 }
 
