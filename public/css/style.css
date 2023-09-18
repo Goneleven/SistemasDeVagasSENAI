@@ -118,9 +118,10 @@ footer {
 }
 
 .scrollVagas {
-  max-height: 1000px;
+  max-height: 600px;
   overflow-y: scroll;
 }
+
 
 .scrollVagas::-webkit-scrollbar-track
 {
