@@ -4,40 +4,40 @@ const server = express();
 const router = express.Router();
 const cors = require("cors");
 server.use(cors());
-server.use(express.json({extended: true}))
+server.use(express.json({ extended: true }))
 
 const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
-router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
+router.post('/sendLoginLeanerData', (req, res) => { //record operation
     const dadosLogin = req.body;
 
-    sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula +" AND cpf = " + req.body.cpf, (error, resultado) => {
-            if(resultado != null){
-                res.send(resultado);
-            }else{
-                res.send(error);
-            }
+    sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula + " AND cpf = " + req.body.cpf, (error, resultado) => {
+        if (resultado != null) {
+            res.send(resultado);
+        } else {
+            res.send(error);
+        }
 
-        })
+    })
 
 });
 
-router.post('/registroEmpresas', (req, res) =>{
+router.post('/registroEmpresas', (req, res) => {
 
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
 
-    let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '"+ dadosCadastro.categoriaEmpresa + "')";
+    let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '" + dadosCadastro.categoriaEmpresa + "')";
 
     let get = "SELECT * FROM empresa where cnpj = '" + dadosCadastro.cnpj + "'";
 
-    
+
     sql.query(conexao, get, (error, resultado) => {
         console.log(resultado);
 
-        if(resultado.length >= 1){
+        if (resultado.length >= 1) {
             console.log('isto já existe');
-        }else{
+        } else {
             sql.query(conexao, insert, (error, resultado) => {
 
             })
@@ -49,7 +49,7 @@ router.post('/registroEmpresas', (req, res) =>{
 
 server.use(router);
 
-server.listen(3000, () =>{
+server.listen(3000, () => {
     console.log('server rodando!');
 })
 
@@ -57,8 +57,19 @@ server.listen(3000, () =>{
 
 //deletar empresa 
 
-router.post('/deletarEmpresa', (req, res) =>{
+router.delete('/deletarEmpresa', (req, res) => {
+    const cnpj = req.body; 
 
+    const deleteQuery = "DELETE FROM empresa WHERE cnpj = '";
 
+    sql.query(conexao, deleteQuery, (error, resultado) => {
+      if (error) {
 
-});
+        console.error("Erro ao excluir empresa:", error);
+        res.status(500).json({ error: "Erro interno do servidor" });
+      
+      }
+    });
+  });
+  
+// DELETE FROM empresa WHERE cnpj
