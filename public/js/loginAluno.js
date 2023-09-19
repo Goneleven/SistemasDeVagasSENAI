@@ -6,6 +6,8 @@ function loginAluno(){
 
     console.log("Matricula: " + matricula + " cpf: " + cpf);
 
+    
+
     enviarDadosLogin(matricula, cpf);
 
 
