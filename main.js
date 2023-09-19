@@ -11,8 +11,23 @@ const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=y
 router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
     const dadosLogin = req.body;
 
-    sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula +" AND cpf = " + req.body.cpf, (error, resultado) => {
-            if(resultado != null){
+    sql.query(conexao, "SELECT * FROM aluno", (error, resultado) => {
+        console.log(resultado);
+            if(resultado != null  && resultado.length > 0){
+                res.send(resultado);
+        }else{
+                res.send(error);
+            }
+
+        })
+
+});
+
+router.post('/sendLoginEnterpriseData', (req, res) =>{ //record operation
+    const dadosLogin = req.body;
+
+    sql.query(conexao, "SELECT * FROM empresa where cnpj = " + req.body.cnpj +" AND senha = " + req.body.codigoAcesso, (error, resultado) => {
+            if(resultado != null && resultado.length > 0){
                 res.send(resultado);
             }else{
                 res.send(error);
