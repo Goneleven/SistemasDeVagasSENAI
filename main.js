@@ -72,29 +72,8 @@ server.listen(3000, () =>{
 
 //deletar empresa 
 
-
-
 router.post('/deletarEmpresa', (req, res) =>{
 
-    const dadosCadastro = req.body;
-    console.log(dadosCadastro);
 
-    let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '"+ dadosCadastro.categoriaEmpresa + "')";
-
-    let get = "SELECT * FROM empresa where cnpj = '" + dadosCadastro.cnpj + "'";
-
-    
-    sql.query(conexao, get, (error, resultado) => {
-        console.log(resultado);
-
-        if(resultado.length >= 1){
-            console.log('isto já existe');
-        }else{
-            sql.query(conexao, insert, (error, resultado) => {
-
-            })
-        }
-
-    })
 
 });

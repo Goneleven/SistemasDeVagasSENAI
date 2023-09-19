@@ -1,45 +1,26 @@
-function deletarEmpresa(){
+async function excluir() {
+    const cpf = document.getElementById('cpfInput').value;
 
-    let nome = document.getElementById('nome').value;
-    let cnpj = document.getElementById("cnpj").value;
-    let categoriaEmpresa = document.getElementById("categoriaEmpresa").value;
-    let senha = document.getElementById('senha').value;
-    if(nome == undefined || cnpj == undefined || categoriaEmpresa == undefined || senha == undefined){
-        
+    if (!cpf) {
+        alert('Por favor, insira um CPF válido.');
+        return;
     }
-    sendData(nome, cnpj, categoriaEmpresa, senha);
 
-}
+    const confirmacao = confirm(`Tem certeza de que deseja excluir o registro com CPF ${cpf}?`);
 
-const sendData = async(nome, cnpj, categoriaEmpresa, senha) =>{
+    if (confirmacao) {
+        try {
+            const response = await fetch(`http://localhost:3000/excluirPorCPF/${cpf}`, {
+                method: 'DELETE',
+            });
 
-    const init = {
-        method: 'DELETE',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify({nome, cnpj, categoriaEmpresa, senha})
+            if (response.ok) {
+                alert('Registro excluído com sucesso.');
+            } else {
+                alert('Ocorreu um erro ao excluir o registro.');
+            }
+        } catch (error) {
+            console.error('Erro ao excluir o registro:', error);
+        }
     }
-    
-    const resLogin = await fetch('http://localhost:3000/registroEmpresas', init);
-
-}
-
-
-//DELETE (Cadastro)
-function deletarDados() {
-    const cpf = document.getElementById('cpf').value;
-
-    fetch(' cadastros')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(objeto => {
-                if (objeto.cpf === cpf) {
-                    fetch(` cadastros/${objeto.id}`, {
-                        method: 'DELETE'
-                    })
-                }
-            })
-
-        })
 }
