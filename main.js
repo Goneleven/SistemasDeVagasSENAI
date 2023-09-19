@@ -6,7 +6,7 @@ const cors = require("cors");
 server.use(cors());
 server.use(express.json({extended: true}))
 
-const conexao = "server=.;Database=divulgacaoVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
+const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
 router.post('/sendLoginLeanerData', (req, res) =>{ //record operation
     const dadosLogin = req.body;
