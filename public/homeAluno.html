@@ -351,8 +351,7 @@
 
       <div class="d-flex align-items-center">
         <h5 class="card-title mx-3 mr-3">Empresa</h5>
-        <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-          id="logoSmall">
+        <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo" id="logoSmall">
       </div>
       <div class="divisoriaCard"></div>
       <div class="scrollVagasPopUp ">
@@ -392,13 +391,13 @@
           <h5 class="card-title">Requisitos:</h5>
           <p class="card-text mx-3">Ensino Médio</p>
         </div>
- 
-      </div>
-      
 
-        <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
+      </div>
+
+
+      <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
           class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button></div>
-        </div>
+      </div>
     </dialog>
 
   </main>
@@ -448,26 +447,26 @@
 
 
   const cardsPopUp = document.querySelectorAll(".popUpMobile");
-const modal = document.querySelector("dialog");
-const buttonfecharPopUp = modal.querySelector("button");
+  const modal = document.querySelector("dialog");
+  const buttonfecharPopUp = modal.querySelector("button");
 
-cardsPopUp.forEach(function (div) {
-  div.addEventListener("click", function () {
-    if (window.innerWidth <= 991) {
-      modal.showModal();
+  cardsPopUp.forEach(function (div) {
+    div.addEventListener("click", function () {
+      if (window.innerWidth <= 991) {
+        modal.showModal();
+      }
+    });
+  });
+
+  buttonfecharPopUp.addEventListener("click", function () {
+    modal.close();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 991) {
+      modal.close();
     }
   });
-});
-
-buttonfecharPopUp.addEventListener("click", function () {
-  modal.close();
-});
-
-window.addEventListener('resize', function () {
-  if (window.innerWidth > 991) {
-    modal.close();
-  }
-});
 
 
 
@@ -479,6 +478,3 @@ window.addEventListener('resize', function () {
   integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </html>
-
-
-
