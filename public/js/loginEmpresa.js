@@ -23,6 +23,7 @@ const enviarDadosLogin = async(cnpj, codigoAcesso) =>{
     }
 
     const resLogin = await fetch('http://localhost:3000/sendLoginEnterpriseData', init);
+    console.log(resLogin);
     if(resLogin.cnpj = cnpj){
         location.href = "homeEmpresa.html";
     }
