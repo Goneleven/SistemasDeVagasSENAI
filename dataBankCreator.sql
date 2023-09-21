@@ -45,3 +45,11 @@ CREATE TABLE inscricao(
 
 
 );
+
+
+INSERT INTO aluno(nome_aluno, n_matricula, cpf)
+VALUES
+('Juan', '12345','12345678-90'),
+('Igor', '23456','23456789-01')
+
+SELECT * FROM aluno
