@@ -24,6 +24,26 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
         console.log(resultado[indexS]);
 
         if(resultado[index] != undefined && resultado[indexS] != undefined && resultado[indexS] == resultado[index]){
+            res.send({response : 204, idLogged: resultado[index].id_aluno});
+        }else{
+            console.log('Não logou');
+        }
+
+    })
+
+});
+
+router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
+    const dadosLogin = req.body;
+
+    sql.query(conexao, "SELECT * FROM empresa", (error, resultado) => {
+
+        let index = getItemIndex('cnpj', req.body.cnpj, resultado);
+        console.log(req.body.codigoAcesso)
+        console.log(resultado[index].senha);
+
+
+        if(resultado[index] != undefined && resultado[index].senha == req.body.codigoAcesso){
             console.log('logou');
         }else{
             console.log('Não logou');
