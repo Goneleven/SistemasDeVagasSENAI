@@ -8,14 +8,25 @@ server.use(express.json({ extended: true }))
 
 const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
+const getItemIndex = (propriedade, valor, data) =>{
+    return data.findIndex((item) => item[propriedade] == valor);
+}
+
 router.post('/sendLoginLeanerData', (req, res) => { //record operation
     const dadosLogin = req.body;
 
-    sql.query(conexao, "SELECT * FROM Alunos where matricula = " + req.body.matricula + " AND cpf = " + req.body.cpf, (error, resultado) => {
-        if (resultado != null) {
-            res.send(resultado);
-        } else {
-            res.send(error);
+    sql.query(conexao, "SELECT * FROM aluno", (error, resultado) => {
+
+        console.log(resultado);
+        let index = getItemIndex('n_matricula', req.body.matricula, resultado);
+        let indexS = getItemIndex('cpf', req.body.cpf, resultado);
+        console.log(resultado[index]);
+        console.log(resultado[indexS]);
+
+        if(resultado[index] != undefined && resultado[indexS] != undefined && resultado[indexS] == resultado[index]){
+            console.log('logou');
+        }else{
+            console.log('Não logou');
         }
 
     })
