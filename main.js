@@ -76,7 +76,8 @@ router.post('/cadastrarVaga', (req, res) => {
 
     let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastro.area + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "')";
 
-  
+    let get = "SELECT * FROM vaga where descricao = '" + dadosCadastro.descricao + "'";
+
     sql.query(conexao, get, (error, resultado) => {
         console.log(resultado);
 
