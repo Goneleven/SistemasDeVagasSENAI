@@ -86,21 +86,58 @@ server.listen(3000, () => {
 
 
 
+
+//Cadastro das vagas no banco de dados
+
+router.post('/cadastrarVaga', (req, res) => {
+
+    const dadosCadastro = req.body;
+    console.log(dadosCadastro);
+
+    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastro.area + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "')";
+
+  
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+
+        if (resultado.length >= 1) {
+            console.log('isto já existe');
+        } else {
+            sql.query(conexao, insert, (error, resultado) => {
+
+            })
+        }
+
+    })
+
+   
+
+});
+
+
+
+
+
 //deletar empresa 
 
-router.delete('/deletarEmpresa', (req, res) => {
-    const cnpj = req.body; 
+// router.delete('/deletarEmpresa', (req, res) => {
 
-    const deleteQuery = "DELETE FROM empresa WHERE cnpj = '";
+//     const dadosCadastro = req.body;
+//     const cnpj = dadosCadastro.cnpj; 
 
-    sql.query(conexao, deleteQuery, (error, resultado) => {
-      if (error) {
+//     const deletar = "DELETE FROM empresa WHERE cnpj = '" + cnpj;
 
-        console.error("Erro ao excluir empresa:", error);
-        res.status(500).json({ error: "Erro interno do servidor" });
-      
-      }
-    });
-  });
+//     sql.query(conexao, deletar, (error, resultado) => {
+
+//       if (error) {
+//         console.error("Erro ao excluir empresa:", error);
+//         res.status(500).json({ error: "Erro interno do servidor" });
+//       } else{
+//         sql.query(conexao, deletar, (error, resultado) => {
+
+//         })
+//       }
+//     });
+//   });
   
 // DELETE FROM empresa WHERE cnpj
