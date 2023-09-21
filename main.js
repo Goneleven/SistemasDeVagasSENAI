@@ -19,7 +19,15 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
 
         console.log(resultado);
         let index = getItemIndex('n_matricula', req.body.matricula, resultado);
+        let indexS = getItemIndex('cpf', req.body.cpf, resultado);
         console.log(resultado[index]);
+        console.log(resultado[indexS]);
+
+        if(resultado[index] != undefined && resultado[indexS] != undefined && resultado[indexS] == resultado[index]){
+            console.log('logou');
+        }else{
+            console.log('Não logou');
+        }
 
     })
 
