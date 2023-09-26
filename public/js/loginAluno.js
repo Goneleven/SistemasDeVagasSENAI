@@ -24,10 +24,11 @@ const enviarDadosLogin = async(matricula, cpf) =>{
         body: JSON.stringify({matricula, cpf})
     }
 
-    const resLogin = await fetch('http://localhost:3000/sendLoginLeanerData', init);
-    console.log(resLogin.json());
-    if(resLogin.matricula = matricula){
-        //location.href = "perfil.html";
+    const loginPromise = await fetch('http://localhost:3000/sendLoginLeanerData', init);
+    let loginResultJson = await resLogin.json();
+    console.log(ResultJson);
+    if(loginResultJson.response == 204){//aqui faz a operação de ir a tela de perfil
+        location.href = "perfil.html"
     }
 
 }

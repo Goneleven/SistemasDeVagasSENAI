@@ -26,7 +26,7 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
         if(resultado[index] != undefined && resultado[indexS] != undefined && resultado[indexS] == resultado[index]){
             res.send({response : 204, idLogged: resultado[index].id_aluno});
         }else{
-            console.log('Não logou');
+            res.send({response : 203, errorMessage : 'Senha ou email incorretos, ou conta inexistente'});
         }
 
     })
