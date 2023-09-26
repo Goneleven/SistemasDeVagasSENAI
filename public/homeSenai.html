@@ -20,6 +20,7 @@
 </head>
 
 
+
 <body onload="closePopup()">
 
   <div id="header">
@@ -37,11 +38,10 @@
       <div class="" id="caixaDosLinks">
         <div class="divisoriaHeader"></div>
         <br>
+        <hr>
         <a class="linkMenu" href="perfilEmpresa.html">Perfil</a>
         <hr />
-        <a class="linkMenu" href="#">Notificações</a>
-        <hr />
-        <a class="linkMenu" href="#">Configurações</a>
+       
         <hr />
         <a class="linkMenu" href="index.html">Sair</a>
         <hr>
@@ -50,8 +50,10 @@
     </div>
     <div class="centralSenaiMenu">
       <div class="text-center d-flex align-items-center justify-content-center my-3">
-        <div id="gerenciarVagas" class="text-white"><span>丨</span> <a class="centralLink" href="#">Gerenciar Vagas</a></div>
-        <div id="controleAcesso" class="text-white mx-2"><span>丨</span> <a class="centralLink" href="gerenciarEmpresa.html">Gerenciar empresas</a> <span>丨</span></div>
+        <div id="gerenciarVagas" class="text-white"><span>丨</span> <a class="centralLink" href="#">Gerenciar Vagas</a>
+        </div>
+        <div id="controleAcesso" class="text-white mx-2"><span>丨</span> <a class="centralLink"
+            href="gerenciarEmpresa.html">Gerenciar empresas</a> <span>丨</span></div>
       </div>
     </div>
 
@@ -133,7 +135,8 @@
 
                 <label class="form-label" for="categoriaVaga">Area de Atuação:</label>
                 <input type="text" name="categoriaVaga" placeholder="A vaga é destinada a qual curso?"
-                  list="atuacaoCategoria" class="form-control form-control-lg inputInfo inputsDeCadastro" id="areaAtuacao"/>
+                  list="atuacaoCategoria" class="form-control form-control-lg inputInfo inputsDeCadastro"
+                  id="areaAtuacao" />
 
                 <datalist id="atuacaoCategoria">
                   <option value="Mecânica"></option>
@@ -143,43 +146,43 @@
                 <hr>
 
                 <label class="form-label" for="descVaga">Descrição da Vaga:</label>
-                <div id="editor">
-                  <input type="text" name="descVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" id="descricaoDaVaga"/>
-                </div>
+                <!-- <div id="editor"> -->
+                  <textarea name="descVaga" id="descricaoDaVaga" class="form-control form-control-lg inputInfo inputsDeCadastro" cols="30" rows="10"></textarea>
+                <!-- </div> -->
                 <hr>
 
                 <label class="form-label" for="responsa">Responsabilidade:</label>
-                <div id="editor1">
-                  <input type="text" name="responsa" class="form-control form-control-lg inputInfo inputsDeCadastro" id="responsabilidade"/>
-                </div>
+                <!-- <div id="editor1"> -->
+                  <textarea name="responsa" id="responsabilidade" class="form-control form-control-lg inputInfo inputsDeCadastro" cols="30" rows="10"></textarea>            
+                <!-- </div> -->
                 <script type="module" src="js/home.js"></script>
                 <hr>
 
-              <label class="form-label" for="categoriaVaga">Jornada/periodo:</label>
-                <input type="text" name="categoriaVaga" placeholder="periodo do trabalho"
-                  list="atuacaoCategoria" class="form-control form-control-lg inputInfo inputsDeCadastro" id="periodo"/>
+                <label class="form-label" for="categoriaVaga">Jornada/periodo:</label>
+                <input type="text" name="categoriaVaga" placeholder="periodo do trabalho" list="atuacaoCategoria"
+                  class="form-control form-control-lg inputInfo inputsDeCadastro" id="periodo" />
                 <hr>
 
                 <label class="form-label" for="requirements">Requisitos:</label>
-                <div id="editor2">
-                  <input type="text" name="requirements"
-                    class="form-control form-control-lg inputInfo inputsDeCadastro" id="requisitos"/>
-                </div>
+                <!-- <div id="editor2"> -->
+                  <textarea name="requirements" id="requisitos" class="form-control form-control-lg inputInfo inputsDeCadastro" cols="30" rows="10"></textarea>    
+                <!-- </div> -->
                 <hr>
 
                 <label class="form-label" for="localidade">Local:</label>
-                <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro" id="localidade"/>
+                <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro"
+                  id="localidade" />
                 <hr>
 
                 <label class="form-label" for="salary">Salário:</label>
                 <input type="number" name="salary" min="600" max="15000"
-                  class="form-control form-control-lg inputInfo inputsDeCadastro" id="salario"/>
+                  class="form-control form-control-lg inputInfo inputsDeCadastro" id="salario" />
                 <hr>
 
                 <label class="form-label" for="benefits">Benefício:</label>
-                <div id="editor3">
-                  <input type="text" name="benefits" class="form-control form-control-lg inputInfo inputsDeCadastro" id="beneficios"/>
-                </div>
+                <!-- <div id="editor3"> -->
+                  <textarea name="benefits" id="beneficios" class="form-control form-control-lg inputInfo inputsDeCadastro" cols="30" rows="10"></textarea>       
+                <!-- </div> -->
 
                 <button type="button" class="border border-dark btn btn-danger rounded m-3" onclick="registrarVaga()">
                   Publicar Vaga
@@ -195,369 +198,377 @@
               id="botaoFiltro">
               <i class="fas fa-filter"></i>
             </button>
-            
+
 
             <input type="search" class="border border-dark form-control rounded-pill m-3" placeholder=""
-            aria-label="Search" class="barraDePesquisa" />
+              aria-label="Search" class="barraDePesquisa" />
           </div>
         </div>
       </div>
 
-    <div class="container">
-      <div class="row justify-content-center mt-5">
-        <div class="col">
-          
+      <div class="container">
+        <div class="row justify-content-center mt-5">
+          <div class="col">
+
+          </div>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 d-flex flex-column scrollVagas">
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+            <div class="card border border-dark mb-4 cardVaga">
+              <div class="card-body popUpMobile">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title mx-3 mr-3">Empresa</h5>
+                  <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
+                    id="logoSmall">
+                </div>
+                <div class="divisoriaCard"></div>
+                <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para
+                  se
+                  juntar à nossa equipe dinâmica e inovadora</p>
+                <p class="card-text">
+                  <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
+                  <strong>R$ 800,00</strong>
+                  <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-none d-lg-block infoVaga">
+            <div class="card border border-dark mb-3 cardInfo">
+              <div class="card-body">
+                <h3 class="card-title text-center my-2">Estagiário de TI</h3>
+                <div class="divisoriaCard"></div>
+                <div id="empresaVaga" class="my-4 mx-2">
+                  <h2 class="card-title">Google</h2>
+                </div>
+                <div class="scrollVagas">
+                  <div id="descVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Descrição da Vaga:</h5>
+                    <p class="card-text mx-3">Teste</p>
+                  </div>
+                  <div id="funcoesVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Responsabilidades:</h5>
+                    <p class="card-text mx-3">qq faz</p>
+                  </div>
+                  <div id="periodoVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Jornada/Período:</h5>
+                    <p class="card-text mx-3">Manhã</p>
+                  </div>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Requisitos:</h5>
+                    <p class="card-text mx-3">Ensino Médio</p>
+                  </div>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Requisitos:</h5>
+                    <p class="card-text mx-3">Ensino Médio</p>
+                  </div>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Requisitos:</h5>
+                    <p class="card-text mx-3">Ensino Médio</p>
+                  </div>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Requisitos:</h5>
+                    <p class="card-text mx-3">Ensino Médio</p>
+                  </div>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Requisitos:</h5>
+                    <p class="card-text mx-3">Ensino Médio</p>
+                  </div>
+
+
+                  <div id="localVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Local:</h5>
+                    <p class="card-text mx-3">São Paulo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <!-- teste pop up -->
+        <dialog class="popUpVagas hide-on-mobile">
+          <button class="botaoFecharPupUpMobile">X</button>
+
+          <div class="d-flex align-items-center">
+            <h5 class="card-title mx-3 mr-3">Empresa</h5>
+            <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo" id="logoSmall">
+          </div>
+          <div class="divisoriaCard"></div>
+          <div class="scrollVagasPopUp ">
+            <div id="funcoesVaga" class="my-3 mx-2">
+              <h5 class="card-title">Responsabilidades:</h5>
+              <p class="card-text mx-3">qq faz</p>
+            </div>
+            <div id="periodoVaga" class="my-3 mx-2">
+              <h5 class="card-title">Jornada/Período:</h5>
+              <p class="card-text mx-3">Manhã</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Requisitos:</h5>
+              <p class="card-text mx-3">Ensino Médio</p>
+            </div>
+
+          </div>
+
+
+          <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
+              class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button></div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6 d-flex flex-column scrollVagas">
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-          <div class="card border border-dark mb-4 cardVaga">
-            <div class="card-body popUpMobile">
-              <div class="d-flex align-items-center">
-                <h5 class="card-title mx-3 mr-3">Empresa</h5>
-                <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-                  id="logoSmall">
-              </div>
-              <div class="divisoriaCard"></div>
-              <p class="card-text my-3">A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se
-                juntar à nossa equipe dinâmica e inovadora</p>
-              <p class="card-text">
-                <i class="fa-solid fa-user mx-2"></i><strong>100</strong>
-                <strong>R$ 800,00</strong>
-                <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 d-none d-lg-block infoVaga">
-          <div class="card border border-dark mb-3 cardInfo">
-            <div class="card-body">
-              <h3 class="card-title text-center my-2">Estagiário de TI</h3>
-              <div class="divisoriaCard"></div>
-              <div id="empresaVaga" class="my-4 mx-2">
-                <h2 class="card-title">Google</h2>
-              </div>
-              <div class="scrollVagas">
-                <div id="descVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Descrição da Vaga:</h5>
-                  <p class="card-text mx-3">Teste</p>
-                </div>
-                <div id="funcoesVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Responsabilidades:</h5>
-                  <p class="card-text mx-3">qq faz</p>
-                </div>
-                <div id="periodoVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Jornada/Período:</h5>
-                  <p class="card-text mx-3">Manhã</p>
-                </div>
-                <div id="requisitosVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Requisitos:</h5>
-                  <p class="card-text mx-3">Ensino Médio</p>
-                </div>
-                <div id="requisitosVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Requisitos:</h5>
-                  <p class="card-text mx-3">Ensino Médio</p>
-                </div>
-                <div id="requisitosVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Requisitos:</h5>
-                  <p class="card-text mx-3">Ensino Médio</p>
-                </div>
-                <div id="requisitosVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Requisitos:</h5>
-                  <p class="card-text mx-3">Ensino Médio</p>
-                </div>
-                <div id="requisitosVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Requisitos:</h5>
-                  <p class="card-text mx-3">Ensino Médio</p>
-                </div>
+      </dialog>
 
+  </main>
 
-                <div id="localVaga" class="my-3 mx-2">
-                  <h5 class="card-title">Local:</h5>
-                  <p class="card-text mx-3">São Paulo</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-  <!-- teste pop up -->
-  <dialog class="popUpVagas hide-on-mobile">
-    <button class="botaoFecharPupUpMobile">X</button>
-
-    <div class="d-flex align-items-center">
-      <h5 class="card-title mx-3 mr-3">Empresa</h5>
-      <img src="https://cdn-teams-slug.flaticon.com/google.jpg" alt="Logo Empresa" class="logo"
-        id="logoSmall">
+  <footer class="text-center text-white fixed-bottom mt-5" style="background-color: #020202" id="footer">
+    <div class="divisoriaFooter"></div>
+    <div class="container p-4"></div>
+    <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="" />
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      <p class="mensagemFooter">
+        Copyright 2023 © Todos os direitos reservados.
+      </p>
+      <p class="mensagemFooter">
+        Privacy Policy | Terms and Conditions | Cookies and Data Protection
+      </p>
     </div>
-    <div class="divisoriaCard"></div>
-    <div class="scrollVagasPopUp ">
-      <div id="funcoesVaga" class="my-3 mx-2">
-        <h5 class="card-title">Responsabilidades:</h5>
-        <p class="card-text mx-3">qq faz</p>
-      </div>
-      <div id="periodoVaga" class="my-3 mx-2">
-        <h5 class="card-title">Jornada/Período:</h5>
-        <p class="card-text mx-3">Manhã</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-      <div id="requisitosVaga" class="my-3 mx-2">
-        <h5 class="card-title">Requisitos:</h5>
-        <p class="card-text mx-3">Ensino Médio</p>
-      </div>
-
-    </div>
-    
-
-      <div id="botaoCandidatar" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
-        class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button></div>
-      </div>
-  </dialog>
-
-</main>
-
-<footer class="text-center text-white fixed-bottom mt-5" style="background-color: #020202" id="footer">
-  <div class="divisoriaFooter"></div>
-  <div class="container p-4"></div>
-  <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="" />
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    <p class="mensagemFooter">
-      Copyright 2023 © Todos os direitos reservados.
-    </p>
-    <p class="mensagemFooter">
-      Privacy Policy | Terms and Conditions | Cookies and Data Protection
-    </p>
-  </div>
-</footer>
+  </footer>
 </body>
 
 <script>
-$('.item1').click(function () {
-  $('.menuLateral ul .itens1').toggleClass('mostra');
-})
+  $('.item1').click(function () {
+    $('.menuLateral ul .itens1').toggleClass('mostra');
+  })
 
-$('.item2').click(function () {
-  $('.menuLateral ul .itens2').toggleClass('mostra');
-})
+  $('.item2').click(function () {
+    $('.menuLateral ul .itens2').toggleClass('mostra');
+  })
 
-$('.item3').click(function () {
-  $('.menuLateral ul .itens3').toggleClass('mostra');
-})
+  $('.item3').click(function () {
+    $('.menuLateral ul .itens3').toggleClass('mostra');
+  })
 
-$('.item4').click(function () {
-  $('.menuLateral ul .itens4').toggleClass('mostra');
-})
-
-
-
-$('.btnLateralBar').click(function () {
-  $('.menuLateral').toggleClass('mostra');
-});
-
-$('.btnFecharLateral').click(function () {
-  $('.menuLateral').toggleClass('mostra');
-})
+  $('.item4').click(function () {
+    $('.menuLateral ul .itens4').toggleClass('mostra');
+  })
 
 
 
-const cardsPopUp = document.querySelectorAll(".popUpMobile");
-const modal = document.querySelector("dialog");
-const buttonfecharPopUp = modal.querySelector("button");
+  $('.btnLateralBar').click(function () {
+    $('.menuLateral').toggleClass('mostra');
+  });
 
-cardsPopUp.forEach(function (div) {
-div.addEventListener("click", function () {
-  if (window.innerWidth <= 991) {
-    modal.showModal();
+  $('.btnFecharLateral').click(function () {
+    $('.menuLateral').toggleClass('mostra');
+  })
+
+
+
+  const cardsPopUp = document.querySelectorAll(".popUpMobile");
+  const modal = document.querySelector("dialog");
+  const buttonfecharPopUp = modal.querySelector("button");
+
+  cardsPopUp.forEach(function (div) {
+    div.addEventListener("click", function () {
+      if (window.innerWidth <= 991) {
+        modal.showModal();
+      }
+    });
+  });
+
+  buttonfecharPopUp.addEventListener("click", function () {
+    modal.close();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 991) {
+      modal.close();
+    }
+  });
+
+
+  function showPopup() {
+    document.getElementById("popupCadastro").style.display = "block";
   }
-});
-});
-
-buttonfecharPopUp.addEventListener("click", function () {
-modal.close();
-});
-
-window.addEventListener('resize', function () {
-if (window.innerWidth > 991) {
-  modal.close();
-}
-});
+  function closePopup() {
+    document.getElementById("popupCadastro").style.display = "none";
+  }
 
 
-function showPopup() {
-  document.getElementById("popupCadastro").style.display = "block";
-}
-function closePopup() {
-  document.getElementById("popupCadastro").style.display = "none";
-}
-
-
-function showPopupCandidatos() {
-  document.getElementById("popupCandidatos").style.display = "block";
-}
-function closePopupCandidatos() {
-  document.getElementById("popupCandidatos").style.display = "none";
-}
+  function showPopupCandidatos() {
+    document.getElementById("popupCandidatos").style.display = "block";
+  }
+  function closePopupCandidatos() {
+    document.getElementById("popupCandidatos").style.display = "none";
+  }
 
 
 </script>
@@ -566,5 +577,7 @@ function closePopupCandidatos() {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-  <script src="js/cadastrarVaga.js"></script>
+<script src="js/cadastrarVaga.js"></script>
+<script src="js/publicarVaga.js"></script>
+
 </html>
