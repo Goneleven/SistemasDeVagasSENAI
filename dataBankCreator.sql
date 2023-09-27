@@ -52,4 +52,9 @@ VALUES
 ('Juan', '12345','12345678-90'),
 ('Igor', '23456','23456789-01')
 
+INSERT INTO empresa(nome_empresa, cnpj, senha, categoria)
+VALUES
+('Juan', '12345','12345678-90'),
+('Igor', '23456','23456789-01')
+
 SELECT * FROM aluno
