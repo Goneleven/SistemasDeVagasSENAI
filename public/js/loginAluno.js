@@ -25,8 +25,8 @@ const enviarDadosLogin = async(matricula, cpf) =>{
     }
 
     const loginPromise = await fetch('http://localhost:3000/sendLoginLeanerData', init);
-    let loginResultJson = await resLogin.json();
-    console.log(ResultJson);
+    let loginResultJson = await loginPromise.json();
+    console.log(loginResultJson);
     if(loginResultJson.response == 204){//aqui faz a operação de ir a tela de perfil
         location.href = "perfil.html"
     }

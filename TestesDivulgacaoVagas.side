@@ -1,0 +1,215 @@
+{
+  "id": "3a58b4f7-7aa9-4c67-8ce8-c6d41a764c18",
+  "version": "2.0",
+  "name": "TestesDivulgacaoVagas",
+  "url": "http://127.0.0.1:5501",
+  "tests": [{
+    "id": "53910aa4-726e-49e9-ab54-6fda0ac5b308",
+    "name": "logincerto",
+    "commands": [{
+      "id": "c8e503ca-fcb9-44e6-ab3f-3d4595547fbd",
+      "comment": "",
+      "command": "open",
+      "target": "/public/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12f3b27b-6732-4b5c-975c-27bfc0ec4748",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b3ebd72-54e8-4b3a-ae39-b9453fc8aecb",
+      "comment": "",
+      "command": "click",
+      "target": "id=numeroMatriculaLogin",
+      "targets": [
+        ["id=numeroMatriculaLogin", "id"],
+        ["css=#numeroMatriculaLogin", "css:finder"],
+        ["xpath=//input[@id='numeroMatriculaLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='caixateste']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "614fc709-ee6c-44bb-8712-8b3a263db852",
+      "comment": "",
+      "command": "type",
+      "target": "id=numeroMatriculaLogin",
+      "targets": [
+        ["id=numeroMatriculaLogin", "id"],
+        ["css=#numeroMatriculaLogin", "css:finder"],
+        ["xpath=//input[@id='numeroMatriculaLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='caixateste']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "35127914-f5da-4d20-8f36-921c9f388552",
+      "comment": "",
+      "command": "click",
+      "target": "id=cpfLogin",
+      "targets": [
+        ["id=cpfLogin", "id"],
+        ["css=#cpfLogin", "css:finder"],
+        ["xpath=//input[@id='cpfLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='caixateste']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e80c990-13f1-4d87-8c86-93c182fa1c93",
+      "comment": "",
+      "command": "type",
+      "target": "id=cpfLogin",
+      "targets": [
+        ["id=cpfLogin", "id"],
+        ["css=#cpfLogin", "css:finder"],
+        ["xpath=//input[@id='cpfLogin']", "xpath:attributes"],
+        ["xpath=//div[@id='caixateste']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12345678-90"
+    }, {
+      "id": "63d4e73a-90b4-44dc-9352-2fcac692c6da",
+      "comment": "",
+      "command": "click",
+      "target": "id=botaoEntrar",
+      "targets": [
+        ["id=botaoEntrar", "id"],
+        ["css=#botaoEntrar", "css:finder"],
+        ["xpath=//button[@id='botaoEntrar']", "xpath:attributes"],
+        ["xpath=//div[@id='caixateste']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Entrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad7c6a2e-641d-488c-a563-4ce3fdcff9c2",
+      "comment": "",
+      "command": "click",
+      "target": "id=openModalBtn",
+      "targets": [
+        ["id=openModalBtn", "id"],
+        ["css=#openModalBtn", "css:finder"],
+        ["xpath=//button[@id='openModalBtn']", "xpath:attributes"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Editar perfil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "194f51b9-ccd9-44a9-ac90-9239344fcdfb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ck-focused",
+      "targets": [
+        ["css=.ck-focused", "css:finder"],
+        ["xpath=//div[5]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15d18831-3aa9-4992-a971-5d4bf9694751",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botaoFecharPupUpMobile",
+      "targets": [
+        ["css=.botaoFecharPupUpMobile", "css:finder"],
+        ["xpath=//dialog/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'X')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42e90c66-6295-4c2a-aa2d-9f7123884873",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botaoAluno:nth-child(2) > b",
+      "targets": [
+        ["css=.botaoAluno:nth-child(2) > b", "css:finder"],
+        ["xpath=//button[2]/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Vagas Inscritas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fe0f55c-7bea-48b9-86af-d87c2c5d5a49",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botaoAluno:nth-child(1) > b",
+      "targets": [
+        ["css=.botaoAluno:nth-child(1) > b", "css:finder"],
+        ["xpath=//button/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Curriculum')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4056df10-1951-4d7b-8de5-9c56d0fcc9b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar",
+      "targets": [
+        ["css=.navbar", "css:finder"],
+        ["xpath=//div[@id='header']/nav", "xpath:idRelative"],
+        ["xpath=//nav", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab83ed1d-86bc-4f92-b720-7f485983a812",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//button[@id='botaoMenu']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9de51ce-fac2-437c-812d-3714564fad60",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=home",
+      "targets": [
+        ["linkText=home", "linkText"],
+        ["css=.linkMenu:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'home')]", "xpath:link"],
+        ["xpath=//div[@id='caixaDosLinks']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'homeAluno.html')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "85056763-0610-4b1a-b931-abb1fb4a0f5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-lg",
+      "targets": [
+        ["css=.btn-lg", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d36d3f70-59c5-4384-beba-9b2a3d57fa75",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fas",
+      "targets": [
+        ["css=.fas", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3778bc66-1ede-4750-8b2c-e91dcd73fe6e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["53910aa4-726e-49e9-ab54-6fda0ac5b308"]
+  }],
+  "urls": ["http://127.0.0.1:5501/"],
+  "plugins": []
+}
