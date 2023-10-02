@@ -12,6 +12,7 @@ const getItemIndex = (propriedade, valor, data) =>{
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
+-
 router.post('/sendLoginLeanerData', (req, res) => { //record operation
     const dadosLogin = req.body;
 
@@ -20,8 +21,6 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
         console.log(resultado);
         let index = getItemIndex('n_matricula', req.body.matricula, resultado);
         let indexS = getItemIndex('cpf', req.body.cpf, resultado);
-        console.log(resultado[index]);
-        console.log(resultado[indexS]);
 
         if(resultado[index] != undefined && resultado[indexS] != undefined && resultado[indexS] == resultado[index]){
             res.send({response : 204, idLogged: resultado[index].id_aluno});
@@ -32,6 +31,17 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
     })
 
 });
+
+router.get('/getPerfilData/:id'), (req, res) => {
+    //const dadosLogin = req.body;
+    const {id} = req.params
+    console.log(id)
+
+    sql.query(conexao, "SELECT nome_aluno FROM aluno"), (error, resultado) => {
+        console.log(resultado)
+    }
+
+}
 
 router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
     const dadosLogin = req.body;
