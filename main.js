@@ -32,16 +32,17 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
 
 });
 
-router.get('/getPerfilData/:id'), (req, res) => {
+router.get('/getPerfilData/:id', (req, res) => {
     //const dadosLogin = req.body;
-    const {id} = req.params
-    console.log(id)
+    const {id} = req.params;
+    console.log(id);
 
-    sql.query(conexao, "SELECT nome_aluno FROM aluno"), (error, resultado) => {
+    sql.query(conexao, `SELECT nome_aluno FROM aluno where id_aluno = ${id} `, (error, resultado) => {
         console.log(resultado)
-    }
+        res.send(resultado);
+    })
 
-}
+})
 
 router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
     const dadosLogin = req.body;
