@@ -37,7 +37,6 @@ CREATE TABLE aluno(
 	cpf VARCHAR(90),
 	senha VARCHAR(90),
 	curriculum VARBINARY(MAX),
-	imagemPerfil VARBINARY(MAX)
 );
 
 CREATE TABLE inscricao(
@@ -53,8 +52,7 @@ CREATE TABLE inscricao(
 
 INSERT INTO aluno(nome_aluno, n_matricula, cpf)
 VALUES
-('Juan', '12345','12345678-90'),
-('Igor', '23456','23456789-01')
+('arthur','654321','65400')
 
 INSERT INTO empresa(nome_empresa, cnpj, senha, categoria)
 VALUES
