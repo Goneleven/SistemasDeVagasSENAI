@@ -14,12 +14,14 @@ function getCookie(cname) {
     return "";
 }
 
-function checaPerfil() {
+const checaPerfil = async() => {
     const dadosUsuario = getCookie("userData")
-    let userLogadoDados = JSON.parse(dadosUsuario)
-    fetch(`http://localhost:3000/getPerfilData/:${dadosUsuario}`)
-
-    document.getElementById('nomeAlunono').textContent = userLogadoDados
+    console.log(dadosUsuario)
+    //let userLogadoDados = JSON.parse(dadosUsuario);
+    const requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
+    let usableResult = await requestResult.json();
+    console.log(usableResult);
+    document.getElementById('nomeAlunono').textContent = usableResult.nome;
 }
 
 checaPerfil()

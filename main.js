@@ -39,7 +39,7 @@ router.get('/getPerfilData/:id', (req, res) => {
 
     sql.query(conexao, `SELECT nome_aluno FROM aluno where id_aluno = ${id} `, (error, resultado) => {
         console.log(resultado)
-        res.send(resultado);
+        res.send({nome : resultado[0].nome_aluno});
     })
 
 })
