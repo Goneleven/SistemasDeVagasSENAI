@@ -90,9 +90,19 @@ router.post('/registroEmpresas', (req, res) => {
 });
 
 router.put('/editarDadosPerfil/:id', (req, res) => {
+    const {id} = req.params;
+    console.log(id);
+    
     const dadosPerfil = req.body;
     console.log(dadosPerfil);
-}
+
+    //tem que usar alter table, modify column e tal
+    sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {
+        console.log(resultado)
+        res.send({nome : resultado[0].nome_aluno, sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno});
+    })
+
+    }
 )
 
 server.use(router);
