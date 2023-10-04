@@ -37,9 +37,9 @@ router.get('/getPerfilData/:id', (req, res) => {
     const {id} = req.params;
     console.log(id);
 
-    sql.query(conexao, `SELECT nome_aluno FROM aluno where id_aluno = ${id} `, (error, resultado) => {
+    sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {
         console.log(resultado)
-        res.send({nome : resultado[0].nome_aluno});
+        res.send({nome : resultado[0].nome_aluno, sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno});
     })
 
 })
@@ -88,6 +88,12 @@ router.post('/registroEmpresas', (req, res) => {
     })
 
 });
+
+router.put('/editarDadosPerfil/:id', (req, res) => {
+    const dadosPerfil = req.body;
+    console.log(dadosPerfil);
+}
+)
 
 server.use(router);
 

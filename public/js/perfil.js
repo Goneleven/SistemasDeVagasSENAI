@@ -22,6 +22,33 @@ const checaPerfil = async() => {
     let usableResult = await requestResult.json();
     console.log(usableResult);
     document.getElementById('nomeAlunono').textContent = usableResult.nome;
+    document.getElementById('emailAlunono').textContent = usableResult.email;
+    document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
 }
 
 checaPerfil()
+
+function editarPerfil() {
+  let nome = document.getElementById('nomeEditar').value;
+  let curriculo = document.getElementById('curriculoEditar').value;
+  let sobre = document.getElementById('sobreEditar').value;
+  let email = document.getElementById("emailEditar").value;
+  if(nome == undefined || curriculo == undefined || sobre == undefined || email == undefined){
+      
+  }
+  sendDataP(nome, curriculo, sobre, email)
+}
+
+const sendDataP = async(nnome, curriculo, sobre, email) =>{
+
+  const init = {
+      method: 'POST',
+      headers: {
+          'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({nome, curriculo, sobre, email})
+  }
+  
+  const resLogin = await fetch('http://localhost:3000/editarDadosPerfil', init);
+
+}

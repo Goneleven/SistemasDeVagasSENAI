@@ -50,13 +50,10 @@ CREATE TABLE inscricao(
 );
 
 
-INSERT INTO aluno(nome_aluno, n_matricula, cpf)
+INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf)
 VALUES
-('arthur','654321','65400')
-
-INSERT INTO empresa(nome_empresa, cnpj, senha, categoria)
-VALUES
-('Juan', '12345','12345678-90'),
-('Igor', '23456','23456789-01')
+('arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400'),
+('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90'),
+('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01')
 
 SELECT * FROM aluno
