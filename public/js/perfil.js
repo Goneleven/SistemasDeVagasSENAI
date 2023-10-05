@@ -52,3 +52,16 @@ const sendDataP = async(nnome, curriculo, sobre, email) =>{
   const resLogin = await fetch('http://localhost:3000/editarDadosPerfil', init);
 
 }
+
+//aqui editamos o precioso perfil :D
+
+function salvarEdicao(){
+
+  let inputArchive = document.getElementById("imageUpload");
+  console.log(inputArchive.value);
+
+
+
+  
+}
+
