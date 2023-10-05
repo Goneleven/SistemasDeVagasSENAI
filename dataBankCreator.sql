@@ -31,7 +31,6 @@ CREATE TABLE aluno(
 	id_aluno INT IDENTITY(1,1) PRIMARY KEY,
 	nome_aluno VARCHAR(190),
 	sobreMim_aluno VARCHAR(190),
-	
 	email_aluno VARCHAR(190),
 	n_matricula VARCHAR(190),
 	cpf VARCHAR(90),
