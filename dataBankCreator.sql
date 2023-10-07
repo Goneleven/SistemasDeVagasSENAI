@@ -23,7 +23,7 @@ CREATE TABLE vaga(
 	beneficios VARCHAR(190),
 
 
-
+zz
 
 
 );
@@ -51,7 +51,7 @@ CREATE TABLE inscricao(
 
 INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf)
 VALUES
-('arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400'),
+('Arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400'),
 ('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90'),
 ('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01')
 
