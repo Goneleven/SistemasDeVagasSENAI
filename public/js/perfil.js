@@ -64,14 +64,14 @@ function editarPerfil() {
 const sendDataP = async(dadosAtualizados) =>{
 
   const init = {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {
           'Content-Type' : 'application/json'
       },
       body: JSON.stringify({
         curriculum: dadosAtualizados.curriculo,
         sobreMim_aluno: dadosAtualizados.sobre,
-        email_aluno: dadosAtualizados.email
+        email_aluno: dadosAtualizados.email,
       }),
     }
 

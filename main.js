@@ -99,7 +99,7 @@ router.put('/editarDadosPerfil/:id', (req, res) => {
     //tem que usar alter table, modify column e tal juan:beleza
     sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {
         console.log(resultado)
-        res.send({nome : resultado[0].nome_aluno, sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno});
+        res.send({sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno});
     })
 
     }
