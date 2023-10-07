@@ -44,27 +44,40 @@ const checaEditarPerfil = async() => {
 }
 
 function editarPerfil() {
-  let nome = document.getElementById('nomeEditar').value;
   let curriculo = document.getElementById('curriculoEditar').value;
-  let sobre = document.getElementById('sobreEditar').value;
+  let sobre = document.getElementById('sobreMimEditar').value;
   let email = document.getElementById("emailEditar").value;
-  if(nome == undefined || curriculo == undefined || sobre == undefined || email == undefined){
-      
+
+  const dadosAtualizados = {}
+
+  if(curriculo !== "" || sobre !== "" || email !== "") {
+      dadosAtualizados.curriculo = curriculo
+      dadosAtualizados.sobre = sobre
+      dadosAtualizados.email = email
   }
-  sendDataP(nome, curriculo, sobre, email)
+
+  //sendDataP(nome, curriculo, sobre, email)
+  console.log(dadosAtualizados)
+  sendDataP(dadosAtualizados)
 }
 
-const sendDataP = async(nome, curriculo, sobre, email) =>{
+const sendDataP = async(dadosAtualizados) =>{
 
   const init = {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
           'Content-Type' : 'application/json'
       },
-      body: JSON.stringify({nome, curriculo, sobre, email})
-  }
-  
-  const resLogin = await fetch('http://localhost:3000/editarDadosPerfil', init);
+      body: JSON.stringify({
+        curriculum: dadosAtualizados.curriculo,
+        sobreMim_aluno: dadosAtualizados.sobre,
+        email_aluno: dadosAtualizados.email
+      }),
+    }
+
+  const resLogin = await fetch(`http://localhost:3000/editarDadosPerfil/${dadosUsuario}`, init);
+  let resLoginResult = await resLogin.json();
+  console.log(resLoginResult)
 
 }
 
