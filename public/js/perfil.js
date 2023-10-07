@@ -36,9 +36,10 @@ checaPerfil()
 
 
 const checaEditarPerfil = async() => {
-  document.getElementById('nomeEditar').value = usableResult.nome;
+
+  document.getElementById('curriculoEditar').value = usableResult.curriculo
   document.getElementById('emailEditar').value = usableResult.email;
-  document.getElementsByClassName('ck-editor__main').getElementsByClassName('p').value = usableResult.sobreMim;
+  document.getElementById('sobreMimEditar').textContent = usableResult.sobreMim;
   
 }
 
