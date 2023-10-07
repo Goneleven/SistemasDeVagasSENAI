@@ -1,3 +1,7 @@
+var requestResult;
+var usableResult;
+var dadosUsuario;
+
 function getCookie(cname) {
     const name = cname + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -15,18 +19,28 @@ function getCookie(cname) {
 }
 
 const checaPerfil = async() => {
-    const dadosUsuario = getCookie("userData")
+    dadosUsuario = getCookie("userData")
     console.log(dadosUsuario)
     //let userLogadoDados = JSON.parse(dadosUsuario);
-    const requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
-    let usableResult = await requestResult.json();
+
+    requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
+    usableResult = await requestResult.json();
     console.log(usableResult);
+
     document.getElementById('nomeAlunono').textContent = usableResult.nome;
     document.getElementById('emailAlunono').textContent = usableResult.email;
     document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
 }
 
 checaPerfil()
+
+
+const checaEditarPerfil = async() => {
+  document.getElementById('nomeEditar').value = usableResult.nome;
+  document.getElementById('emailEditar').value = usableResult.email;
+  document.getElementsByClassName('ck-editor__main').getElementsByClassName('p').value = usableResult.sobreMim;
+  
+}
 
 function editarPerfil() {
   let nome = document.getElementById('nomeEditar').value;
@@ -39,7 +53,7 @@ function editarPerfil() {
   sendDataP(nome, curriculo, sobre, email)
 }
 
-const sendDataP = async(nnome, curriculo, sobre, email) =>{
+const sendDataP = async(nome, curriculo, sobre, email) =>{
 
   const init = {
       method: 'POST',
