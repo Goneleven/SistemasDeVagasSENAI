@@ -1,3 +1,7 @@
+var requestResult;
+var usableResult;
+var dadosUsuario;
+
 function getCookie(cname) {
     const name = cname + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -15,12 +19,14 @@ function getCookie(cname) {
 }
 
 const checaPerfil = async() => {
-    const dadosUsuario = getCookie("userData")
+    dadosUsuario = getCookie("userData")
     console.log(dadosUsuario)
     //let userLogadoDados = JSON.parse(dadosUsuario);
-    const requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
-    let usableResult = await requestResult.json();
+
+    requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
+    usableResult = await requestResult.json();
     console.log(usableResult);
+
     document.getElementById('nomeAlunono').textContent = usableResult.nome;
     document.getElementById('emailAlunono').textContent = usableResult.email;
     document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
@@ -28,27 +34,62 @@ const checaPerfil = async() => {
 
 checaPerfil()
 
-function editarPerfil() {
-  let nome = document.getElementById('nomeEditar').value;
-  let curriculo = document.getElementById('curriculoEditar').value;
-  let sobre = document.getElementById('sobreEditar').value;
-  let email = document.getElementById("emailEditar").value;
-  if(nome == undefined || curriculo == undefined || sobre == undefined || email == undefined){
-      
-  }
-  sendDataP(nome, curriculo, sobre, email)
+
+const checaEditarPerfil = async() => {
+
+  document.getElementById('curriculoEditar').value = usableResult.curriculo
+  document.getElementById('emailEditar').value = usableResult.email;
+  document.getElementById('sobreMimEditar').textContent = usableResult.sobreMim;
+  
 }
 
-const sendDataP = async(nnome, curriculo, sobre, email) =>{
+function editarPerfil() {
+  let curriculo = document.getElementById('curriculoEditar').value;
+  let sobre = document.getElementById('sobreMimEditar').value;
+  let email = document.getElementById("emailEditar").value;
+
+  const dadosAtualizados = {}
+
+  if(curriculo !== "" || sobre !== "" || email !== "") {
+      dadosAtualizados.curriculo = curriculo
+      dadosAtualizados.sobre = sobre
+      dadosAtualizados.email = email
+  }
+
+  //sendDataP(nome, curriculo, sobre, email)
+  console.log(dadosAtualizados)
+  sendDataP(dadosAtualizados)
+}
+
+const sendDataP = async(dadosAtualizados) =>{
 
   const init = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
           'Content-Type' : 'application/json'
       },
-      body: JSON.stringify({nome, curriculo, sobre, email})
-  }
-  
-  const resLogin = await fetch('http://localhost:3000/editarDadosPerfil', init);
+      body: JSON.stringify({
+        curriculum: dadosAtualizados.curriculo,
+        sobreMim_aluno: dadosAtualizados.sobre,
+        email_aluno: dadosAtualizados.email,
+      }),
+    }
+
+  const resLogin = await fetch(`http://localhost:3000/editarDadosPerfil/${dadosUsuario}`, init);
+  let resLoginResult = await resLogin.json();
+  console.log(resLoginResult)
 
 }
+
+//aqui editamos o precioso perfil :D
+
+function salvarEdicao(){
+
+  let inputArchive = document.getElementById("imageUpload");
+  console.log(inputArchive.value);
+
+
+
+  
+}
+

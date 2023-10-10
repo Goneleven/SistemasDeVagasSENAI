@@ -23,7 +23,7 @@ CREATE TABLE vaga(
 	beneficios VARCHAR(190),
 
 
-
+zz
 
 
 );
@@ -31,12 +31,11 @@ CREATE TABLE aluno(
 	id_aluno INT IDENTITY(1,1) PRIMARY KEY,
 	nome_aluno VARCHAR(190),
 	sobreMim_aluno VARCHAR(190),
-	
 	email_aluno VARCHAR(190),
 	n_matricula VARCHAR(190),
 	cpf VARCHAR(90),
 	senha VARCHAR(90),
-	curriculum VARBINARY(MAX),
+	curriculum VARCHAR(1000),
 );
 
 CREATE TABLE inscricao(
@@ -50,10 +49,12 @@ CREATE TABLE inscricao(
 );
 
 
-INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf)
+INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf, curriculum)
 VALUES
-('arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400'),
-('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90'),
-('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01')
+('Arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400', 'Cursando Desenvolvimento de Sistemas no último semestre'),
+('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no último semestre'),
+('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no último semestre')
 
 SELECT * FROM aluno
+
+DROP TABLE aluno
