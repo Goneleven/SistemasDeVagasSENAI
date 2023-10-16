@@ -1,6 +1,3 @@
-const { get } = require("express/lib/response");
-
-
 
 var container = document.getElementById('tenis');
 
