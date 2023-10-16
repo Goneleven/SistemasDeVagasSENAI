@@ -105,6 +105,41 @@ router.put('/editarDadosPerfil/:id', (req, res) => {
     }
 )
 
+router.post('/cadVagas',(req, res) =>{
+
+    const dadosCadastroV = req.body;
+    console.log(dadosCadastroV);
+
+    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastroV.areaAt + "', '" + dadosCadastroV.descricao + "', '" + dadosCadastroV.responsabilidade + "', '" + dadosCadastroV.periodo + "', '" + dadosCadastroV.requisitos + "', '" + dadosCadastroV.local + "', '" + dadosCadastroV.salario + "', '" + dadosCadastroV.beneficios + "')";
+
+    let get = "SELECT * FROM vaga";
+
+    sql.query(conexao, insert, (error, resultado) => {
+        console.log('foi sapoha');
+        console.log(resultado);
+    })
+
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+
+        res.send(resultado);
+
+    })
+});
+
+router.get('/getVagas',(req, res) =>{
+
+    let get = "SELECT * FROM vaga";
+
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+
+        res.send(resultado);
+
+    })
+});
+
+
 server.use(router);
 
 server.listen(3000, () => {

@@ -1,5 +1,4 @@
 
-
 const cadastrar = async() =>{
 
     let cnpj = document.getElementById("cnpjCadastro").value;
