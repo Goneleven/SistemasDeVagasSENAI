@@ -11,6 +11,7 @@ const cadastrar = async () => {
     let local = document.getElementById("localidade").value;
     let salario = document.getElementById("salario").value;
     let beneficios = document.getElementById("beneficios").value;
+    let modalidade = document.getElementById("modalidade").value
 
 
     const init = {
@@ -18,7 +19,7 @@ const cadastrar = async () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios })
+        body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade })
     }
 
     const resLogin = await fetch('http://localhost:3000/cadVagas', init);
@@ -52,7 +53,7 @@ function updateCard(vagas) {
        
         const titulo = document.createElement('h5');
         titulo.classList.add('card-title', 'mx-3', 'mr-3');
-        titulo.textContent = 'Empresa';
+        titulo.textContent = vagaAtual.area;
 
         const imagem = document.createElement('img');
         imagem.classList.add('logo');
@@ -66,11 +67,11 @@ function updateCard(vagas) {
         
         const paragrafo1 = document.createElement('p');
         paragrafo1.classList.add('card-text', 'my-3');
-        paragrafo1.textContent = 'A Google Inc. está em busca de um Estagiário em Tecnologia da Informação para se juntar à nossa equipe dinâmica e inovadora';
+        paragrafo1.textContent = vagaAtual.descricao;
 
         const paragrafo2 = document.createElement('p');
         paragrafo2.classList.add('card-text');
-        paragrafo2.innerHTML = '<i class="fa-solid fa-user mx-2"></i><strong>100</strong> <strong>R$ 800,00</strong> <i class="fa-solid fa-building mx-2"></i><strong>Presencial</strong>';
+        paragrafo2.innerHTML = '<strong>R$ </strong>'+ vagaAtual.salario +'<i class="fa-solid fa-building mx-2"></i>' + vagaAtual.modalidade;
 
        
         titulo_logo.appendChild(titulo);

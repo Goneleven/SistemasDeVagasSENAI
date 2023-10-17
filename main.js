@@ -110,7 +110,7 @@ router.post('/cadVagas',(req, res) =>{
     const dadosCadastroV = req.body;
     console.log(dadosCadastroV);
 
-    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastroV.areaAt + "', '" + dadosCadastroV.descricao + "', '" + dadosCadastroV.responsabilidade + "', '" + dadosCadastroV.periodo + "', '" + dadosCadastroV.requisitos + "', '" + dadosCadastroV.local + "', '" + dadosCadastroV.salario + "', '" + dadosCadastroV.beneficios + "')";
+    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, modalidade) VALUES('" + dadosCadastroV.areaAt + "', '" + dadosCadastroV.descricao + "', '" + dadosCadastroV.responsabilidade + "', '" + dadosCadastroV.periodo + "', '" + dadosCadastroV.requisitos + "', '" + dadosCadastroV.local + "', '" + dadosCadastroV.salario + "', '" + dadosCadastroV.beneficios + "', '" + dadosCadastroV.modalidade + "')";
 
     let get = "SELECT * FROM vaga";
 
@@ -156,7 +156,7 @@ router.post('/cadastrarVaga', (req, res) => {
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
 
-    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastro.area + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "')";
+    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios) VALUES('" + dadosCadastro.areaAt + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "')";
 
     let get = "SELECT * FROM vaga where descricao = '" + dadosCadastro.descricao + "'";
 
