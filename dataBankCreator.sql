@@ -23,8 +23,6 @@ CREATE TABLE vaga(
 	beneficios VARCHAR(190),
 
 
-zz
-
 
 );
 CREATE TABLE aluno(
@@ -51,10 +49,8 @@ CREATE TABLE inscricao(
 
 INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf, curriculum)
 VALUES
-('Arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400', 'Cursando Desenvolvimento de Sistemas no último semestre'),
-('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no último semestre'),
-('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no último semestre')
+('Arthur', 'Sou o Arthur', 'arthur@email.com', '654321', '65400', 'Cursando Desenvolvimento de Sistemas no ï¿½ltimo semestre'),
+('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no ï¿½ltimo semestre'),
+('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no ï¿½ltimo semestre')
 
 SELECT * FROM aluno
-
-DROP TABLE aluno
