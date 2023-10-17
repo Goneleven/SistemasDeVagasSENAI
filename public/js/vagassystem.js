@@ -68,7 +68,9 @@ function updateCard(vagas) {
         const paragrafo1 = document.createElement('p');
         paragrafo1.classList.add('card-text', 'my-3');
         paragrafo1.textContent = vagaAtual.descricao;
+        const descricaoTexto = vagaAtual.descricao;
 
+   
         const paragrafo2 = document.createElement('p');
         paragrafo2.classList.add('card-text');
         paragrafo2.innerHTML = '<strong>R$ </strong>'+ vagaAtual.salario +'<i class="fa-solid fa-building mx-2"></i>' + vagaAtual.modalidade;
@@ -87,6 +89,12 @@ function updateCard(vagas) {
 
         
         container.appendChild(card);
+        
+        if (descricaoTexto.length <= 100) {
+            paragrafo1.textContent = descricaoTexto;
+          } else {
+            paragrafo1.textContent = descricaoTexto.substring(0, 100) + '...';
+          }
 
 
     }
