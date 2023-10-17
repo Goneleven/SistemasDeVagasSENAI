@@ -21,10 +21,8 @@ CREATE TABLE vaga(
 	localidade VARCHAR(190),
 	salario VARCHAR(190),
 	beneficios VARCHAR(190),
-
-
-
 );
+
 CREATE TABLE aluno(
 	id_aluno INT IDENTITY(1,1) PRIMARY KEY,
 	nome_aluno VARCHAR(190),
@@ -36,14 +34,12 @@ CREATE TABLE aluno(
 	curriculum VARCHAR(1000),
 );
 
+
 CREATE TABLE inscricao(
 
 	id_aluno INT,
 	id_vaga	INT,
 	id_inscricao INT,
-
-
-
 );
 
 
