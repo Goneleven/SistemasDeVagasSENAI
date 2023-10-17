@@ -47,6 +47,7 @@ function editarPerfil() {
   let curriculo = document.getElementById('curriculoEditar').value;
   let sobre = document.getElementById('sobreMimEditar').value;
   let email = document.getElementById("emailEditar").value;
+  let image = document.getElementById('imageUpload').value;
 
   const dadosAtualizados = {}
 
