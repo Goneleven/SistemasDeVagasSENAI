@@ -49,4 +49,9 @@ VALUES
 ('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no �ltimo semestre'),
 ('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no �ltimo semestre')
 
+INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios)
+VALUES
+(1, 'TI', 'construir um sistema web de compartilhamento de vagas', 'muita', '18 as 22', 'Ser do técnico de desenvolvimento de sistemas SENAI', 'Mogi das Cruzes', '1000', 'nenhum');
+
+
 SELECT * FROM aluno
