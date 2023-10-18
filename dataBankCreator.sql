@@ -14,13 +14,14 @@ CREATE TABLE vaga(
 	id_vaga INT IDENTITY(1,1) PRIMARY KEY,
 	id_publicador INT,
 	area VARCHAR(90),
-	descricao VARCHAR(90),
+	descricao VARCHAR(max),
 	responsabilidade VARCHAR(190),
 	jornada VARCHAR(190),
 	requisitos VARCHAR(190),
 	localidade VARCHAR(190),
 	salario VARCHAR(190),
 	beneficios VARCHAR(190),
+	modalidade VARCHAR(190),
 );
 
 CREATE TABLE aluno(
@@ -49,9 +50,11 @@ VALUES
 ('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no �ltimo semestre'),
 ('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no �ltimo semestre')
 
-INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios)
+INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, modalidade)
 VALUES
-(1, 'TI', 'construir um sistema web de compartilhamento de vagas', 'muita', '18 as 22', 'Ser do técnico de desenvolvimento de sistemas SENAI', 'Mogi das Cruzes', '1000', 'nenhum');
+(1, 'TI', 'construir um sistema web de compartilhamento de vagas', 'muita', '18 as 22', 'Ser do técnico de desenvolvimento de sistemas SENAI', 'Mogi das Cruzes', '1000', 'nenhum', 'ead');
 
 
-SELECT * FROM aluno
+SELECT * FROM vaga
+
+

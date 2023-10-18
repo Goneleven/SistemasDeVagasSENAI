@@ -116,11 +116,11 @@ router.post('/cadVagas',(req, res) =>{
 
     sql.query(conexao, insert, (error, resultado) => {
         console.log('foi sapoha');
-        console.log(resultado);
+        console.log(error);
     })
 
     sql.query(conexao, get, (error, resultado) => {
-        console.log(resultado);
+        console.log(error);
 
         res.send(resultado);
 

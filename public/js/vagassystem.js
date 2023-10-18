@@ -41,6 +41,9 @@ function updateCard(vagas) {
 
 
         const card = document.createElement('div');
+        card.onclick = function(){
+            moreInfo(vagaAtual);
+        };
         card.classList.add('card', 'border', 'border-dark', 'mb-4', 'cardVaga');
 
         const cardBody = document.createElement('div');
@@ -99,6 +102,14 @@ function updateCard(vagas) {
 
     }
 
+
+}
+
+function moreInfo(vaga){
+
+    console.log(vaga);
+
+    document.getElementById("tituloVagaI").innerHTML = vaga.area;
 
 }
 
