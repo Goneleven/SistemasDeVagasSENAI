@@ -58,12 +58,7 @@ function updateCard(vagas) {
         titulo.classList.add('card-title', 'mx-3', 'mr-3');
         titulo.textContent = vagaAtual.area;
 
-        const imagem = document.createElement('img');
-        imagem.classList.add('logo');
-        imagem.src = 'https://cdn-teams-slug.flaticon.com/google.jpg';
-        imagem.alt = 'Logo Empresa';
-        imagem.id = 'logoSmall';
-
+       
         const divisoriaCard = document.createElement('div');
         divisoriaCard.classList.add('divisoriaCard');
 
@@ -80,7 +75,6 @@ function updateCard(vagas) {
 
        
         titulo_logo.appendChild(titulo);
-        titulo_logo.appendChild(imagem);
 
         cardBody.appendChild(titulo_logo);
         cardBody.appendChild(divisoriaCard);
@@ -100,6 +94,30 @@ function updateCard(vagas) {
           }
 
 
+          const cardsPopUp = document.querySelectorAll(".popUpMobile");
+          const modal = document.querySelector("dialog");
+          const buttonfecharPopUp = modal.querySelector("button");
+        
+          cardsPopUp.forEach(function (div) {
+            div.addEventListener("click", function () {
+              if (window.innerWidth <= 991) {
+                modal.showModal();
+              }
+            });
+          });
+        
+          buttonfecharPopUp.addEventListener("click", function () {
+            modal.close();
+          });
+        
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 991) {
+              modal.close();
+            }
+          });
+
+          
+
     }
 
 
@@ -110,6 +128,24 @@ function moreInfo(vaga){
     console.log(vaga);
 
     document.getElementById("tituloVagaI").innerHTML = vaga.area;
+    document.getElementById("areaDescricao").innerHTML = vaga.descricao;
+    document.getElementById("areaResponsabilidade").innerHTML = vaga.responsabilidade;
+    document.getElementById("areaJornada").innerHTML = vaga.jornada;
+    document.getElementById("areaRequisitos").innerHTML = vaga.requisitos;
+    document.getElementById("areaLocalidade").innerHTML = vaga.localidade;
+    document.getElementById("areaSalario").innerHTML = vaga.salario;
+    document.getElementById("areaBeneficio").innerHTML = vaga.beneficios;
+    document.getElementById("areaModalidade").innerHTML = vaga.modalidade;
+
+    document.getElementById("tituloVagaIPopUp").innerHTML = vaga.area;
+    document.getElementById("areaDescricaoPopUp").innerHTML = vaga.descricao;
+    document.getElementById("areaResponsabilidadePopUp").innerHTML = vaga.responsabilidade;
+    document.getElementById("areaJornadaPopUp").innerHTML = vaga.jornada;
+    document.getElementById("areaRequisitosPopUp").innerHTML = vaga.requisitos;
+    document.getElementById("areaLocalidadePopUp").innerHTML = vaga.localidade;
+    document.getElementById("areaSalarioPopUp").innerHTML = vaga.salario;
+    document.getElementById("areaBeneficioPopUp").innerHTML = vaga.beneficios;
+    document.getElementById("areaModalidadePopUp").innerHTML = vaga.modalidade;
 
 }
 
