@@ -102,9 +102,20 @@
 @media (max-width: 1178px) {
     .popupCadastro {
         top: 50px;
-        left: 50px;
+        left: 20px;
         width: 300px;
         height: 550px;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .popupCadastro {
+        top: 50px;
+        left: 20px;
+        width: 300px;
+        height: 550px;
+        margin-top: 40%;
     }
 }
 
