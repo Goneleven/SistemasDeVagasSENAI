@@ -163,3 +163,32 @@ const getAllVagas = async () => {
 getAllVagas();
 
 
+//barra de pesquisa
+const barraDePesquisa = document.getElementById("barraDePesquisa");
+
+barraDePesquisa.addEventListener("input", function () {
+  const termoPesquisa = barraDePesquisa.value.toLowerCase(); 
+  const vagasFiltradas = filtrarVagas(termoPesquisa); 
+
+  updateCard(vagasFiltradas); 
+});
+function filtrarVagas(termoPesquisa) {
+ 
+  if (termoPesquisa.trim() === "") {
+    return vagas; 
+  }
+
+  termoPesquisa = termoPesquisa.toLowerCase();
+
+
+  const vagasFiltradas = vagas.filter((vaga) => {
+    const area = vaga.area.toLowerCase();
+    const descricao = vaga.descricao.toLowerCase();
+
+
+    return area.includes(termoPesquisa) || descricao.includes(termoPesquisa);
+  });
+
+  return vagasFiltradas;
+}
+
