@@ -120,11 +120,11 @@
       <div class="row justify-content-center mt-5">
         <div class="col">
           <div class="input-group w-md-25 w-100 mx-auto mb-4 d-flex justify-content-center">
-            <button type="button" id="adicionarVagas" class="border border-dark btn btn-danger rounded m-3">
+            <button type="button" id="adicionarVagasPop" class="border border-dark btn btn-danger rounded m-3">
               adicionar vagas +
             </button>
 
-            <dialog  id="popupCadastro" class="popupCadastro hide-on-mobile">
+            <dialog  id="popupCadastroVagas" class="popupCadastro hide-on-mobile">
          
 
               <button type="button" id="fecharPopUpCadastrarVagas" class="border border-dark btn btn-danger rounded m-3">
@@ -301,7 +301,7 @@
           </div>
         </div>
         <!-- teste pop up -->
-        <dialog class="popUpVagas hide-on-mobile">
+        <dialog class="popUpVagas hide-on-mobile" id="pipop">
           <button class="botaoFecharPupUpMobile">X</button>
 
           <div class="d-flex align-items-center">
@@ -394,16 +394,16 @@
 
 
   function openPopup() {
-    var dialog = document.getElementById("popupCadastro");
-    dialog.showModal();
+    var dialogCadastrar = document.getElementById("popupCadastroVagas");
+    dialogCadastrar.showModal();
   }
 
   function closePopup() {
-    var dialog = document.getElementById("popupCadastro");
-    dialog.close();
+    var dialogCadastrar = document.getElementById("popupCadastroVagas");
+    dialogCadastrar.close();
   }
  
-  document.getElementById("adicionarVagas").addEventListener("click", openPopup);
+  document.getElementById("adicionarVagasPop").addEventListener("click", openPopup);
   document.getElementById("fecharPopUpCadastrarVagas").addEventListener("click", closePopup);
 
 </script>

@@ -95,7 +95,7 @@ function updateCard(vagas) {
 
 
           const cardsPopUp = document.querySelectorAll(".popUpMobile");
-          const modal = document.querySelector("dialog");
+          const modal = document.getElementById("pipop");
           const buttonfecharPopUp = modal.querySelector("button");
         
           cardsPopUp.forEach(function (div) {
