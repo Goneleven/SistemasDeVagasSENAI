@@ -1,6 +1,7 @@
 var requestResult;
 var usableResult;
 var dadosUsuario;
+var logado;
 
 function getCookie(cname) {
     const name = cname + "=";
@@ -21,6 +22,7 @@ function getCookie(cname) {
 const checaPerfil = async() => {
     dadosUsuario = getCookie("userData")
     console.log(dadosUsuario)
+    logado = true;
     //let userLogadoDados = JSON.parse(dadosUsuario);
 
     requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);

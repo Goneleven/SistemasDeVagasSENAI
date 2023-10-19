@@ -1,5 +1,40 @@
 
+//var logadoEmpresa;
+var logado;
 var vagas;
+
+
+function getCookie(cname) {
+  const name = cname + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const definirLogado = async() => {
+  dadosUsuario = getCookie("userData");
+  console.log(dadosUsuario);
+
+  // Converte dadosUsuario para um número usando parseInt ou Number
+  const idUsuario = parseInt(dadosUsuario); // Ou Number(dadosUsuario)
+
+  if (idUsuario === 1 || idUsuario === 2 || idUsuario === 3) {
+    logado = true;
+  } else {
+    logado = false;
+  }
+}
+
+definirLogado();
 
 const cadastrar = async () => {
 
@@ -73,6 +108,16 @@ function updateCard(vagas) {
         paragrafo2.classList.add('card-text');
         paragrafo2.innerHTML = '<strong>R$ </strong>'+ vagaAtual.salario +'<i class="fa-solid fa-building mx-2"></i>' + vagaAtual.modalidade;
 
+        if(logado == false) {
+          var vagaApagar = document.createElement('p');
+          vagaApagar.classList.add('card-text');
+          vagaApagar.innerHTML = '<i class="fa-solid fa fa-trash-o mx-2"></i>'
+
+          vagaApagar.addEventListener('click', () => {
+            deletaVaga(vagaAtual)
+          })
+        }
+
        
         titulo_logo.appendChild(titulo);
 
@@ -80,6 +125,10 @@ function updateCard(vagas) {
         cardBody.appendChild(divisoriaCard);
         cardBody.appendChild(paragrafo1);
         cardBody.appendChild(paragrafo2);
+
+        if(!logado) {
+          cardBody.appendChild(vagaApagar);
+        }
 
         card.appendChild(cardBody);
 
@@ -158,6 +207,23 @@ const getAllVagas = async () => {
     updateCard(vagas);
 
 }
+
+const deletaVaga = async (vagaAtual) => {
+  const url = `http://localhost:3000/deletarVaga/${vagaAtual.id_vaga}`;
+
+  const init = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const deletarVagaPromise = await fetch(url, init);
+  let delVResultJson = await deletarVagaPromise.json();
+  console.log(delVResultJson);
+}
+
+
 
 
 getAllVagas();

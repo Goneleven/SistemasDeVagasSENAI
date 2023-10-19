@@ -178,6 +178,22 @@ router.post('/cadastrarVaga', (req, res) => {
 });
 
 
+//Deletar Vaga
+
+router.delete('/deletarVaga/:id', (req, res) => {
+    const {id} = req.params;
+    console.log(id);
+
+    const delVagaB = req.body
+    console.log(delVagaB);
+
+    const deletar = `DELETE FROM vaga WHERE id_vaga = ${id}`
+
+    sql.query(conexao, deletar, (error, resultado) => {
+        console.log(resultado);
+    })
+});
+
 
 
 

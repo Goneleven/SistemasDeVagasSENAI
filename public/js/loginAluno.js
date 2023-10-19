@@ -1,3 +1,5 @@
+var logado;
+
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -54,6 +56,7 @@ const enviarDadosLogin = async(matricula, cpf) =>{
         const usuarioLogado = JSON.stringify(loginResultJson.idLogged);
         setCookie("userData", usuarioLogado);
         location.href = "perfil.html"
+        logado = true;
     }
 
 }
