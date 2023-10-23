@@ -252,12 +252,12 @@
           </div>
           <div class="col-md-6 d-none d-lg-block infoVaga">
             <div class="card border border-dark mb-3 cardInfo">
-              <div class="card-body">
+              <div class="card-body" >
                 <h3 class="card-title text-center my-2" id="tituloVagaI">Area de Atuação</h3>
                 <div class="divisoriaCard"></div>
 
                 <br><br>
-                <div class="scrollVagas">
+                <div class="scrollVagas" id="info1">
                   <div id="descVaga" class="my-3 mx-2">
                     <h5 class="card-title">Descrição da Vaga:</h5>
                     <p class="card-text mx-3" id="areaDescricao">.......</p>
@@ -291,10 +291,19 @@
                     <p class="card-text mx-3" id="areaModalidade">......</p>
                   </div>
 
-
-
+                  
                 </div>
+
+                <div class="scrollVagas" id="info2" style="display: none;"> 
+                   <div class="containerCandidatos">
+                    <p>Usuario...</p>
+                    <img src="img/149071.png" width="10%">
+                  </div>
+                  <hr id="divisoriaPerfilParaPerfil">
               </div>
+
+              <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButton" id="candidatosButton" onclick="toggleInfos()">Candidatos</button>
+              
             </div>
 
 
@@ -308,7 +317,7 @@
             <h3 class="card-title text-center my-2" id="tituloVagaIPopUp">Area de Atuação</h3>
           </div>
           <div class="divisoriaCard"></div>
-          <div class="scrollVagasPopUp ">
+          <div class="scrollVagasPopUp " id="infoVagaMobile1">
             <div id="descVaga" class="my-3 mx-2">
               <h5 class="card-title">Descrição da Vaga:</h5>
               <p class="card-text mx-3" id="areaDescricaoPopUp">.......</p>
@@ -341,11 +350,18 @@
               <h5 class="card-title">Modalidade:</h5>
               <p class="card-text mx-3" id="areaModalidadePopUp">......</p>
             </div>
-
-
           </div>
 
+          <div class="scrollVagasPopUp " id="infoVagaMobile2" style="display: none;">
+            <div class="containerCandidatos">
+              <p>Usuario...</p>
+              <img src="img/149071.png" width="10%">
+            </div>
+            <hr id="divisoriaPerfilParaPerfil">
+          </div>
+          <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButtonMobile" id="candidatosButton2" onclick="toggleInfos2()">Candidatos</button>
       </dialog>
+
 
   </main>
 
@@ -402,10 +418,60 @@
     var dialogCadastrar = document.getElementById("popupCadastroVagas");
     dialogCadastrar.close();
   }
- 
+
   document.getElementById("adicionarVagasPop").addEventListener("click", openPopup);
   document.getElementById("fecharPopUpCadastrarVagas").addEventListener("click", closePopup);
 
+
+
+  function toggleInfos() {
+    const info1 = document.getElementById("info1");
+    const info2 = document.getElementById("info2");
+    const candidatosButton = document.getElementById("candidatosButton");
+
+    if (info1.style.display === "block") {
+      info1.style.opacity = 0;
+      info2.style.opacity = 1;
+      setTimeout(() => {
+        info1.style.display = "none";
+        info2.style.display = "block";
+        candidatosButton.textContent = "informações"; 
+      }, 500);
+    } else {
+      info1.style.opacity = 1;
+      info2.style.opacity = 0;
+      setTimeout(() => {
+        info1.style.display = "block";
+        info2.style.display = "none";
+        candidatosButton.textContent = "Candidatos"; 
+      }, 500);
+    }
+  }
+
+  function toggleInfos2() {
+    const info1 = document.getElementById("infoVagaMobile1");
+    const info2 = document.getElementById("infoVagaMobile2");
+    const candidatosButtonMobile = document.getElementById("candidatosButton2");
+  
+    if (info1.style.display === "block") {
+      info1.style.opacity = 0;
+      info2.style.opacity = 1;
+      setTimeout(() => {
+        info1.style.display = "none";
+        info2.style.display = "block";
+        candidatosButtonMobile.textContent = "informações";
+      }, 500);
+    } else {
+      info1.style.opacity = 1;
+      info2.style.opacity = 0;
+      setTimeout(() => {
+        info1.style.display = "block";
+        info2.style.display = "none";
+        candidatosButtonMobile.textContent = "Candidatos";
+      }, 500);
+    }
+  }
+    
 </script>
 
 

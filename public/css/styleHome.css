@@ -46,7 +46,6 @@
 }
 
 .containerCandidatos{
-    border: 1px solid black;
     display: flex;
     flex-direction: row-reverse;
     justify-content: left;
@@ -157,4 +156,25 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+
+  .popUpCandidatos{
+    width: 30%;
+  }
+
+  .perfilCandidatos{
+ 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+    align-items: start;
+}
+
+#divisoriaPerfilParaPerfil{
+    margin: 0;
+}
+
+#candidatosButton{
+    margin: auto 40%;
+}
 

@@ -119,7 +119,7 @@ footer {
 }
 
 .scrollVagas {
-  max-height: 600px;
+  height: 600px;
   overflow-y: scroll;
 }
 
@@ -290,6 +290,8 @@ margin:30px;
 
 .popUpVagas{
   width: 90%;
+
+  height: 600px;
   max-height: 550px;
   border-radius: 2em;
   text-align: center;
