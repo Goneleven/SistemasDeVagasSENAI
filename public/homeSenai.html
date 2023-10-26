@@ -40,7 +40,7 @@
         <div class="divisoriaHeader"></div>
         <br>
         <hr>
-        <a class="linkMenu" href="perfilEmpresa.html">Perfil</a>
+        <a class="linkMenu" href="perfil.html">Perfil</a>
         <hr />
 
         <hr />
@@ -60,61 +60,7 @@
 
   </div>
   <main>
-    <!-- Barra Lateral: -->
-    <nav class="menuLateral">
-      <img src="img/iconClose.png" width="7%" class="btnFecharLateral">
-      <!-- <div class="titulo">Filtro</div> -->
-      <div class="caixaDoFiltro">
-        <ul>
-          <li><a href="#" class="item1">
-              <p>Empresa</p>
-            </a>
-            <ul class="itens1">
-              <li><input type="checkbox"> Amazon</li>
-              <li><input type="checkbox"> Apple</a></li>
-              <li><input type="checkbox"> Google</a></li>
-              <li><input type="checkbox"> Microsoft</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#" class="item2">
-              <p>Categoria</p>
-            </a>
-            <ul class="itens2">
-              <li><input type="checkbox"> T.I</li>
-              <li><input type="checkbox"> Mecatronica</a></li>
-              <li><input type="checkbox"> Eletronica</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#" class="item3">
-              <p>Localização</p>
-            </a>
-            <ul class="itens3">
-              <li><input type="checkbox"> Suzano</li>
-              <li><input type="checkbox"> Lugar outro</a></li>
-              <li><input type="checkbox"> La longe</a></li>
-              <li><input type="checkbox"> Aqui pertinho</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#" class="item4">
-              <p>Tipo de Trabalho</p>
-            </a>
-            <ul class="itens4">
-              <li><input type="checkbox"> Híbrido</li>
-              <li><input type="checkbox"> Home Office</a></li>
-              <li><input type="checkbox"> Presencial</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div id="btnFiltrar"><button type="submit"
-            class="btn btn-danger border border-dark rounded rounded-pill">Filtrar</button></div>
-      </div>
-      </div>
-    </nav>
-
-    <!-- --- -->
+   
 
     <div class="container">
       <div class="row justify-content-center mt-5">
@@ -211,10 +157,7 @@
 
             </dialog>
 
-            <button type="button" class="border border-dark btn btn-danger btn-lg rounded-circle m-3 btnLateralBar "
-              id="botaoFiltro">
-              <i class="fas fa-filter"></i>
-            </button>
+            
 
 
             <input type="search" class="border border-dark form-control rounded-pill m-3" placeholder=""
@@ -381,32 +324,7 @@
 </body>
 
 <script>
-  $('.item1').click(function () {
-    $('.menuLateral ul .itens1').toggleClass('mostra');
-  })
-
-  $('.item2').click(function () {
-    $('.menuLateral ul .itens2').toggleClass('mostra');
-  })
-
-  $('.item3').click(function () {
-    $('.menuLateral ul .itens3').toggleClass('mostra');
-  })
-
-  $('.item4').click(function () {
-    $('.menuLateral ul .itens4').toggleClass('mostra');
-  })
-
-
-
-  $('.btnLateralBar').click(function () {
-    $('.menuLateral').toggleClass('mostra');
-  });
-
-  $('.btnFecharLateral').click(function () {
-    $('.menuLateral').toggleClass('mostra');
-  })
-
+ 
 
 
   function openPopup() {

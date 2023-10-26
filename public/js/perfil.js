@@ -32,6 +32,7 @@ const checaPerfil = async() => {
     document.getElementById('nomeAlunono').textContent = usableResult.nome;
     document.getElementById('emailAlunono').textContent = usableResult.email;
     document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
+    document.getElementById('curriculumAlunono').textContent = usableResult.curriculo
 }
 
 checaPerfil()
@@ -49,7 +50,7 @@ function editarPerfil() {
   let curriculo = document.getElementById('curriculoEditar').value;
   let sobre = document.getElementById('sobreMimEditar').value;
   let email = document.getElementById("emailEditar").value;
-  let image = document.getElementById('imageUpload').value;
+  //let image = document.getElementById('imageUpload').value;
 
   const dadosAtualizados = {}
 

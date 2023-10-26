@@ -55,6 +55,7 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
 
 
         if(resultado[index] != undefined && resultado[index].senha == req.body.codigoAcesso){
+            res.send({response : 204, idLogged: resultado[index].id_empresa});
             console.log('logou');
         }else{
             console.log('Não logou');
@@ -97,9 +98,14 @@ router.put('/editarDadosPerfil/:id', (req, res) => {
     console.log(dadosPerfil);
 
     //tem que usar alter table, modify column e tal juan:beleza
-    sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {
+    let querry = `UPDATE aluno SET curriculum = '${dadosPerfil.curriculum}',sobreMim_aluno = '${dadosPerfil.sobreMim_aluno}', email_aluno = '${dadosPerfil.email_aluno}' where id_aluno = ${id}`
+
+    console.log(querry);
+
+    sql.query(conexao,querry , (error, resultado) => {
         console.log(resultado)
-        res.send({sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno});
+        res.send(resultado);
+        console.log(error)
     })
 
     }
