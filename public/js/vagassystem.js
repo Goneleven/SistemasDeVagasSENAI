@@ -204,9 +204,14 @@ const getAllVagas = async () => {
     let resJson = await res.json();
     vagas = resJson;
     console.log(vagas);
+
+    testeQoL(vagas);
+
     updateCard(vagas);
 
 }
+
+
 
 const deletaVaga = async (vagaAtual) => {
   const url = `http://localhost:3000/deletarVaga/${vagaAtual.id_vaga}`;
@@ -223,11 +228,13 @@ const deletaVaga = async (vagaAtual) => {
   console.log(delVResultJson);
 }
 
-
+const testeQoL = async (vagas) => {
+  const vaga = vagas[0];
+  moreInfo(vaga);
+};
 
 
 getAllVagas();
-
 
 //barra de pesquisa
 const barraDePesquisa = document.getElementById("barraDePesquisa");
