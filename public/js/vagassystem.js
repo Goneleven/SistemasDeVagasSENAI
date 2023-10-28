@@ -21,16 +21,16 @@ function getCookie(cname) {
 }
 
 const definirLogado = async() => {
-  dadosUsuario = getCookie("userData");
-  console.log(dadosUsuario);
+  dadosEmpresa = getCookie("enterpriseData");
+  console.log(dadosEmpresa);
 
   // Converte dadosUsuario para um número usando parseInt ou Number
-  const idUsuario = parseInt(dadosUsuario); // Ou Number(dadosUsuario)
+  const idUsuario = parseInt(dadosEmpresa); // Ou Number(dadosUsuario)
 
   if (idUsuario === 1 || idUsuario === 2 || idUsuario === 3) {
-    logado = true;
-  } else {
     logado = false;
+  } else {
+    logado = true;
   }
 }
 
