@@ -46,24 +46,24 @@
         <hr />
         <a class="linkMenu" onclick="logOutUser()">Sair</a>
         <hr>
-      
+
       </div>
     </div>
     <div class="divisoriaHeader"></div>
 
   </div>
   <main>
-   
+
 
     <div class="container">
       <div class="row justify-content-center mt-5">
         <div class="col">
           <div class="input-group w-md-25 w-100 mx-auto mb-4 d-flex justify-content-center">
 
-          
+
 
             <input type="search" class="border border-dark form-control rounded-pill m-3" placeholder=""
-              aria-label="Search" class="barraDePesquisa" id="barraDePesquisa" />
+              aria-label="Search" class="barraDePesquisa" id="barraDePesquisa" style="height: 50px;" />
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
                 </p>
               </div>
             </div>
-        
+
           </div>
           <div class="col-md-6 d-none d-lg-block infoVaga">
             <div class="card border border-dark mb-3 cardInfo">
@@ -135,16 +135,21 @@
                     <h5 class="card-title">Modalidade:</h5>
                     <p class="card-text mx-3" id="areaModalidade">......</p>
                   </div>
-
-                  <button type="submit" class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button>
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Contato Empresa:</h5>
+                    <p class="card-text mx-3" id="contatoEmpresa">......</p>
+                  </div>
 
                 </div>
+                <button type="submit"
+                  class="btn btn-danger border border-dark rounded rounded-pill botaoCardCanditatarInfo">candidatar-se</button>
               </div>
             </div>
-
-
           </div>
         </div>
+
+
+
         <!-- teste pop up -->
         <dialog class="popUpVagas hide-on-mobile" id="pipop">
           <button class="botaoFecharPupUpMobile">X</button>
@@ -153,7 +158,7 @@
             <h3 class="card-title text-center my-2" id="tituloVagaIPopUp">Area de Atuação</h3>
           </div>
           <div class="divisoriaCard"></div>
-          <div class="scrollVagasPopUp ">
+          <div class="scrollVagasPopUp " id="infoVagaMobile1">
             <div id="descVaga" class="my-3 mx-2">
               <h5 class="card-title">Descrição da Vaga:</h5>
               <p class="card-text mx-3" id="areaDescricaoPopUp">.......</p>
@@ -186,10 +191,15 @@
               <h5 class="card-title">Modalidade:</h5>
               <p class="card-text mx-3" id="areaModalidadePopUp">......</p>
             </div>
-
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Contato Empresa:</h5>
+              <p class="card-text mx-3" id="contatoEmpresaPopUp">......</p>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-danger border border-dark rounded rounded-pill">candidatar-se</button>
+      </div>
+
       </dialog>
 
   </main>
@@ -221,9 +231,10 @@
     var dialogCadastrar = document.getElementById("popupCadastroVagas");
     dialogCadastrar.close();
   }
- 
+
   document.getElementById("adicionarVagasPop").addEventListener("click", openPopup);
   document.getElementById("fecharPopUpCadastrarVagas").addEventListener("click", closePopup);
+
 
 </script>
 

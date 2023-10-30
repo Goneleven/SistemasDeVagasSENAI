@@ -47,6 +47,7 @@ const cadastrar = async () => {
     let salario = document.getElementById("salario").value;
     let beneficios = document.getElementById("beneficios").value;
     let modalidade = document.getElementById("modalidade").value
+    let email = document.getElementById("emailContato").value
 
 
     const init = {
@@ -54,7 +55,7 @@ const cadastrar = async () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade })
+        body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade,email })
     }
 
     const resLogin = await fetch('http://localhost:3000/cadVagas', init);
@@ -185,6 +186,8 @@ function moreInfo(vaga){
     document.getElementById("areaSalario").innerHTML = vaga.salario;
     document.getElementById("areaBeneficio").innerHTML = vaga.beneficios;
     document.getElementById("areaModalidade").innerHTML = vaga.modalidade;
+    document.getElementById("contatoEmpresa").innerHTML = vaga.emailContato;
+
 
     document.getElementById("tituloVagaIPopUp").innerHTML = vaga.area;
     document.getElementById("areaDescricaoPopUp").innerHTML = vaga.descricao;
@@ -195,6 +198,7 @@ function moreInfo(vaga){
     document.getElementById("areaSalarioPopUp").innerHTML = vaga.salario;
     document.getElementById("areaBeneficioPopUp").innerHTML = vaga.beneficios;
     document.getElementById("areaModalidadePopUp").innerHTML = vaga.modalidade;
+    document.getElementById("contatoEmpresaPopUp").innerHTML = vaga.emailContato;
 
 }
 

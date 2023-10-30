@@ -66,7 +66,7 @@
       <div class="row justify-content-center mt-5">
         <div class="col">
           <div class="input-group w-md-25 w-100 mx-auto mb-4 d-flex justify-content-center">
-            <button type="button" id="adicionarVagasPop" class="border border-dark btn btn-danger rounded-circle m-3">
+            <button type="button" id="adicionarVagasPop" class="border border-dark btn btn-danger rounded-circle m-3" style="width: 60px; height: 50px;">
               <i class="fa-solid fa-plus mx-2"></i>
             </button>
 
@@ -122,6 +122,12 @@
                 <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro"
                   id="localidade" />
                 <hr>
+
+                <label class="form-label" for="localidade">Email:</label>
+                <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro"
+                  id="emailContato" />
+                <hr>
+
 
                 <label class="form-label" for="localidade">modalidade:</label>
                 <input type="text" name="localidade" class="form-control form-control-lg inputInfo inputsDeCadastro"
@@ -233,7 +239,10 @@
                     <h5 class="card-title">Modalidade:</h5>
                     <p class="card-text mx-3" id="areaModalidade">......</p>
                   </div>
-
+                  <div id="requisitosVaga" class="my-3 mx-2">
+                    <h5 class="card-title">Contato Empresa:</h5>
+                    <p class="card-text mx-3" id="contatoEmpresa">......</p>
+                  </div>
                   
                 </div>
 
@@ -253,7 +262,7 @@
           </div>
         </div>
         <!-- teste pop up -->
-        <dialog class="popUpVagas hide-on-mobile" id="pipop">
+        <dialog class="popUpVagas hide-on-mobile" id="pipop" style="margin-top: 20%; ">
           <button class="botaoFecharPupUpMobile">X</button>
 
           <div class="d-flex align-items-center">
@@ -292,6 +301,10 @@
             <div id="requisitosVaga" class="my-3 mx-2">
               <h5 class="card-title">Modalidade:</h5>
               <p class="card-text mx-3" id="areaModalidadePopUp">......</p>
+            </div>
+            <div id="requisitosVaga" class="my-3 mx-2">
+              <h5 class="card-title">Contato Empresa:</h5>
+              <p class="card-text mx-3" id="contatoEmpresaPopUp">......</p>
             </div>
           </div>
 
