@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylePerfil.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"></script>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
+    <title>SENAI - Perfil</title>
+    <style>
+        .teste {
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- //isso aqui é só um testes ou talvez uma sugestão -->
+    <div id="header">
+        <nav class="navbar">
+            <a class="navbar-brand" href="homeAluno.html"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png" alt=""></a>
+            <button class="navbar-toggler navbar-toggler-center" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation" id="botaoMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <div class="collapse menu" id="navbarToggleExternalContent">
+            <div class="" id="caixaDosLinks">
+                <div class="divisoriaHeader"></div>
+                <br>
+                <a class="linkMenu" href="homeAluno.html">Home</a>
+                <hr />
+                <a class="linkMenu" href="perfil.html">Perfil</a>
+                <hr />
+                <a class="linkMenu" onclick="logOutUser()">Sair</a>
+                <hr>
+                <div class="divisoriaHeader"></div>
+            </div>
+        </div>
+        <div class="divisoriaHeader"></div>
+
+    </div>
+
+
+    <main>
+        <div class="perfilAluno">
+            <img src="img/aluno.png" class="editarPerfil">
+            <div class="nomeAluno">
+                <h1 id="nomeAlunono">Felipe Zaghetti</h1>
+                <a href="#">
+                    <p id='emailAlunono' class="emailAluno"><b>felpsfelpopobobesponja@gmail.com</b></p>
+                </a>
+                
+            </div>
+        </div>
+        <br><br>
+        <div class="containerPerfil">
+            <fieldset class="painelBiografia">
+                <div id="dentroPainelBiografia">
+                    <h1>Sobre Mim:</h1>
+                    <p id="sobreAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em 1543 na cidade de
+                        Felpepólis.
+                        Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
+                        supermercado —
+                        e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
+                        É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
+                        (solenemente)
+                        nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território mundial.
+                        Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.</p>
+                </div>
+            </fieldset>
+            <hr>
+            <fieldset class="painelBiografia">
+                <div id="dentroPainelBiografia">
+                    <h1>Curriculum:</h1>
+                    <p id="curriculumAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em 1543 na cidade de
+                        Felpepólis.
+                        Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
+                        supermercado —
+                        e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
+                        É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
+                        (solenemente)
+                        nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território mundial.
+                        Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.</p>
+                </div>
+            </fieldset>
+        </div>
+
+        <dialog class="popUpVagas hide-on-mobile">
+            <div class="teste">
+                <button class="botaoFecharPupUpMobile">X</button>
+            </div>
+            <div class="scrollVagasPopUp ">
+
+                <label class="form-label" for="descVaga">Curriculum:</label>
+
+                <textarea name="curriculum" id="curriculoEditar" class="textareaOK" cols="30" rows="5"></textarea>
+                <!-- <div id="editor1"> -->
+                    <!-- <input type="text" name="descVaga" id="curriculoEditar"
+                        class="form-control form-control-lg inputInfo inputsDeCadastro" /> -->
+                        
+                <!-- </div> -->
+                <hr>
+                <label class="form-label" for="descVaga">Sobre mim:</label>
+                <textarea name="sobreMim" id="sobreMimEditar" class="textareaOK" cols="30" rows="5"></textarea>
+                <!-- <div id="editor2"> -->
+                    <!-- <input type="text" name="descVaga" id="sobreEditar"
+                        class="form-control form-control-lg inputInfo inputsDeCadastro" /> -->
+                <!-- </div> -->
+                <hr>
+                <label class="form-label" for="descVaga">Email:</label>
+                <div>
+                    <input type="text" name="descVaga" id="emailEditar"
+                        class="form-control form-control-lg inputInfo inputsDeCadastro" />
+                </div>
+                <hr>
+
+                <div class="form-group">
+                    <label for="imageUpload">Imagem de perfil:</label>
+                    <input type="file" class="form-control-file" id="imageUpload">
+                </div>
+            </div>
+
+
+            <div id="salvarInfo" class="py-2 my-4 d-flex justify-content-center"><button type="submit" onclick="editarPerfil()"
+                    class="btn btn-danger border border-dark rounded rounded-pill">Salvar</button></div>
+            </div>
+        </dialog>
+    </main>
+
+
+    <footer class="text-center text-white fixed-bottom" style="background-color: #020202;" id="footer">
+        <div class="divisoriaFooter"></div>
+        <div class="container p-4"></div>
+        <img id="logoSenaiFooter" src="img/logoSenaiPretaEBranca.png" alt="">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <p class="mensagemFooter">Copyright 2023 © Todos os direitos reservados.</p>
+            <p class="mensagemFooter">Privacy Policy | Terms and Conditions | Cookies and Data Protection</p>
+
+        </div>
+    </footer>
+</body>
+<script>
+    // Selecionar elementos
+    const openModalBtn = document.getElementById("openModalBtn");
+    const editProfileModal = document.querySelector(".popUpVagas");
+    const closeModalBtn = document.querySelector(".botaoFecharPupUpMobile");
+
+
+    openModalBtn.addEventListener("click", () => {
+        editProfileModal.showModal();
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+        editProfileModal.close();
+    });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+<!-- <script type="module" src="js/home.js"></script> -->
+<script src="js/perfil.js"></script>
+<script src="js/home.js"></script>
+
+</html>
