@@ -114,6 +114,10 @@ function updateCard(vagas) {
           vagaApagar.classList.add('card-text');
           vagaApagar.innerHTML = '<i class="fa-solid fa fa-trash-o mx-2"></i>'
 
+          vagaApagar.style.position = 'relative'; 
+          vagaApagar.style.marginTop = '-7%'
+          vagaApagar.style.marginLeft = '90%'
+
           vagaApagar.addEventListener('click', () => {
             deletaVaga(vagaAtual)
           })
@@ -231,6 +235,34 @@ const deletaVaga = async (vagaAtual) => {
   let delVResultJson = await deletarVagaPromise.json();
   console.log(delVResultJson);
 }
+
+//isso é uma tentativa de dar um aviso caso a vaga seja deletada
+
+// const deletaVaga = async (vagaAtual) => {
+//   const url = `http://localhost:3000/deletarVaga/${vagaAtual.id_vaga}`;
+
+//   const init = {
+//     method: 'DELETE',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   };
+
+//   const deletarVagaPromise = await fetch(url, init);
+//   let delVResultJson = await deletarVagaPromise.json();
+  
+//   // Verifique se a exclusão foi bem-sucedida
+//   if (delVResultJson.success) {
+//     // Exiba uma mensagem no prompt
+//     window.prompt('Vaga apagada com sucesso!');
+//   } else {
+//     // Exiba uma mensagem de erro no prompt
+//     window.prompt('Falha ao apagar a vaga.');
+//   }
+  
+//   console.log(delVResultJson);
+// }
+
 
 const testeQoL = async (vagas) => {
   const vaga = vagas[0];
