@@ -16,8 +16,8 @@ const getItemIndex = (propriedade, valor, data) =>{//encontra o indice do alvo d
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
--
-router.post('/sendLoginLeanerData', (req, res) => {//envia os dados do input do login para o server arquivo logins
+
+/*router.post('/sendLoginLeanerData', (req, res) => {//envia os dados do input do login para o server arquivo logins
     const dadosLogin = req.body;//aqui estao os inputs do login
 
     sql.query(conexao, "SELECT * FROM aluno", (error, resultado) => {//seleciona todos os alunos no banco de dados
@@ -160,7 +160,7 @@ router.delete('/deletarVaga/:id', (req, res) => {//deleta vaga arquibo vagas
     sql.query(conexao, deletar, (error, resultado) => {
         console.log(resultado);
     })
-});
+});*/
 
 server.use('/login', loginRoutes);
 server.use('/perfil', perfilRoutes);

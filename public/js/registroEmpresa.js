@@ -21,6 +21,6 @@ const sendData = async(nome, cnpj, categoriaEmpresa, senha) =>{
         body: JSON.stringify({nome, cnpj, categoriaEmpresa, senha})
     }
     
-    const resLogin = await fetch('http://localhost:3000/registroEmpresas', init);
+    const resLogin = await fetch('http://localhost:3000/login/registroEmpresas', init);
 
 }

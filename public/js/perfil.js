@@ -25,7 +25,7 @@ const checaPerfil = async() => {
     logado = true;
     //let userLogadoDados = JSON.parse(dadosUsuario);
 
-    requestResult = await fetch(`http://localhost:3000/getPerfilData/${dadosUsuario}`);
+    requestResult = await fetch(`http://localhost:3000/perfil/getPerfilData/${dadosUsuario}`);
     usableResult = await requestResult.json();
     console.log(usableResult);
 
@@ -79,7 +79,7 @@ const sendDataP = async(dadosAtualizados) =>{
       }),
     }
 
-  const resLogin = await fetch(`http://localhost:3000/editarDadosPerfil/${dadosUsuario}`, init);
+  const resLogin = await fetch(`http://localhost:3000/perfil/editarDadosPerfil/${dadosUsuario}`, init);
   let resLoginResult = await resLogin.json();
   console.log(resLoginResult)
 

@@ -27,6 +27,6 @@ const sendData = async(area, descricao, responsabilidade, jornada, requisitos, l
         body: JSON.stringify({area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email})
     }
     
-    const resLogin = await fetch('http://localhost:3000/cadastrarVaga', init);
+    const resLogin = await fetch('http://localhost:3000/vagas/cadastrarVaga', init);
 
 }

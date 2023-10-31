@@ -49,7 +49,7 @@ const enviarDadosLogin = async(matricula, cpf) =>{
         body: JSON.stringify({matricula, cpf})
     }
 
-    const loginPromise = await fetch('http://localhost:3000/sendLoginLeanerData', init);
+    const loginPromise = await fetch('http://localhost:3000/login/sendLoginLeanerData', init);
     let loginResultJson = await loginPromise.json();
     console.log(loginResultJson);
     if(loginResultJson.response == 204){//aqui faz a operação de ir a tela de perfil

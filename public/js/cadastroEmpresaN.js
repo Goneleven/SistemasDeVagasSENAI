@@ -18,7 +18,7 @@ const cadastrar = async() =>{
         body: JSON.stringify({cnpj, nome, email, telefone, cep, cidade, setor})
     }
 
-    const resLogin = await fetch('http://localhost:3000/cadastroEmpresaN', init);
+    const resLogin = await fetch('http://localhost:3000/login/cadastroEmpresaN', init);
     console.log(resLogin);
 
 }

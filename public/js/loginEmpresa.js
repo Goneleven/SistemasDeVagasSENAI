@@ -45,7 +45,7 @@ const enviarDadosLogin = async(cnpj, codigoAcesso) =>{
         body: JSON.stringify({cnpj, codigoAcesso})
     }
 
-    const resLogin = await fetch('http://localhost:3000/sendLoginEnterpriseData', init);
+    const resLogin = await fetch('http://localhost:3000/login/sendLoginEnterpriseData', init);
     let logEmpresaResJson = await resLogin.json()
     console.log(logEmpresaResJson);
     if(logEmpresaResJson.response == 204){//aqui faz a operação de ir a tela de perfil

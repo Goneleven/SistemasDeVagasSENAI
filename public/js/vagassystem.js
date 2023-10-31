@@ -58,7 +58,7 @@ const cadastrar = async () => {
         body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade,email })
     }
 
-    const resLogin = await fetch('http://localhost:3000/cadVagas', init);
+    const resLogin = await fetch('http://localhost:3000/vagas/cadVagas', init);
     getAllVagas();
     console.log(resLogin);
 
@@ -208,7 +208,7 @@ function moreInfo(vaga){
 
 const getAllVagas = async () => {
 
-    let res = await fetch('http://localhost:3000/getVagas');
+    let res = await fetch('http://localhost:3000/vagas/getVagas');
     let resJson = await res.json();
     vagas = resJson;
     console.log(vagas);
@@ -222,7 +222,7 @@ const getAllVagas = async () => {
 
 
 const deletaVaga = async (vagaAtual) => {
-  const url = `http://localhost:3000/deletarVaga/${vagaAtual.id_vaga}`;
+  const url = `http://localhost:3000/vagas/deletarVaga/${vagaAtual.id_vaga}`;
 
   const init = {
     method: 'DELETE',
@@ -233,6 +233,7 @@ const deletaVaga = async (vagaAtual) => {
 
   const deletarVagaPromise = await fetch(url, init);
   let delVResultJson = await deletarVagaPromise.json();
+  getAllVagas();
   console.log(delVResultJson);
 }
 
