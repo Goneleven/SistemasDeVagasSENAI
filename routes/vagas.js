@@ -84,7 +84,36 @@ router.post('/cadastrarVaga', (req, res) => {
 router.post('/candidatura', (req, res) => {
 
     const dadosCadastro = req.body;
+    let insert = `INSERT INTO inscricao(id_aluno,id_vaga) VALUES (${dadosCadastro.idUser},${dadosCadastro.vagasID});`;
     console.log(dadosCadastro);
+
+    sql.query(conexao, insert, (error, resultado) => {
+        console.log(resultado);
+    });
+
+});
+
+router.get('/alunosEmVaga/:id',(req, res) =>{
+    const {id} = req.params;
+    console.log(id);
+    let get = `SELECT * FROM inscricao inner join aluno on aluno.id_aluno = inscricao.id_aluno where id_vaga = ${id}`;
+    console.log('teste');
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+        res.send(resultado);
+    });
+
+
+});
+
+router.get('/vagasEmAluno/:id',(req, res) =>{
+
+    const {id} = req.params
+    let get = `SELECT * FROM inscricao inner join vaga on vaga.id_vaga = inscricao.id_vaga where id_aluno = ${id}`;
+    sql.query(conexao, get, (error, resultado) => {
+        res.send(resultado);
+    });
+
 
 });
 

@@ -58,10 +58,18 @@ VALUES
 
 UPDATE aluno SET curriculum = Cursando Desenvolvimento de Sistemas no ?ltimo semestre,sobreMim_aluno = Sou o Arthur gatãpo, email_aluno = arthur@email.com where id_aluno = 1
 
-select * from inscricao
+select * from aluno
+
+INSERT INTO inscricao(id_aluno,id_vaga)
+VALUES
+(1,2);
 
 
-SELECT * FROM vaga
+SELECT * FROM inscricao
+
+SELECT * FROM inscricao inner join aluno on aluno.id_aluno = inscricao.id_aluno where id_vaga = 1;
+
+SELECT * FROM inscricao inner join vaga on vaga.id_vaga = inscricao.id_vaga where id_aluno = 2;
 
 drop table vaga
 

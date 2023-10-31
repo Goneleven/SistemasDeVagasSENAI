@@ -318,6 +318,17 @@ candidaturaDoing = async (obj) => {
 
 }
 
+teste = async () => {
+
+  const candidaturaF = await fetch('http://localhost:3000/vagas/alunosEmVaga/1');
+  let resJson = await candidaturaF.json();
+  console.log(resJson);
+
+
+}
+
+teste();
+
 function candidaturaAction(){
   dadosUsuario = getCookie("userData");
   idUser = parseInt(dadosUsuario);
