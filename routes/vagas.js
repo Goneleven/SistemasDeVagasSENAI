@@ -81,4 +81,11 @@ router.post('/cadastrarVaga', (req, res) => {
 
 });
 
+router.post('/candidatura', (req, res) => {
+
+    const dadosCadastro = req.body;
+    console.log(dadosCadastro);
+
+});
+
 module.exports = router;

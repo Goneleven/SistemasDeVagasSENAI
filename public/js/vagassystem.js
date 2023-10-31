@@ -2,6 +2,7 @@
 //var logadoEmpresa;
 var logado;
 var vagas;
+var vagasID;
 
 
 function getCookie(cname) {
@@ -203,6 +204,7 @@ function moreInfo(vaga){
     document.getElementById("areaBeneficioPopUp").innerHTML = vaga.beneficios;
     document.getElementById("areaModalidadePopUp").innerHTML = vaga.modalidade;
     document.getElementById("contatoEmpresaPopUp").innerHTML = vaga.emailContato;
+    vagasID = vaga.id_vaga;
 
 }
 
@@ -218,8 +220,6 @@ const getAllVagas = async () => {
     updateCard(vagas);
 
 }
-
-
 
 const deletaVaga = async (vagaAtual) => {
   const url = `http://localhost:3000/vagas/deletarVaga/${vagaAtual.id_vaga}`;
@@ -270,7 +270,6 @@ const testeQoL = async (vagas) => {
   moreInfo(vaga);
 };
 
-
 getAllVagas();
 
 //barra de pesquisa
@@ -301,4 +300,31 @@ function filtrarVagas(termoPesquisa) {
 
   return vagasFiltradas;
 }
+
+candidaturaDoing = async (obj) => {
+
+  const init = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(obj)
+  }
+
+  console.log(obj);
+
+  const candidaturaF = await fetch('http://localhost:3000/vagas/candidatura', init);
+
+
+}
+
+function candidaturaAction(){
+  dadosUsuario = getCookie("userData");
+  idUser = parseInt(dadosUsuario);
+  candidaturaDoing({vagasID, idUser});
+}
+
+
+
+
 
