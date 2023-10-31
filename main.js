@@ -8,15 +8,19 @@ server.use(express.json({ extended: true }))
 
 const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
-const getItemIndex = (propriedade, valor, data) =>{
+const loginRoutes = require('./routes/login.js');
+const perfilRoutes = require('./routes/perfil.js');
+const vagasRoutes = require('./routes/vagas.js');
+
+const getItemIndex = (propriedade, valor, data) =>{//encontra o indice do alvo desejado num vetor
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
 -
-router.post('/sendLoginLeanerData', (req, res) => { //record operation
-    const dadosLogin = req.body;
+router.post('/sendLoginLeanerData', (req, res) => {//envia os dados do input do login para o server arquivo logins
+    const dadosLogin = req.body;//aqui estao os inputs do login
 
-    sql.query(conexao, "SELECT * FROM aluno", (error, resultado) => {
+    sql.query(conexao, "SELECT * FROM aluno", (error, resultado) => {//seleciona todos os alunos no banco de dados
 
         console.log(resultado);
         let index = getItemIndex('n_matricula', req.body.matricula, resultado);
@@ -32,19 +36,19 @@ router.post('/sendLoginLeanerData', (req, res) => { //record operation
 
 });
 
-router.get('/getPerfilData/:id', (req, res) => {
+router.get('/getPerfilData/:id', (req, res) => {//pega uma conta de especifica por meio do id guardado no cookie. arquivo perfil
     //const dadosLogin = req.body;
-    const {id} = req.params;
+    const {id} = req.params;//pega o id no campo de argumentos na "url"
     console.log(id);
 
-    sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {
+    sql.query(conexao, `SELECT * FROM aluno where id_aluno = ${id} `, (error, resultado) => {//puxa o aluno especifico do banco de dados.
         console.log(resultado)
         res.send({nome : resultado[0].nome_aluno, sobreMim: resultado[0].sobreMim_aluno, email: resultado[0].email_aluno, curriculo: resultado[0].curriculum});
     })
 
 })
 
-router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
+router.post('/sendLoginEnterpriseData', (req, res) => { //login empresa arquivo login
     const dadosLogin = req.body;
 
     sql.query(conexao, "SELECT * FROM empresa", (error, resultado) => {
@@ -65,7 +69,7 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //record operation
 
 });
 
-router.post('/registroEmpresas', (req, res) => {
+router.post('/registroEmpresas', (req, res) => {//registra empresa arquivo login
 
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
@@ -90,7 +94,7 @@ router.post('/registroEmpresas', (req, res) => {
 
 });
 
-router.put('/editarDadosPerfil/:id', (req, res) => {
+router.put('/editarDadosPerfil/:id', (req, res) => {//edita perfil aluno arquivo perfil
     const {id} = req.params;
     console.log(id);
     
@@ -108,10 +112,9 @@ router.put('/editarDadosPerfil/:id', (req, res) => {
         console.log(error)
     })
 
-    }
-)
+    });
 
-router.post('/cadVagas',(req, res) =>{
+router.post('/cadVagas',(req, res) =>{//cadastra vagas arquivo vagas
 
     const dadosCadastroV = req.body;
     console.log(dadosCadastroV);
@@ -133,7 +136,7 @@ router.post('/cadVagas',(req, res) =>{
     })
 });
 
-router.get('/getVagas',(req, res) =>{
+router.get('/getVagas',(req, res) =>{//pega todas as vagas da tabela vagas no db arquivo vagas
 
     let get = "SELECT * FROM vaga";
 
@@ -145,8 +148,23 @@ router.get('/getVagas',(req, res) =>{
     })
 });
 
+router.delete('/deletarVaga/:id', (req, res) => {//deleta vaga arquibo vagas
+    const {id} = req.params;
+    console.log(id);
 
-server.use(router);
+    const delVagaB = req.body
+    console.log(delVagaB);
+
+    const deletar = `DELETE FROM vaga WHERE id_vaga = ${id}`
+
+    sql.query(conexao, deletar, (error, resultado) => {
+        console.log(resultado);
+    })
+});
+
+server.use('/login', loginRoutes);
+server.use('/perfil', perfilRoutes);
+server.use('/vagas', vagasRoutes);
 
 server.listen(3000, () => {
     console.log('server rodando!');
@@ -182,26 +200,6 @@ router.post('/cadastrarVaga', (req, res) => {
    
 
 });
-
-
-//Deletar Vaga
-
-router.delete('/deletarVaga/:id', (req, res) => {
-    const {id} = req.params;
-    console.log(id);
-
-    const delVagaB = req.body
-    console.log(delVagaB);
-
-    const deletar = `DELETE FROM vaga WHERE id_vaga = ${id}`
-
-    sql.query(conexao, deletar, (error, resultado) => {
-        console.log(resultado);
-    })
-});
-
-
-
 
 //deletar empresa 
 
