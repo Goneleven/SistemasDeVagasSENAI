@@ -106,15 +106,4 @@ router.get('/alunosEmVaga/:id',(req, res) =>{//pega todos os alunos que estao in
 
 });
 
-router.get('/vagasEmAluno/:id',(req, res) =>{//pega todas as vagas que determinado aluno esta inscrito
-
-    const {id} = req.params
-    let get = `SELECT * FROM inscricao inner join vaga on vaga.id_vaga = inscricao.id_vaga where id_aluno = ${id}`;
-    sql.query(conexao, get, (error, resultado) => {
-        res.send(resultado);
-    });
-
-
-});
-
 module.exports = router;

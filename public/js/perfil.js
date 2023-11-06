@@ -37,6 +37,19 @@ const checaPerfil = async() => {
 
 checaPerfil()
 
+const getAlVagasInLearner = async () => {
+
+  let res = await fetch(`http://localhost:3000/perfil/vagasEmAluno/${dadosUsuario}`);
+  let resJson = await res.json();
+  alunos = resJson;
+  console.log(alunos);
+
+  //testeQoL(alunos);
+
+updateListaAlunos(alunos);  
+
+}
+
 
 const checaEditarPerfil = async() => {
 
