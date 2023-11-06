@@ -2,6 +2,7 @@
 //var logadoEmpresa;
 var logado;
 var vagas;
+var alunos;
 var vagasID;
 
 
@@ -178,12 +179,6 @@ function updateCard(vagas) {
 
 }
 
-function VisuCadastrado(){
-
-  
-
-}
-
 function moreInfo(vaga){
 
     console.log(vaga);
@@ -211,6 +206,7 @@ function moreInfo(vaga){
     document.getElementById("areaModalidadePopUp").innerHTML = vaga.modalidade;
     document.getElementById("contatoEmpresaPopUp").innerHTML = vaga.emailContato;
     vagasID = vaga.id_vaga;
+    getAlLearnersInVaga();
 
 }
 
@@ -224,6 +220,59 @@ const getAllVagas = async () => {
     testeQoL(vagas);
 
     updateCard(vagas);
+
+}
+
+function updateListaAlunos(alunos) {
+
+  //const container = document.getElementById('containerCardsVagas');
+  //container.innerHTML = "";
+
+  for (let i = 0; i < alunos.length; i++) {
+
+      let alunoAtual = alunos[i];
+
+      console.log(alunoAtual);
+
+        /*const cardsPopUp = document.querySelectorAll(".popUpMobile");
+        const modal = document.getElementById("pipop");
+        const buttonfecharPopUp = modal.querySelector("button");
+      
+        cardsPopUp.forEach(function (div) {
+          div.addEventListener("click", function () {
+            if (window.innerWidth <= 991) {
+              modal.showModal();
+            }
+          });
+        });
+      
+        buttonfecharPopUp.addEventListener("click", function () {
+          modal.close();
+        });
+      
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 991) {
+            modal.close();
+          }
+        });*/
+
+        
+
+  }
+
+
+}
+
+const getAlLearnersInVaga = async () => {
+
+  let res = await fetch(`http://localhost:3000/vagas/alunosEmVaga/${vagasID}`);
+  let resJson = await res.json();
+  alunos = resJson;
+  console.log(alunos);
+
+  //testeQoL(alunos);
+
+  updateListaAlunos(alunos);
 
 }
 

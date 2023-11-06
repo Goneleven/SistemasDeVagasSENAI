@@ -81,7 +81,7 @@ router.post('/cadastrarVaga', (req, res) => {
 
 });
 
-router.post('/candidatura', (req, res) => {
+router.post('/candidatura', (req, res) => {//realiza a inscrição
 
     const dadosCadastro = req.body;
     let insert = `INSERT INTO inscricao(id_aluno,id_vaga) VALUES (${dadosCadastro.idUser},${dadosCadastro.vagasID});`;
@@ -93,7 +93,7 @@ router.post('/candidatura', (req, res) => {
 
 });
 
-router.get('/alunosEmVaga/:id',(req, res) =>{
+router.get('/alunosEmVaga/:id',(req, res) =>{//pega todos os alunos que estao inscritos em determinada vaga
     const {id} = req.params;
     console.log(id);
     let get = `SELECT * FROM inscricao inner join aluno on aluno.id_aluno = inscricao.id_aluno where id_vaga = ${id}`;
@@ -106,7 +106,7 @@ router.get('/alunosEmVaga/:id',(req, res) =>{
 
 });
 
-router.get('/vagasEmAluno/:id',(req, res) =>{
+router.get('/vagasEmAluno/:id',(req, res) =>{//pega todas as vagas que determinado aluno esta inscrito
 
     const {id} = req.params
     let get = `SELECT * FROM inscricao inner join vaga on vaga.id_vaga = inscricao.id_vaga where id_aluno = ${id}`;
