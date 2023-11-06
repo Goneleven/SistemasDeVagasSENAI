@@ -22,5 +22,11 @@ function getCookie(cname) {
     return "";
 }
 
+onepiece = {
 
-export default {setCookie, getCookie};
+
+
+};
+
+
+module.exports = onepiece;
