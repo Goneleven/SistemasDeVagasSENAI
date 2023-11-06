@@ -178,6 +178,12 @@ function updateCard(vagas) {
 
 }
 
+function VisuCadastrado(){
+
+  
+
+}
+
 function moreInfo(vaga){
 
     console.log(vaga);
