@@ -183,3 +183,16 @@
     width: 130px;
 }
 
+.meu-botao-personalizado {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    padding: 10px 20px; /* Preenchimento do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Altera o cursor quando o mouse passa sobre o botão */
+}
+
+.meu-botao-personalizado:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse sobre o botão */
+}
+

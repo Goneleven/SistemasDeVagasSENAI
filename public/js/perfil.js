@@ -34,7 +34,11 @@ const checaPerfil = async() => {
     document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
     document.getElementById('curriculumAlunono').textContent = usableResult.curriculo
 }
-
+// if(location.href == "perfilVisualizacao.html"){
+//   perfilVisualizacao();
+// }else{
+//   checaPerfil()
+// }
 checaPerfil()
 
 const getAlVagasInLearner = async () => {
@@ -104,9 +108,8 @@ function salvarEdicao(){
 
   let inputArchive = document.getElementById("imageUpload");
   console.log(inputArchive.value);
-
-
-
   
 }
+
+
 

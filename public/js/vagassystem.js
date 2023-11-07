@@ -260,31 +260,46 @@ function updateListaAlunos(alunos) {
       }
     });*/
 
+
+
     const containerCandidatos = document.createElement("div");
     containerCandidatos.className = "containerCandidatos";
 
     const nomeAluno = document.createElement("button");
-    nomeAluno.textContent = alunoAtual.nome_aluno;
-    // nomeAluno.href = 'perfilVisualizacao.html';
 
-    // function direcionaPerfil(){
-      
-    // }
+    nomeAluno.style.backgroundColor = "#e64c3a";
+    nomeAluno.style.color = "#fff";
+    nomeAluno.style.padding = "10px 20px";
+    nomeAluno.style.border = "none";
+    nomeAluno.style.borderRadius = "5px";
+    nomeAluno.style.width = "80%"
+    nomeAluno.style.cursor = "pointer";
+    nomeAluno.style.marginLeft = "10%"
+
+
+
 
     const testeSpam = document.createElement("span");
     testeSpam.textContent = alunoAtual.nome_aluno;
-    nomeAluno.append (testeSpam);
+    nomeAluno.append(testeSpam);
 
-    
+
 
     containerCandidatos.appendChild(nomeAluno);
 
 
 
-   info2.appendChild(containerCandidatos);
+    info2.appendChild(containerCandidatos);
 
-   const divisoriaPerfilParaPerfil = document.createElement("hr");
-   info2.appendChild(divisoriaPerfilParaPerfil);
+    const divisoriaPerfilParaPerfil = document.createElement("hr");
+    info2.appendChild(divisoriaPerfilParaPerfil);
+
+    nomeAluno.addEventListener("click", function () {
+      let key = 'alunoBotao';
+      localStorage.setItem(key, JSON.stringify(alunoAtual));
+
+      location.href = "perfilVisualizacao.html";
+    });
 
   }
 
