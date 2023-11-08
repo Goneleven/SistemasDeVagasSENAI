@@ -55,6 +55,10 @@ INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requ
 VALUES
 (1, 'TI', 'construir um sistema web de compartilhamento de vagas', 'muita', '18 as 22', 'Ser do técnico de desenvolvimento de sistemas SENAI', 'Mogi das Cruzes', '1000', 'nenhum', 'ead','senai@gmial.com');
 
+INSERT INTO empresa(nome_empresa, cnpj, senha ,categoria)
+VALUES
+('SENAI', '123', '123', 'admin');
+
 
 UPDATE aluno SET curriculum = Cursando Desenvolvimento de Sistemas no ?ltimo semestre,sobreMim_aluno = Sou o Arthur gatãpo, email_aluno = arthur@email.com where id_aluno = 1
 

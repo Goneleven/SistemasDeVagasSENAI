@@ -73,7 +73,10 @@ function updateCard(vagas) {
 
   for (let i = 0; i < vagas.length; i++) {
 
+    vagas.reverse();
     let vagaAtual = vagas[i];
+
+    
 
     console.log(vagaAtual.area);
 
@@ -338,6 +341,9 @@ const deletaVaga = async (vagaAtual) => {
   getAllVagas();
   console.log(delVResultJson);
 }
+
+
+
 
 //isso é uma tentativa de dar um aviso caso a vaga seja deletada
 
