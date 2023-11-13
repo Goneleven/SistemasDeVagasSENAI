@@ -5,17 +5,28 @@ const router = express.Router();
 const cors = require("cors");
 server.use(cors());
 server.use(express.json({ extended: true }))
+const path = require('path');
+
 
 const conexao = "server=.;Database=sistemaDivulgacaoDeVagas;Trusted_connection=yes;Driver={SQL Server Native Client 11.0}";
 
 const loginRoutes = require('./routes/login.js');
 const perfilRoutes = require('./routes/perfil.js');
 const vagasRoutes = require('./routes/vagas.js');
+const pagesRoutes = require('./routes/pages.js');
+
+server.use(express.static(path.join(__dirname, 'public')));
 
 const getItemIndex = (propriedade, valor, data) =>{//encontra o indice do alvo desejado num vetor
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
+router.get('/index',(req, res) =>{
+
+    res.sendFile('public/index.html', {root: __dirname });
+
+
+});
 
 /*router.post('/sendLoginLeanerData', (req, res) => {//envia os dados do input do login para o server arquivo logins
     const dadosLogin = req.body;//aqui estao os inputs do login
@@ -165,6 +176,8 @@ router.delete('/deletarVaga/:id', (req, res) => {//deleta vaga arquibo vagas
 server.use('/login', loginRoutes);
 server.use('/perfil', perfilRoutes);
 server.use('/vagas', vagasRoutes);
+server.use('/pages', pagesRoutes);
+server.use('', router);
 
 server.listen(3000, () => {
     console.log('server rodando!');
