@@ -21,7 +21,7 @@ const getItemIndex = (propriedade, valor, data) =>{//encontra o indice do alvo d
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
-router.get('/index',(req, res) =>{//pega todas as vagas da tabela vagas no db arquivo vagas
+router.get('/index',(req, res) =>{
 
     res.sendFile('public/index.html', {root: __dirname });
 
