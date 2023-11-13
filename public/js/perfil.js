@@ -41,6 +41,7 @@ const checaPerfil = async() => {
 // }
 checaPerfil()
 
+// vagas que cada aluno se inscreveu
 const getAlVagasInLearner = async () => {
 
   let res = await fetch(`http://localhost:3000/perfil/vagasEmAluno/${dadosUsuario}`);
@@ -48,7 +49,7 @@ const getAlVagasInLearner = async () => {
   alunos = resJson;
   console.log(alunos);
 
-  //testeQoL(alunos);
+  // testeQoL(alunos);
 
 updateListaAlunos(alunos);  
 

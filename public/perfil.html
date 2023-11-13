@@ -34,11 +34,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stylePerfil.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"></script>
-  
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
     <title>SENAI - Perfil</title>
     <style>
@@ -56,7 +56,8 @@
     <!-- //isso aqui é só um testes ou talvez uma sugestão -->
     <div id="header">
         <nav class="navbar">
-            <a class="navbar-brand" href="homeAluno.html"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png" alt=""></a>
+            <a class="navbar-brand" href="homeAluno.html"><img id="logoHome" src="img/SENAI_São_Paulo_logo.png"
+                    alt=""></a>
             <button class="navbar-toggler navbar-toggler-center" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation" id="botaoMenu">
@@ -91,41 +92,54 @@
                     <p id='emailAlunono' class="emailAluno"><b>felpsfelpopobobesponja@gmail.com</b></p>
                 </a>
                 <div class="botoesAluno">
-                    <button class="botaoAluno"><b>Vagas Inscritas</b></button>
-                    <button class="botaoAluno" id="openModalBtn" onclick="checaEditarPerfil()"><b>Editar perfil</b></button>
+                    <button class="botaoAluno" id="botaoVagasInscritas" onclick="toggleInfos()"><b>Vagas Inscritas</b></button>
+                    <button class="botaoAluno" id="openModalBtn" onclick="checaEditarPerfil()"><b>Editar
+                            perfil</b></button>
                 </div>
             </div>
         </div>
         <div class="containerPerfil">
-            <fieldset class="painelBiografia">
-                <div id="dentroPainelBiografia">
-                    <h1>Sobre Mim:</h1>
-                    <p id="sobreAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em 1543 na cidade de
-                        Felpepólis.
-                        Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
-                        supermercado —
-                        e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
-                        É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
-                        (solenemente)
-                        nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território mundial.
-                        Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.</p>
-                </div>
-            </fieldset>
-            <hr>
-            <fieldset class="painelBiografia">
-                <div id="dentroPainelBiografia">
-                    <h1>Curriculum:</h1>
-                    <p id="curriculumAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em 1543 na cidade de
-                        Felpepólis.
-                        Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
-                        supermercado —
-                        e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
-                        É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
-                        (solenemente)
-                        nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território mundial.
-                        Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.</p>
-                </div>
-            </fieldset>
+            <div id="infoCurriculum1">
+                <fieldset class="painelBiografia">
+                    <div id="dentroPainelBiografia">
+                        <h1>Sobre Mim:</h1>
+                        <p id="sobreAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em 1543
+                            na cidade de
+                            Felpepólis.
+                            Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
+                            supermercado —
+                            e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
+                            É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
+                            (solenemente)
+                            nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território
+                            mundial.
+                            Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.
+                        </p>
+                    </div>
+                </fieldset>
+                <hr>
+                <fieldset class="painelBiografia">
+                    <div id="dentroPainelBiografia">
+                        <h1>Curriculum:</h1>
+                        <p id="curriculumAlunono">Felps é um twitcher e protagonista original do Felpsverso. Nasceu em
+                            1543 na cidade de
+                            Felpepólis.
+                            Ganhou destaque após se tornar um hacker de sucessos — hackeando até mesmo sacolas de
+                            supermercado —
+                            e menos notavelmente como maior proprietário de avós fazedoras de cookies. <br>
+                            É considerado em 2,5 países a maior ameaça contra a humanidade apesar de ter jurado
+                            (solenemente)
+                            nunca atacar a Somália — que, na época do juramento, correspondia a 60% do território
+                            mundial.
+                            Hoje em dia vive pacificamente, apesar de constantes tentativas de ataques de Flops e Splef.
+                        </p>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="infoCurriculum2">
+              
+
+            </div>
         </div>
 
         <dialog class="popUpVagas hide-on-mobile">
@@ -138,15 +152,15 @@
 
                 <textarea name="curriculum" id="curriculoEditar" class="textareaOK" cols="30" rows="5"></textarea>
                 <!-- <div id="editor1"> -->
-                    <!-- <input type="text" name="descVaga" id="curriculoEditar"
+                <!-- <input type="text" name="descVaga" id="curriculoEditar"
                         class="form-control form-control-lg inputInfo inputsDeCadastro" /> -->
-                        
+
                 <!-- </div> -->
                 <hr>
                 <label class="form-label" for="descVaga">Sobre mim:</label>
                 <textarea name="sobreMim" id="sobreMimEditar" class="textareaOK" cols="30" rows="5"></textarea>
                 <!-- <div id="editor2"> -->
-                    <!-- <input type="text" name="descVaga" id="sobreEditar"
+                <!-- <input type="text" name="descVaga" id="sobreEditar"
                         class="form-control form-control-lg inputInfo inputsDeCadastro" /> -->
                 <!-- </div> -->
                 <hr>
@@ -164,7 +178,8 @@
             </div>
 
 
-            <div id="salvarInfo" class="py-2 my-4 d-flex justify-content-center"><button type="submit" onclick="editarPerfil()"
+            <div id="salvarInfo" class="py-2 my-4 d-flex justify-content-center"><button type="submit"
+                    onclick="editarPerfil()"
                     class="btn btn-danger border border-dark rounded rounded-pill">Salvar</button></div>
             </div>
         </dialog>
@@ -197,6 +212,35 @@
         editProfileModal.close();
     });
 
+
+    function toggleInfos() {
+        const info1 = document.getElementById("infoCurriculum1");
+        const info2 = document.getElementById("infoCurriculum2");
+        const candidatosButton = document.getElementById("botaoVagasInscritas");
+    
+        const computedStyle1 = window.getComputedStyle(info1);
+        const computedStyle2 = window.getComputedStyle(info2);
+    
+        if (computedStyle1.display !== "none") {
+            info1.style.opacity = 0;
+            info2.style.opacity = 1;
+            setTimeout(() => {
+                info1.style.display = "none";
+                info2.style.display = "block";
+                candidatosButton.textContent = "Curriculum";
+            }, 500);
+        } else {
+            info1.style.opacity = 1;
+            info2.style.opacity = 0;
+            setTimeout(() => {
+                info1.style.display = "block";
+                info2.style.display = "none";
+                candidatosButton.textContent = "Vagas Inscritas";
+            }, 500);
+        }
+    }
+    
+    
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

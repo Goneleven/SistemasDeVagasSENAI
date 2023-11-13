@@ -226,11 +226,15 @@ const getAllVagas = async () => {
 
 }
 
+
+
 function updateListaAlunos(alunos) {
 
 
   const info2 = document.getElementById("info2");
   info2.innerHTML = "";
+
+ 
 
   //const container = document.getElementById('containerCardsVagas');
   //container.innerHTML = "";
@@ -264,12 +268,13 @@ function updateListaAlunos(alunos) {
     });*/
 
 
-
+    
     const containerCandidatos = document.createElement("div");
     containerCandidatos.className = "containerCandidatos";
 
     const nomeAluno = document.createElement("button");
 
+    nomeAluno.style.marginTop = "5%"
     nomeAluno.style.backgroundColor = "#e64c3a";
     nomeAluno.style.color = "#fff";
     nomeAluno.style.padding = "10px 20px";
@@ -293,9 +298,14 @@ function updateListaAlunos(alunos) {
 
 
     info2.appendChild(containerCandidatos);
+    
 
     const divisoriaPerfilParaPerfil = document.createElement("hr");
+
     info2.appendChild(divisoriaPerfilParaPerfil);
+    
+
+
 
     nomeAluno.addEventListener("click", function () {
       let key = 'alunoBotao';
@@ -306,7 +316,88 @@ function updateListaAlunos(alunos) {
 
   }
 
+  const infoMobile2 = document.getElementById("infoVagaMobile2");
+  infoMobile2.innerHTML = "";
 
+
+  for (let i = 0; i < alunos.length; i++) {
+
+    let alunoAtual = alunos[i];
+
+    console.log(alunoAtual);
+
+    /*const cardsPopUp = document.querySelectorAll(".popUpMobile");
+    const modal = document.getElementById("pipop");
+    const buttonfecharPopUp = modal.querySelector("button");
+  
+    cardsPopUp.forEach(function (div) {
+      div.addEventListener("click", function () {
+        if (window.innerWidth <= 991) {
+          modal.showModal();
+        }
+      });
+    });
+  
+    buttonfecharPopUp.addEventListener("click", function () {
+      modal.close();
+    });
+  
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 991) {
+        modal.close();
+      }
+    });*/
+
+
+    
+    const containerCandidatos = document.createElement("div");
+    containerCandidatos.className = "containerCandidatos";
+
+    const nomeAluno = document.createElement("button");
+
+    nomeAluno.style.marginTop = "5%"
+    nomeAluno.style.backgroundColor = "#e64c3a";
+    nomeAluno.style.color = "#fff";
+    nomeAluno.style.padding = "10px 20px";
+    nomeAluno.style.border = "none";
+    nomeAluno.style.borderRadius = "5px";
+    nomeAluno.style.width = "80%"
+    nomeAluno.style.cursor = "pointer";
+    nomeAluno.style.marginLeft = "10%"
+
+
+
+
+    const testeSpam = document.createElement("span");
+    testeSpam.textContent = alunoAtual.nome_aluno;
+    nomeAluno.append(testeSpam);
+
+
+
+    containerCandidatos.appendChild(nomeAluno);
+
+
+
+    infoMobile2.appendChild(containerCandidatos);
+    
+
+    const divisoriaPerfilParaPerfil = document.createElement("hr");
+
+    infoMobile2.appendChild(divisoriaPerfilParaPerfil);
+    
+
+
+
+    nomeAluno.addEventListener("click", function () {
+      let key = 'alunoBotao';
+      localStorage.setItem(key, JSON.stringify(alunoAtual));
+
+      location.href = "perfilVisualizacao.html";
+    });
+
+  }
+
+  
 
 
 }

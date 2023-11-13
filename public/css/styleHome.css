@@ -196,3 +196,18 @@
     background-color: #0056b3; /* Cor de fundo ao passar o mouse sobre o botão */
 }
 
+.candidatosButtonMobile {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #candidatosButton {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    transform: translateX(-50%);
+  }
+
+
