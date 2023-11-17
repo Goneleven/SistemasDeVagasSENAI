@@ -207,7 +207,9 @@ function toggleInfos() {
   const computedStyle2 = window.getComputedStyle(info2);
 
   if (computedStyle1.display !== "none") {
+    
     getAlVagasInLearner()
+
       info1.style.opacity = 0;
       info2.style.opacity = 1;
       setTimeout(() => {
