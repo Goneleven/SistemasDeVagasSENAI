@@ -34,7 +34,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stylePerfil.css">
-    <link rel="stylesheet" href="css/styleHome.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
@@ -214,34 +213,7 @@
     });
 
 
-    function toggleInfos() {
-        const info1 = document.getElementById("infoCurriculum1");
-        const info2 = document.getElementById("infoCurriculum2");
-        const candidatosButton = document.getElementById("botaoVagasInscritas");
-    
-        const computedStyle1 = window.getComputedStyle(info1);
-        const computedStyle2 = window.getComputedStyle(info2);
-    
-        if (computedStyle1.display !== "none") {
-            info1.style.opacity = 0;
-            info2.style.opacity = 1;
-            setTimeout(() => {
-                info1.style.display = "none";
-                info2.style.display = "block";
-                candidatosButton.textContent = "Curriculum";
-            }, 500);
-        } else {
-            info1.style.opacity = 1;
-            info2.style.opacity = 0;
-            setTimeout(() => {
-                info1.style.display = "block";
-                info2.style.display = "none";
-                candidatosButton.textContent = "Vagas Inscritas";
-            }, 500);
-        }
-    }
-    
-    
+   
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
