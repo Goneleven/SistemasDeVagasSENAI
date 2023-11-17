@@ -537,6 +537,11 @@ function candidaturaAction() {
   candidaturaDoing({ vagasID, idUser });
 }
 
+// const exibirPrompt = (mensagem) => {
+//   alert(mensagem);
+// };
+
+
 
 
 
