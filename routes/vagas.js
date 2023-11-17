@@ -97,10 +97,10 @@ router.post('/candidatura', (req, res) => {//realiza a inscrição
         console.log(resultado);
         if(resultado.length <= 0){
             inscricaoInsert(insert);
-            res.send({resposta : 'deu certo'});
+            res.send({resposta : 'Inscrição realizada com sucesso. Boa sorte!'});
         }else{
             console.log('ja foi inscrito');
-            res.send({resposta : 'já inscrito'});
+            res.send({resposta : 'já inscrito nesta vaga'});
         }
     });
     
