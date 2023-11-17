@@ -503,6 +503,11 @@ function filtrarVagas(termoPesquisa) {
   return vagasFiltradas;
 }
 
+const exibirPrompt = (mensagem) => {
+  alert(mensagem);
+};
+
+
 candidaturaDoing = async (obj) => {
 
   const init = {
@@ -519,13 +524,11 @@ candidaturaDoing = async (obj) => {
 
   let resposta = await candidaturaF.json();
   console.log(resposta);
+  exibirPrompt(resposta.resposta);
 
 
 
 }
-const exibirPrompt = (mensagem) => {
-  alert(mensagem);
-};
 
 teste = async () => {
 
@@ -544,11 +547,7 @@ function candidaturaAction() {
   idUser = parseInt(dadosUsuario);
   candidaturaDoing({ vagasID, idUser });
 
-  if (idUser) {
-    exibirPrompt("Candidatação realizada com sucesso. Boa sorte!");
-  } else {
-    exibirPrompt("Algo deu de errado ou você ja está esta cadastrado na cadidatação dessa vaga.");
-  }
+
 }
 
 
