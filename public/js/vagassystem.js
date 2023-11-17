@@ -68,12 +68,15 @@ const cadastrar = async () => {
 
 function updateCard(vagas) {
 
+  console.warn(vagas);
+
   const container = document.getElementById('containerCardsVagas');
   container.innerHTML = "";
 
+  vagas.reverse();
+
   for (let i = 0; i < vagas.length; i++) {
 
-    vagas.reverse();
     let vagaAtual = vagas[i];
 
     
