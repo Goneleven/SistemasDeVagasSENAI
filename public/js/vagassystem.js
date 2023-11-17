@@ -79,7 +79,7 @@ function updateCard(vagas) {
 
     let vagaAtual = vagas[i];
 
-    
+
 
     console.log(vagaAtual.area);
 
@@ -237,7 +237,7 @@ function updateListaAlunos(alunos) {
   const info2 = document.getElementById("info2");
   info2.innerHTML = "";
 
- 
+
 
   //const container = document.getElementById('containerCardsVagas');
   //container.innerHTML = "";
@@ -271,7 +271,7 @@ function updateListaAlunos(alunos) {
     });*/
 
 
-    
+
     const containerCandidatos = document.createElement("div");
     containerCandidatos.className = "containerCandidatos";
 
@@ -301,12 +301,12 @@ function updateListaAlunos(alunos) {
 
 
     info2.appendChild(containerCandidatos);
-    
+
 
     const divisoriaPerfilParaPerfil = document.createElement("hr");
 
     info2.appendChild(divisoriaPerfilParaPerfil);
-    
+
 
 
 
@@ -352,7 +352,7 @@ function updateListaAlunos(alunos) {
     });*/
 
 
-    
+
     const containerCandidatos = document.createElement("div");
     containerCandidatos.className = "containerCandidatos";
 
@@ -382,12 +382,12 @@ function updateListaAlunos(alunos) {
 
 
     infoMobile2.appendChild(containerCandidatos);
-    
+
 
     const divisoriaPerfilParaPerfil = document.createElement("hr");
 
     infoMobile2.appendChild(divisoriaPerfilParaPerfil);
-    
+
 
 
 
@@ -400,7 +400,7 @@ function updateListaAlunos(alunos) {
 
   }
 
-  
+
 
 
 }
@@ -519,12 +519,16 @@ candidaturaDoing = async (obj) => {
 
 
 }
+const exibirPrompt = (mensagem) => {
+  alert(mensagem);
+};
 
 teste = async () => {
 
   const candidaturaF = await fetch('http://localhost:3000/vagas/alunosEmVaga/1');
   let resJson = await candidaturaF.json();
   console.log(resJson);
+
 
 
 }
@@ -535,11 +539,14 @@ function candidaturaAction() {
   dadosUsuario = getCookie("userData");
   idUser = parseInt(dadosUsuario);
   candidaturaDoing({ vagasID, idUser });
+
+  if (idUser) {
+    exibirPrompt("Candidatação realizada com sucesso. Boa sorte!");
+  } else {
+    exibirPrompt("Algo deu de errado ou você ja está esta cadastrado na cadidatação dessa vaga.");
+  }
 }
 
-// const exibirPrompt = (mensagem) => {
-//   alert(mensagem);
-// };
 
 
 
