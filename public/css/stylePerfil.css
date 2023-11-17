@@ -87,3 +87,40 @@
 .textareaOK{
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+.divisoriaCard {
+    left: 0;
+    width: 100%;
+    border: solid red;
+}
+
+.filter-search {
+    padding: 3%;
+}
+
+.cardVaga {
+    border-radius: 20px !important;
+    width: 90%;
+    background: #FFF;
+    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: 0.5s ;
+}
+
+
+.cardInfo {
+    border-radius: 20px !important;
+    min-height: 90%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 15px 15px 20px 5px rgba(0, 0, 0, 0.50);
+}
+

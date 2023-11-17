@@ -55,7 +55,6 @@ updateListaAlunos(vagas);
 
 }
 
-getAlVagasInLearner()
 
 function updateListaAlunos(vagas) {
 
@@ -63,6 +62,13 @@ function updateListaAlunos(vagas) {
   const infoCurriculum2 = document.getElementById("infoCurriculum2");
   infoCurriculum2.innerHTML = "";
 
+  const tituloPagina = document.createElement('h2');
+  tituloPagina.textContent = "Vagas inscritas: "
+  infoCurriculum2.appendChild(tituloPagina)
+
+  tituloPagina.style.marginLeft = "30px";
+  tituloPagina.style.fontSize = "40px";
+  tituloPagina.style.marginTop = "30px";
  
   for (let i = 0; i < vagas.length; i++) {
 
@@ -72,7 +78,10 @@ function updateListaAlunos(vagas) {
     const card = document.createElement('div');
    
     card.classList.add('card', 'border', 'border-dark', 'mb-4', 'cardVaga');
+    card.style.marginTop = "30px";
 
+  
+   
 
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body', 'popUpMobile');
@@ -102,6 +111,7 @@ function updateListaAlunos(vagas) {
     paragrafo2.innerHTML = '<strong>R$ </strong>' + vagaAtual.salario + '<i class="fa-solid fa-building mx-2"></i>' + vagaAtual.modalidade;
 
 
+    
     
     titulo_logo.appendChild(titulo);
 
@@ -187,4 +197,32 @@ function salvarEdicao(){
 }
 
 
+
+function toggleInfos() {
+  const info1 = document.getElementById("infoCurriculum1");
+  const info2 = document.getElementById("infoCurriculum2");
+  const candidatosButton = document.getElementById("botaoVagasInscritas");
+
+  const computedStyle1 = window.getComputedStyle(info1);
+  const computedStyle2 = window.getComputedStyle(info2);
+
+  if (computedStyle1.display !== "none") {
+    getAlVagasInLearner()
+      info1.style.opacity = 0;
+      info2.style.opacity = 1;
+      setTimeout(() => {
+          info1.style.display = "none";
+          info2.style.display = "block";
+          candidatosButton.textContent = "Curriculum";
+      }, 500);
+  } else {
+      info1.style.opacity = 1;
+      info2.style.opacity = 0;
+      setTimeout(() => {
+          info1.style.display = "block";
+          info2.style.display = "none";
+          candidatosButton.textContent = "Vagas Inscritas";
+      }, 500);
+  }
+}
 
