@@ -59,15 +59,13 @@ INSERT INTO empresa(nome_empresa, cnpj, senha ,categoria)
 VALUES
 ('SENAI', '123', '123', 'admin');
 
-
-UPDATE aluno SET curriculum = Cursando Desenvolvimento de Sistemas no ?ltimo semestre,sobreMim_aluno = Sou o Arthur gatãpo, email_aluno = arthur@email.com where id_aluno = 1
-
-select * from aluno
-
 INSERT INTO inscricao(id_aluno,id_vaga)
 VALUES
 (1,2);
 
+
+
+select * from aluno
 
 SELECT * FROM inscricao
 
@@ -77,4 +75,5 @@ SELECT * FROM inscricao inner join vaga on vaga.id_vaga = inscricao.id_vaga wher
 
 drop table vaga
 
+UPDATE aluno SET curriculum = Cursando Desenvolvimento de Sistemas no ?ltimo semestre,sobreMim_aluno = Sou o Arthur gatãpo, email_aluno = arthur@email.com where id_aluno = 1
 
