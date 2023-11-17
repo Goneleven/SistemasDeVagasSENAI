@@ -32,11 +32,12 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //login empresa arquivo 
     sql.query(conexao, "SELECT * FROM empresa", (error, resultado) => {
 
         let index = getItemIndex('cnpj', req.body.cnpj, resultado);
-        console.log(req.body.codigoAcesso)
-        console.log(resultado[index].senha);
+        let indexs = getItemIndex('senha', req.body.codigoAcesso, resultado);
+        console.log(resultado[index]);
+        console.log(resultado[indexs]);
 
 
-        if(resultado[index] != undefined && resultado[index].senha == req.body.codigoAcesso){
+        if(resultado[index] != undefined && resultado[indexs] != undefined && resultado[indexs] == resultado[index]){
             res.send({response : 204, idLogged: resultado[index].id_empresa});
             console.log('logou');
         }else{
