@@ -517,6 +517,10 @@ candidaturaDoing = async (obj) => {
 
   const candidaturaF = await fetch('http://localhost:3000/vagas/candidatura', init);
 
+  let resposta = await candidaturaF.json();
+  console.log(resposta);
+
+
 
 }
 const exibirPrompt = (mensagem) => {

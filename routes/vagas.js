@@ -49,8 +49,12 @@ router.delete('/deletarVaga/:id', (req, res) => {//deleta vaga arquibo vagas
     console.log(delVagaB);
 
     const deletar = `DELETE FROM vaga WHERE id_vaga = ${id}`
+    const deletarInscricao = `DELETE from inscricao where id_vaga=${id}`;
 
     sql.query(conexao, deletar, (error, resultado) => {
+        console.log(resultado);
+    })
+    sql.query(conexao, deletarInscricao, (error, resultado) => {
         console.log(resultado);
     })
 });
@@ -85,13 +89,32 @@ router.post('/candidatura', (req, res) => {//realiza a inscrição
 
     const dadosCadastro = req.body;
     let insert = `INSERT INTO inscricao(id_aluno,id_vaga) VALUES (${dadosCadastro.idUser},${dadosCadastro.vagasID});`;
+    let get = `SELECT * FROM inscricao inner join aluno on aluno.id_aluno = inscricao.id_aluno where id_vaga = ${dadosCadastro.vagasID} AND aluno.id_aluno = ${dadosCadastro.idUser};`
     console.log(dadosCadastro);
 
-    sql.query(conexao, insert, (error, resultado) => {
+    sql.query(conexao, get, (error, resultado) => {
+        console.log('tabela usuarioRepetido?')
         console.log(resultado);
+        if(resultado.length <= 0){
+            inscricaoInsert(insert);
+            res.send({resposta : 'deu certo'});
+        }else{
+            console.log('ja foi inscrito');
+            res.send({resposta : 'já inscrito'});
+        }
     });
+    
 
 });
+
+function inscricaoInsert(insert){
+    let result;
+    sql.query(conexao, insert, (error, resultado) => {
+        console.log(resultado);
+        result = resultado;
+    });
+    return result;
+}
 
 router.get('/alunosEmVaga/:id',(req, res) =>{//pega todos os alunos que estao inscritos em determinada vaga
     const {id} = req.params;
