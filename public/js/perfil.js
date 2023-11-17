@@ -46,15 +46,16 @@ const getAlVagasInLearner = async () => {
 
   let res = await fetch(`http://localhost:3000/perfil/vagasEmAluno/${dadosUsuario}`);
   let resJson = await res.json();
-  alunos = resJson;
+  vagas = resJson;
   console.log(vagas);
 
   // testeQoL(alunos);
 
-updateListaAlunos(alunos);  
+updateListaAlunos(vagas);  
 
 }
 
+getAlVagasInLearner()
 
 function updateListaAlunos(vagas) {
 
@@ -63,19 +64,15 @@ function updateListaAlunos(vagas) {
   infoCurriculum2.innerHTML = "";
 
  
-  for (let i = 0; i < alunos.length; i++) {
+  for (let i = 0; i < vagas.length; i++) {
 
-    vagas.reverse();
     let vagaAtual = vagas[i];
 
-    console.log(vagaAtual.area);
-
-
+ 
     const card = document.createElement('div');
-    card.onclick = function () {
-      moreInfo(vagaAtual);
-    };
+   
     card.classList.add('card', 'border', 'border-dark', 'mb-4', 'cardVaga');
+
 
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body', 'popUpMobile');
@@ -113,15 +110,12 @@ function updateListaAlunos(vagas) {
     cardBody.appendChild(paragrafo1);
     cardBody.appendChild(paragrafo2);
 
-    if (!logado) {
-      cardBody.appendChild(vagaApagar);
-    }
-
+   
     card.appendChild(cardBody);
 
 
 
-    container.appendChild(card);
+    infoCurriculum2.appendChild(card);
 
     if (descricaoTexto.length <= 100) {
       paragrafo1.textContent = descricaoTexto;
