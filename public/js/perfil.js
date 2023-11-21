@@ -4,35 +4,35 @@ var dadosUsuario;
 var logado;
 
 function getCookie(cname) {
-    const name = cname + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
+  const name = cname + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
     }
-    return "";
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
-const checaPerfil = async() => {
-    dadosUsuario = getCookie("userData")
-    console.log(dadosUsuario)
-    logado = true;
-    //let userLogadoDados = JSON.parse(dadosUsuario);
+const checaPerfil = async () => {
+  dadosUsuario = getCookie("userData")
+  console.log(dadosUsuario)
+  logado = true;
+  //let userLogadoDados = JSON.parse(dadosUsuario);
 
-    requestResult = await fetch(`http://localhost:3000/perfil/getPerfilData/${dadosUsuario}`);
-    usableResult = await requestResult.json();
-    console.log(usableResult);
+  requestResult = await fetch(`http://localhost:3000/perfil/getPerfilData/${dadosUsuario}`);
+  usableResult = await requestResult.json();
+  console.log(usableResult);
 
-    document.getElementById('nomeAlunono').textContent = usableResult.nome;
-    document.getElementById('emailAlunono').textContent = usableResult.email;
-    document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
-    document.getElementById('curriculumAlunono').textContent = usableResult.curriculo
+  document.getElementById('nomeAlunono').textContent = usableResult.nome;
+  document.getElementById('emailAlunono').textContent = usableResult.email;
+  document.getElementById('sobreAlunono').textContent = usableResult.sobreMim;
+  document.getElementById('curriculumAlunono').textContent = usableResult.curriculo
 }
 // if(location.href == "perfilVisualizacao.html"){
 //   perfilVisualizacao();
@@ -51,7 +51,7 @@ const getAlVagasInLearner = async () => {
 
   // testeQoL(alunos);
 
-updateListaAlunos(vagas);  
+  updateListaAlunos(vagas);
 
 }
 
@@ -69,19 +69,19 @@ function updateListaAlunos(vagas) {
   tituloPagina.style.marginLeft = "30px";
   tituloPagina.style.fontSize = "40px";
   tituloPagina.style.marginTop = "30px";
- 
+
   for (let i = 0; i < vagas.length; i++) {
 
     let vagaAtual = vagas[i];
 
- 
+
     const card = document.createElement('div');
-   
+
     card.classList.add('card', 'border', 'border-dark', 'mb-4', 'cardVaga');
     card.style.marginTop = "30px";
 
-  
-   
+
+
 
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body', 'popUpMobile');
@@ -111,8 +111,8 @@ function updateListaAlunos(vagas) {
     paragrafo2.innerHTML = '<strong>R$ </strong>' + vagaAtual.salario + '<i class="fa-solid fa-building mx-2"></i>' + vagaAtual.modalidade;
 
 
-    
-    
+
+
     titulo_logo.appendChild(titulo);
 
     cardBody.appendChild(titulo_logo);
@@ -120,7 +120,7 @@ function updateListaAlunos(vagas) {
     cardBody.appendChild(paragrafo1);
     cardBody.appendChild(paragrafo2);
 
-   
+
     card.appendChild(cardBody);
 
 
@@ -136,16 +136,16 @@ function updateListaAlunos(vagas) {
 
   }
 
-  
+
 }
 
 
-const checaEditarPerfil = async() => {
+const checaEditarPerfil = async () => {
 
   document.getElementById('curriculoEditar').value = usableResult.curriculo
   document.getElementById('emailEditar').value = usableResult.email;
   document.getElementById('sobreMimEditar').textContent = usableResult.sobreMim;
-  
+
 }
 
 function editarPerfil() {
@@ -156,30 +156,32 @@ function editarPerfil() {
 
   const dadosAtualizados = {}
 
-  if(curriculo !== "" || sobre !== "" || email !== "") {
-      dadosAtualizados.curriculo = curriculo
-      dadosAtualizados.sobre = sobre
-      dadosAtualizados.email = email
+  if (curriculo !== "" || sobre !== "" || email !== "") {
+    dadosAtualizados.curriculo = curriculo
+    dadosAtualizados.sobre = sobre
+    dadosAtualizados.email = email
   }
 
   //sendDataP(nome, curriculo, sobre, email)
   console.log(dadosAtualizados)
   sendDataP(dadosAtualizados)
+
+
 }
 
-const sendDataP = async(dadosAtualizados) =>{
+const sendDataP = async (dadosAtualizados) => {
 
   const init = {
-      method: 'PUT',
-      headers: {
-          'Content-Type' : 'application/json'
-      },
-      body: JSON.stringify({
-        curriculum: dadosAtualizados.curriculo,
-        sobreMim_aluno: dadosAtualizados.sobre,
-        email_aluno: dadosAtualizados.email,
-      }),
-    }
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      curriculum: dadosAtualizados.curriculo,
+      sobreMim_aluno: dadosAtualizados.sobre,
+      email_aluno: dadosAtualizados.email,
+    }),
+  }
 
   const resLogin = await fetch(`http://localhost:3000/perfil/editarDadosPerfil/${dadosUsuario}`, init);
   let resLoginResult = await resLogin.json();
@@ -189,11 +191,11 @@ const sendDataP = async(dadosAtualizados) =>{
 
 //aqui editamos o precioso perfil :D
 
-function salvarEdicao(){
+function salvarEdicao() {
 
   let inputArchive = document.getElementById("imageUpload");
   console.log(inputArchive.value);
-  
+
 }
 
 
@@ -207,24 +209,24 @@ function toggleInfos() {
   const computedStyle2 = window.getComputedStyle(info2);
 
   if (computedStyle1.display !== "none") {
-    
+
     getAlVagasInLearner()
 
-      info1.style.opacity = 0;
-      info2.style.opacity = 1;
-      setTimeout(() => {
-          info1.style.display = "none";
-          info2.style.display = "block";
-          candidatosButton.textContent = "Curriculum";
-      }, 500);
+    info1.style.opacity = 0;
+    info2.style.opacity = 1;
+    setTimeout(() => {
+      info1.style.display = "none";
+      info2.style.display = "block";
+      candidatosButton.textContent = "Curriculum";
+    }, 500);
   } else {
-      info1.style.opacity = 1;
-      info2.style.opacity = 0;
-      setTimeout(() => {
-          info1.style.display = "block";
-          info2.style.display = "none";
-          candidatosButton.textContent = "Vagas Inscritas";
-      }, 500);
+    info1.style.opacity = 1;
+    info2.style.opacity = 0;
+    setTimeout(() => {
+      info1.style.display = "block";
+      info2.style.display = "none";
+      candidatosButton.textContent = "Vagas Inscritas";
+    }, 500);
   }
 }
 

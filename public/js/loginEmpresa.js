@@ -35,6 +35,12 @@ function loginEmpresa(){
 
 }
 
+
+const exibirPrompt = (mensagem) => {
+    alert(mensagem);
+  };
+  
+
 const enviarDadosLogin = async(cnpj, codigoAcesso) =>{
 
     const init = {
@@ -47,8 +53,11 @@ const enviarDadosLogin = async(cnpj, codigoAcesso) =>{
 
     const resLogin = await fetch('http://localhost:3000/login/sendLoginEnterpriseData', init);
     let logEmpresaResJson = await resLogin.json()
+    
     console.log(logEmpresaResJson);
     if(logEmpresaResJson.response == 204){//aqui faz a operação de ir a tela de perfil
+
+        exibirPrompt("Login bem-sucedido!");
         const usuarioLogado = JSON.stringify(logEmpresaResJson.idLogged);
         setCookie("enterpriseData", usuarioLogado);
         if(usuarioLogado === "1") {
@@ -57,5 +66,7 @@ const enviarDadosLogin = async(cnpj, codigoAcesso) =>{
         else {
             location.href = "homeEmpresa.html"
         }
+    }else{
+        exibirPrompt("Login falhou. Senha ou email incorretos.");
     }
 }

@@ -41,7 +41,7 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //login empresa arquivo 
             res.send({response : 204, idLogged: resultado[index].id_empresa});
             console.log('logou');
         }else{
-            console.log('Não logou');
+            res.send({response : 203, errorMessage : 'Senha ou email incorretos, ou conta inexistente'});
         }
 
     })
