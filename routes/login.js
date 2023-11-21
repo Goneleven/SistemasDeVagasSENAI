@@ -33,8 +33,9 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //login empresa arquivo 
 
         let index = getItemIndex('cnpj', req.body.cnpj, resultado);
         let indexs = getItemIndex('senha', req.body.codigoAcesso, resultado);
+        console.log(req.body);
         console.log(resultado[index]);
-        console.log(resultado[indexs]);
+        console.log("teste 2 "  +resultado[indexs]);
 
 
         if(resultado[index] != undefined && resultado[indexs] != undefined && resultado[indexs] == resultado[index]){
