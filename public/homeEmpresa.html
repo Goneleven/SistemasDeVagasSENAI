@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/5cd8fd820a.js" crossorigin="anonymous"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
-  <title>SENAI - Home\empresa</title>
+  <title>SENAI - Home\Senai</title>
 </head>
 
 
@@ -46,24 +46,25 @@
         <div class="divisoriaHeader"></div>
       </div>
     </div>
-
-<div class="divisoriaHeader"></div>
+    <div class="divisoriaHeader"></div>
   </div>
   <main>
-   
+
 
     <div class="container">
       <div class="row justify-content-center mt-5">
         <div class="col">
           <div class="input-group w-md-25 w-100 mx-auto mb-4 d-flex justify-content-center">
-            <button type="button" id="adicionarVagasPop" class="border border-dark btn btn-danger rounded-circle m-3" style="width: 60px; height: 50px;">
+            <button type="button" id="adicionarVagasPop" class="border border-dark btn btn-danger rounded-circle m-3"
+              style="width: 60px; height: 50px;">
               <i class="fa-solid fa-plus mx-2"></i>
             </button>
 
-            <dialog  id="popupCadastroVagas" class="popupCadastro hide-on-mobile">
-         
+            <dialog id="popupCadastroVagas" class="popupCadastro hide-on-mobile">
 
-              <button type="button" id="fecharPopUpCadastrarVagas" class="border border-dark btn btn-danger rounded m-3">
+
+              <button type="button" id="fecharPopUpCadastrarVagas"
+                class="border border-dark btn btn-danger rounded m-3">
                 X
               </button>
 
@@ -153,7 +154,7 @@
 
             </dialog>
 
-            
+
 
 
             <input type="search" class="border border-dark form-control rounded-pill m-3" placeholder=""
@@ -187,11 +188,11 @@
                 </p>
               </div>
             </div>
-        
+
           </div>
           <div class="col-md-6 d-none d-lg-block infoVaga">
             <div class="card border border-dark mb-3 cardInfo">
-              <div class="card-body" >
+              <div class="card-body">
                 <h3 class="card-title text-center my-2" id="tituloVagaI">Area de Atuação</h3>
                 <div class="divisoriaCard"></div>
 
@@ -233,21 +234,22 @@
                     <h5 class="card-title">Contato Empresa:</h5>
                     <p class="card-text mx-3" id="contatoEmpresa">......</p>
                   </div>
-                  
+
                 </div>
 
-                <div class="scrollVagas" id="info2" style="display: none;"> 
-                   <div class="containerCandidatos">
+                <div class="scrollVagas" id="info2" style="display: none;">
+                  <div class="containerCandidatos">
                     <p>Usuario...</p>
                     <img src="img/149071.png" width="10%">
                   </div>
                   <hr id="divisoriaPerfilParaPerfil">
+                </div>
 
-                  
               </div>
 
-              <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButton" id="candidatosButton" onclick="toggleInfos()">Candidatos</button>
-              
+              <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButton"
+                id="candidatosButton" onclick="toggleInfos()">Candidatos</button>
+
             </div>
 
 
@@ -301,14 +303,16 @@
           </div>
 
           <div class="scrollVagasPopUp " id="infoVagaMobile2" style="display: none;">
+            
             <div class="containerCandidatos">
               <p>Usuario...</p>
               <img src="img/149071.png" width="10%">
             </div>
             <hr id="divisoriaPerfilParaPerfil">
           </div>
-          <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButtonMobile" id="candidatosButton2" onclick="toggleInfos2()">Candidatos</button>
-      </dialog>
+          <button type="button" class="btn btn-danger border border-dark rounded rounded-pill candidatosButtonMobile"
+            id="candidatosButton2" onclick="toggleInfos2()">Candidatos</button>
+        </dialog>
 
 
   </main>
@@ -329,7 +333,7 @@
 </body>
 
 <script>
- 
+
 
 
   function openPopup() {
@@ -352,13 +356,16 @@
     const info2 = document.getElementById("info2");
     const candidatosButton = document.getElementById("candidatosButton");
 
-    if (info1.style.display === "block") {
+    const computedStyle1 = window.getComputedStyle(info1);
+    const computedStyle2 = window.getComputedStyle(info2);
+
+    if (computedStyle1.display !== "none") {
       info1.style.opacity = 0;
       info2.style.opacity = 1;
       setTimeout(() => {
         info1.style.display = "none";
         info2.style.display = "block";
-        candidatosButton.textContent = "informações"; 
+        candidatosButton.textContent = "informações";
       }, 500);
     } else {
       info1.style.opacity = 1;
@@ -366,7 +373,7 @@
       setTimeout(() => {
         info1.style.display = "block";
         info2.style.display = "none";
-        candidatosButton.textContent = "Candidatos"; 
+        candidatosButton.textContent = "Candidatos";
       }, 500);
     }
   }
@@ -375,8 +382,11 @@
     const info1 = document.getElementById("infoVagaMobile1");
     const info2 = document.getElementById("infoVagaMobile2");
     const candidatosButtonMobile = document.getElementById("candidatosButton2");
-  
-    if (info1.style.display === "block") {
+
+    const computedStyle1 = window.getComputedStyle(info1);
+    const computedStyle2 = window.getComputedStyle(info2);
+
+    if (computedStyle1.display !== "none") {
       info1.style.opacity = 0;
       info2.style.opacity = 1;
       setTimeout(() => {
@@ -394,7 +404,7 @@
       }, 500);
     }
   }
-    
+
 </script>
 
 

@@ -166,6 +166,8 @@ function editarPerfil() {
   console.log(dadosAtualizados)
   sendDataP(dadosAtualizados)
 
+  location.reload()
+
 
 }
 
