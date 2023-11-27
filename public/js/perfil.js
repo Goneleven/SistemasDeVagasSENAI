@@ -152,7 +152,9 @@ function editarPerfil() {
   let curriculo = document.getElementById('curriculoEditar').value;
   let sobre = document.getElementById('sobreMimEditar').value;
   let email = document.getElementById("emailEditar").value;
-  //let image = document.getElementById('imageUpload').value;
+  let image = document.getElementById('imageUpload').files[0];
+
+  console.log(image);
 
   const dadosAtualizados = {}
 
@@ -160,13 +162,15 @@ function editarPerfil() {
     dadosAtualizados.curriculo = curriculo
     dadosAtualizados.sobre = sobre
     dadosAtualizados.email = email
+    dadosAtualizados.img = image;
   }
 
   //sendDataP(nome, curriculo, sobre, email)
   console.log(dadosAtualizados)
   sendDataP(dadosAtualizados)
 
-  location.reload()
+
+  //location.reload()
 
 
 }
@@ -182,10 +186,30 @@ const sendDataP = async (dadosAtualizados) => {
       curriculum: dadosAtualizados.curriculo,
       sobreMim_aluno: dadosAtualizados.sobre,
       email_aluno: dadosAtualizados.email,
+      imagem : dadosAtualizados.img
     }),
   }
 
+  const init2 = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      dadosAtualizados.img
+    )
+  }
+
+  console.log(dadosAtualizados.img);
+  let a = JSON.stringify(
+
+    dadosAtualizados.img,
+
+  
+  );
+  console.log(a);
   const resLogin = await fetch(`http://localhost:3000/perfil/editarDadosPerfil/${dadosUsuario}`, init);
+  const resimg = await fetch(`http://localhost:4000/sendImage/${dadosUsuario}`, init2);
   let resLoginResult = await resLogin.json();
   console.log(resLoginResult)
 
