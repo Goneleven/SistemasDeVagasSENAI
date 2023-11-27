@@ -74,5 +74,32 @@ router.post('/registroEmpresas', (req, res) => {//registra empresa arquivo login
 
 });
 
+router.get('/empresaPesquisa/:id',(req, res) =>{ // visualizar empresa
+    const {id} = req.params;
+    console.log(id);
+    let get = `SELECT * FROM empresa WHERE id_empresa = ${id}`;
+
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+        res.send(resultado);
+    });
+
+
+});
+
+router.delete('/deletarVaga/:id', (req, res) => { // deletar empresa
+    const {id} = req.params;
+    console.log(id);
+
+
+    const deletar = `DELETE FROM empresa WHERE id_vaga = ${id}`
+ 
+
+    sql.query(conexao, deletar, (error, resultado) => {
+        console.log(resultado);
+    })
+    
+});
+
 module.exports = router;
 
