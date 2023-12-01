@@ -87,19 +87,52 @@ router.get('/empresaPesquisa/:id',(req, res) =>{ // visualizar empresa
 
 });
 
-router.delete('/deletarVaga/:id', (req, res) => { // deletar empresa
-    const {id} = req.params;
+router.delete('/deletarEmpresa/:id', (req, res) => {
+    const { id } = req.params;
     console.log(id);
 
-
-    const deletar = `DELETE FROM empresa WHERE id_vaga = ${id}`
- 
+    const deletar = `DELETE FROM empresa WHERE id_empresa = ${id}`;
 
     sql.query(conexao, deletar, (error, resultado) => {
         console.log(resultado);
-    })
-    
+        res.send({ success: true, message: 'Empresa deletada com sucesso' });
+    });
 });
+
+
+
+router.get('/empresaPesquisa2/:id',(req, res) =>{ // visualizar empresa
+    const {id} = req.params;
+    console.log(id);
+    let get = `SELECT * FROM empresa WHERE id_empresa = ${id}`;
+
+    sql.query(conexao, get, (error, resultado) => {
+        console.log(resultado);
+        res.send(resultado);
+    });
+
+
+});
+
+
+router.put('/atualizarEmpresa/:id', (req, res) => {
+    const { id } = req.params;
+    const novosDados = req.body;
+
+    let updateQuery = `UPDATE empresa SET nome_empresa = '${novosDados.nome_empresa}', cnpj = '${novosDados.cnpj}', senha = '${novosDados.senha}', categoria = '${novosDados.categoria}' WHERE id_empresa = ${id}`;
+
+    sql.query(conexao, updateQuery, (error, resultado) => { 
+        if (error) {
+            console.error(error);
+            res.status(500).send('Erro ao atualizar empresa');
+        } else {
+            res.send('Empresa atualizada com sucesso');
+        }
+    });
+});
+
+
+
 
 module.exports = router;
 
