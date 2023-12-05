@@ -1,6 +1,10 @@
 var empresaID;
 var empresa;
 
+const exibirPrompt = (mensagem) => {
+    alert(mensagem);
+};
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const pesquisarEmpresaBtn = document.getElementById('pesquisarEmpresa');
@@ -28,7 +32,7 @@ const getAlLearnersInEmpresa = async (id) => {
     const salvarBtn = document.getElementById('salvarEmpresa');
 
     salvarBtn.addEventListener('click', async () => {
-        
+
         const novosDados = {
             nome_empresa: document.getElementById("nomeEmpresa").value,
             cnpj: document.getElementById("cnpjEmpresa").value,
@@ -36,7 +40,7 @@ const getAlLearnersInEmpresa = async (id) => {
             categoria: document.getElementById("categoriaEmpresa").value
         };
 
-        
+
         let resposta = await fetch(`http://localhost:3000/login/atualizarEmpresa/${id}`, {
             method: 'PUT',
             headers: {
@@ -45,11 +49,15 @@ const getAlLearnersInEmpresa = async (id) => {
             body: JSON.stringify(novosDados),
         });
 
-     
+
         if (resposta.ok) {
             console.log('Empresa atualizada com sucesso');
         } else {
             console.error('Erro ao atualizar empresa');
         }
     });
+
+
+    const responseBody = await resLogin.json();
+
 };

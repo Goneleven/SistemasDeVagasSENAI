@@ -7,6 +7,7 @@ const getItemIndex = (propriedade, valor, data) =>{//encontra o indice do alvo d
     return data.findIndex((item) => item[propriedade] == valor);
 }
 
+
 router.get('/getPerfilData/:id', (req, res) => {//pega uma conta de especifica por meio do id guardado no cookie. arquivo login
     //const dadosLogin = req.body;
     const {id} = req.params;//pega o id no campo de argumentos na "url"
@@ -37,6 +38,8 @@ router.put('/editarDadosPerfil/:id', (req, res) => {//edita perfil aluno arquivo
         console.log(error)
     })
 
+
+    
 });
 
 router.get('/vagasEmAluno/:id',(req, res) =>{//pega todas as vagas que determinado aluno esta inscrito

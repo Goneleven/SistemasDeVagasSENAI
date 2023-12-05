@@ -49,30 +49,33 @@ router.post('/sendLoginEnterpriseData', (req, res) => { //login empresa arquivo 
 
 });
 
-router.post('/registroEmpresas', (req, res) => {//registra empresa arquivo login
-
+router.post('/registroEmpresas', (req, res) => {
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
 
     let insert = "INSERT INTO empresa(nome_empresa, cnpj, senha, categoria) VALUES('" + dadosCadastro.nome + "', '" + dadosCadastro.cnpj + "', '" + dadosCadastro.senha + "', '" + dadosCadastro.categoriaEmpresa + "')";
-
     let get = "SELECT * FROM empresa where cnpj = '" + dadosCadastro.cnpj + "'";
-
 
     sql.query(conexao, get, (error, resultado) => {
         console.log(resultado);
 
         if (resultado.length >= 1) {
-            console.log('isto já existe');
+            console.log('Esta empresa já existe');
+            res.send({ status: 409, message: 'Esta empresa já está cadastrada' });
         } else {
             sql.query(conexao, insert, (error, resultado) => {
-
-            })
+                if (error) {
+                    console.error('Erro ao inserir empresa:', error);
+                    res.send({ status: 409, message: 'Erro ao cadastrar empresa' });
+                } else {
+                    console.log('Empresa cadastrada com sucesso');
+                    res.send({ status: 200, message: 'Empresa cadastrada com sucesso' });
+                }
+            });
         }
-
-    })
-
+    });
 });
+
 
 router.get('/empresaPesquisa/:id',(req, res) =>{ // visualizar empresa
     const {id} = req.params;
@@ -120,6 +123,7 @@ router.put('/atualizarEmpresa/:id', (req, res) => {
     const novosDados = req.body;
 
     let updateQuery = `UPDATE empresa SET nome_empresa = '${novosDados.nome_empresa}', cnpj = '${novosDados.cnpj}', senha = '${novosDados.senha}', categoria = '${novosDados.categoria}' WHERE id_empresa = ${id}`;
+    
 
     sql.query(conexao, updateQuery, (error, resultado) => { 
         if (error) {
