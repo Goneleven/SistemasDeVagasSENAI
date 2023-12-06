@@ -1,5 +1,6 @@
-function registrarVaga(){
-
+function registrarVaga() {
+    let enterpriseDataInfo = dadosEmpresa;
+    console.log(enterpriseDataInfo)
     let area = document.getElementById('areaAtuacao').value;
     let descricao = document.getElementById("descricaoDaVaga").value;
     let responsabilidade = document.getElementById("responsabilidade").value;
@@ -10,23 +11,45 @@ function registrarVaga(){
     let beneficios = document.getElementById('beneficios').value;
     let email = document.getElementById('emailContato').value;
 
-    if(area == undefined || descricao == undefined || responsabilidade == undefined || jornada == undefined || requisitos == undefined || localidade == undefined || salario == undefined || beneficios == undefined || email == undefined){
-        
+    // Verifica se algum campo obrigatório está vazio
+    if (
+        enterpriseDataInfo === undefined ||
+        area === undefined ||
+        descricao === undefined ||
+        responsabilidade === undefined ||
+        jornada === undefined ||
+        requisitos === undefined ||
+        localidade === undefined ||
+        salario === undefined ||
+        beneficios === undefined ||
+        email === undefined
+    ) {
+        // Faça algo se algum campo obrigatório estiver vazio
+        return;
     }
-    sendData(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email);
 
+    sendData(enterpriseDataInfo, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email);
 }
 
-const sendData = async(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email) =>{
-
+const sendData = async (enterpriseDataInfo, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email) => {
     const init = {
         method: 'POST',
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, email})
-    }
-    
-    const resLogin = await fetch('http://localhost:3000/vagas/cadastrarVaga', init);
+        body: JSON.stringify({
+            enterpriseDataInfo,
+            area,
+            descricao,
+            responsabilidade,
+            jornada,
+            requisitos,
+            localidade,
+            salario,
+            beneficios,
+            email
+        })
+    };
 
-}
+    const resLogin = await fetch('http://localhost:3000/vagas/cadastrarVaga', init);
+};
