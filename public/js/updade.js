@@ -1,10 +1,9 @@
 var empresaID;
 var empresa;
 
-const exibirPrompt = (mensagem) => {
+const exibirAlerta = (mensagem) => {
     alert(mensagem);
 };
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const pesquisarEmpresaBtn = document.getElementById('pesquisarEmpresa');
@@ -14,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         getAlLearnersInEmpresa(empresaID);
     });
 });
+
 
 
 const getAlLearnersInEmpresa = async (id) => {
@@ -32,7 +32,6 @@ const getAlLearnersInEmpresa = async (id) => {
     const salvarBtn = document.getElementById('salvarEmpresa');
 
     salvarBtn.addEventListener('click', async () => {
-
         const novosDados = {
             nome_empresa: document.getElementById("nomeEmpresa").value,
             cnpj: document.getElementById("cnpjEmpresa").value,
@@ -49,10 +48,11 @@ const getAlLearnersInEmpresa = async (id) => {
             body: JSON.stringify(novosDados),
         });
 
-
         if (resposta.ok) {
+            exibirAlerta('Empresa atualizada com sucesso');
             console.log('Empresa atualizada com sucesso');
         } else {
+            exibirAlerta('Erro ao atualizar empresa');
             console.error('Erro ao atualizar empresa');
         }
     });

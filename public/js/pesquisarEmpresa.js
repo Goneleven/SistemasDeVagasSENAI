@@ -1,4 +1,3 @@
-var empresaID;
 var empresa;
 
 function moreInfo(empresa) {
@@ -14,18 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const pesquisarEmpresaBtn = document.getElementById('pesquisarEmpresa');
 
     pesquisarEmpresaBtn.addEventListener('click', function () {
-        const empresaID = document.getElementById("nomeEmpresaPesquisa").value;
-        getAlLearnersInEmpresa(empresaID);
+        const nomeEmpresa = document.getElementById("nomeEmpresaPesquisa").value;
+        getAlLearnersInEmpresa(nomeEmpresa);
     });
 });
 
-const getAlLearnersInEmpresa = async (id) => {
-  
-        let res = await fetch(`http://localhost:3000/login/empresaPesquisa/${id}`);
-        let resJson = await res.json();
-        empresa = resJson[0];
-        
-        console.log(empresa);
+const getAlLearnersInEmpresa = async (nome) => {
+    let res = await fetch(`http://localhost:3000/login/empresaPesquisa/${nome}`);
+    let resJson = await res.json();
+    empresa = resJson[0];
 
-        moreInfo(empresa)
+    console.log(empresa);
+
+    moreInfo(empresa);
 }
