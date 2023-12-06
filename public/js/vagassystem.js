@@ -40,6 +40,8 @@ definirLogado();
 
 const cadastrar = async () => {
 
+
+  let enterpriseDataInfo = getCookie("enterpriseData");
   let areaAt = document.getElementById("areaAtuacao").value;
   let descricao = document.getElementById("descricaoDaVaga").value;
   let responsabilidade = document.getElementById("responsabilidade").value;
@@ -57,7 +59,7 @@ const cadastrar = async () => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade, email })
+    body: JSON.stringify({ enterpriseDataInfo, areaAt, descricao, responsabilidade, periodo, requisitos, local, salario, beneficios, modalidade, email })
   }
 
   const resLogin = await fetch('http://localhost:3000/vagas/cadVagas', init);
@@ -217,16 +219,26 @@ function moreInfo(vaga) {
 }
 
 const getAllVagas = async () => {
+  // Adicione o enterpriseData na requisição
+  const enterpriseDataInfo = getCookie("enterpriseData");
 
-  let res = await fetch('http://localhost:3000/vagas/getVagas');
-  let resJson = await res.json();
+  const init = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    // Passar enterpriseDataInfo no corpo da requisição
+    body: JSON.stringify({ enterpriseDataInfo })
+  };
+
+  const res = await fetch('http://localhost:3000/vagas/getVagas', init);
+  const resJson = await res.json();
   vagas = resJson;
   console.log(vagas);
 
   testeQoL(vagas);
 
   updateCard(vagas);
-
 }
 
 

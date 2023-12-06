@@ -12,7 +12,7 @@ router.post('/cadVagas',(req, res) =>{//cadastra vagas arquivo vagas
     const dadosCadastroV = req.body;
     console.log(dadosCadastroV);
 
-    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, modalidade, emailContato) VALUES('" + dadosCadastroV.areaAt + "', '" + dadosCadastroV.descricao + "', '" + dadosCadastroV.responsabilidade + "', '" + dadosCadastroV.periodo + "', '" + dadosCadastroV.requisitos + "', '" + dadosCadastroV.local + "', '" + dadosCadastroV.salario + "', '" + dadosCadastroV.beneficios + "', '" + dadosCadastroV.modalidade + "', '" + dadosCadastroV.email + "')";
+    let insert = "INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, modalidade, emailContato) VALUES('" + dadosCadastroV.enterpriseDataInfo + "', '"+ dadosCadastroV.areaAt + "', '" + dadosCadastroV.descricao + "', '" + dadosCadastroV.responsabilidade + "', '" + dadosCadastroV.periodo + "', '" + dadosCadastroV.requisitos + "', '" + dadosCadastroV.local + "', '" + dadosCadastroV.salario + "', '" + dadosCadastroV.beneficios + "', '" + dadosCadastroV.modalidade + "', '" + dadosCadastroV.email + "')";
 
     let get = "SELECT * FROM vaga";
 
@@ -29,17 +29,30 @@ router.post('/cadVagas',(req, res) =>{//cadastra vagas arquivo vagas
     })
 });
 
-router.get('/getVagas',(req, res) =>{//pega todas as vagas da tabela vagas no db arquivo vagas
-
-    let get = "SELECT * FROM vaga";
-
+router.post('/getVagas', (req, res) => {
+    const { enterpriseDataInfo } = req.body;
+  
+    // Modifique a lógica de busca com base no enterpriseDataInfo
+    let get;
+  
+    if (enterpriseDataInfo === "1") {
+      // Se enterpriseDataInfo for 1, busca todas as vagas
+      get = "SELECT * FROM vaga";
+    } else {
+      // Caso contrário, busca apenas as vagas relacionadas ao enterpriseData específico
+      get = "SELECT * FROM vaga WHERE id_publicador = " + enterpriseDataInfo;
+    }
+  
     sql.query(conexao, get, (error, resultado) => {
-        console.log(resultado);
-
+      if (error) {
+        console.log('Erro ao obter vagas:', error);
+        res.status(500).send('Erro ao obter vagas');
+      } else {
         res.send(resultado);
-
-    })
-});
+      }
+    });
+  });
+  
 
 router.delete('/deletarVaga/:id', (req, res) => {//deleta vaga arquibo vagas
     const {id} = req.params;
@@ -64,7 +77,7 @@ router.post('/cadastrarVaga', (req, res) => {
     const dadosCadastro = req.body;
     console.log(dadosCadastro);
 
-    let insert = "INSERT INTO vaga(area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, emailContato) VALUES('" + dadosCadastro.areaAt + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "' , '" + dadosCadastro.email +"' )";
+    let insert = "INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, emailContato) VALUES('" + dadosCadastro.id_publicador + "', '" + dadosCadastro.areaAt + "', '" + dadosCadastro.descricao + "', '" + dadosCadastro.responsabilidade + "', '" + dadosCadastro.jornada + "' , '" + dadosCadastro.requisitos + "' , '" + dadosCadastro.localidade + "' , '" + dadosCadastro.salario + "' , '" + dadosCadastro.beneficios + "' , '" + dadosCadastro.email +"' )";
 
     let get = "SELECT * FROM vaga where descricao = '" + dadosCadastro.descricao + "'";
 
