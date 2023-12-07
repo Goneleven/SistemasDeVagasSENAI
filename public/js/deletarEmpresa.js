@@ -20,10 +20,10 @@ const exibirPrompt = (mensagem) => {
 });
 
 
-const deletaVaga = async (id) => {
-  console.log('Iniciando deleção da empresa com ID:', id);
+const deletaVaga = async (cnpj) => {
+  console.log('Iniciando deleção da empresa com ID:', cnpj);
 
-  const url = `http://localhost:3000/login/deletarEmpresa/${id}`;
+  const url = `http://localhost:3000/login/deletarEmpresa/${cnpj}`;
   const init = {
       method: 'DELETE',
       headers: {

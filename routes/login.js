@@ -88,23 +88,24 @@ router.get('/empresaPesquisa/:nome', (req, res) => {
     });
 });
 
-router.delete('/deletarEmpresa/:id', (req, res) => {
-    const { id } = req.params;
-    console.log('Recebida solicitação para deletar empresa com ID:', id);
 
 
-    const deletar = 'DELETE FROM empresa WHERE id_empresa = ?';
-sql.query(conexao, deletar, [id], (error, resultado) => {
+router.delete('/deletarEmpresa/:cnpj', (req, res) => {
+    const { cnpj } = req.params;
+    console.log('Recebida solicitação para deletar empresa com CNPJ:', cnpj);
+
+    const deletar = 'DELETE FROM empresa WHERE cnpj = ?';
+    sql.query(conexao, deletar, [cnpj], (error, resultado) => {
         if (error) {
             console.error(error);
             res.send({ status: 409, message: 'Erro ao deletar empresa' });
         } else {
             console.log('Empresa deletada');
             res.send({ status: 200, message: 'Empresa deletada com sucesso' });
-            
         }
     });
 });
+
 
 
 router.get('/empresaPesquisa2/:id',(req, res) =>{ // visualizar empresa

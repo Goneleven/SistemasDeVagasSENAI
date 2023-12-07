@@ -130,6 +130,7 @@ function updateCard(vagas) {
 
       vagaApagar.addEventListener('click', () => {
         deletaVaga(vagaAtual)
+        location.reload();
       })
     }
 
