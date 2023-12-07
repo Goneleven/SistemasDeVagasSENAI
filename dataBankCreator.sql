@@ -49,7 +49,7 @@ INSERT INTO aluno(nome_aluno, sobreMim_aluno, email_aluno, n_matricula, cpf, cur
 VALUES
 ('Arthur', 'Sou o Arthur', 'arthur@email.com', '123456', '123456', 'Cursando Desenvolvimento de Sistemas no ultimo semestre'),
 ('Juan', 'Sou o Juan', 'juan@email.com', '12345', '12345678-90', 'Cursando Desenvolvimento de Sistemas no ultimo semestre'),
-('Guilherme', 'Sou o Guilherme', 'guilherme@email.com', '12345', '1234567890', 'Cursando Desenvolvimento de Sistemas no ultimo semestre'),
+('Guilherme', 'Sou o Guilherme', 'guilherme@email.com', '11123', '1234567890', 'Cursando Desenvolvimento de Sistemas no ultimo semestre'),
 ('Igor', 'Sou o Igor', 'igor@email.com', '23456', '23456789-01', 'Cursando Desenvolvimento de Sistemas no ultimo semestre')
 
 INSERT INTO vaga(id_publicador, area, descricao, responsabilidade, jornada, requisitos, localidade, salario, beneficios, modalidade,emailContato)
