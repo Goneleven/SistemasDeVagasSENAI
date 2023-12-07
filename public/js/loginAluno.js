@@ -1,3 +1,4 @@
+
 var logado;
 
 function setCookie(cname, cvalue, exdays) {
@@ -32,7 +33,11 @@ async function loginAluno() {
 }
 
 const exibirPrompt = (mensagem) => {
-  alert(mensagem);
+  Swal.fire({
+    title: "Teste",
+    text: mensagem,
+    icon: "success"
+  });
 };
 
 const enviarDadosLogin = async (matricula, cpf) => {

@@ -221,6 +221,7 @@ function moreInfo(vaga) {
 const getAllVagas = async () => {
   // Adicione o enterpriseData na requisição
   const enterpriseDataInfo = getCookie("enterpriseData");
+  const userData = getCookie("userData");
 
   const init = {
     method: 'POST',
@@ -228,7 +229,7 @@ const getAllVagas = async () => {
       'Content-Type': 'application/json'
     },
     // Passar enterpriseDataInfo no corpo da requisição
-    body: JSON.stringify({ enterpriseDataInfo })
+    body: JSON.stringify({ enterpriseDataInfo, userData })
   };
 
   const res = await fetch('http://localhost:3000/vagas/getVagas', init);
@@ -516,7 +517,11 @@ function filtrarVagas(termoPesquisa) {
 }
 
 const exibirPrompt = (mensagem) => {
-  alert(mensagem);
+  Swal.fire({
+    title: "Teste",
+    text: mensagem,
+    icon: "success"
+  });
 };
 
 
