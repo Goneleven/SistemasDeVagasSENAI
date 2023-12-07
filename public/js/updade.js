@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-const getAlLearnersInEmpresa = async (id) => {
-    let res = await fetch(`http://localhost:3000/login/empresaPesquisa2/${id}`);
+const getAlLearnersInEmpresa = async (nome_empresa) => {
+    let res = await fetch(`http://localhost:3000/login/empresaPesquisa2/${nome_empresa}`);
     let resJson = await res.json();
     console.log(resJson);
 
@@ -43,8 +43,7 @@ const getAlLearnersInEmpresa = async (id) => {
             categoria: document.getElementById("categoriaEmpresa").value
         };
 
-
-        let resposta = await fetch(`http://localhost:3000/login/atualizarEmpresa/${id}`, {
+        let resposta = await fetch(`http://localhost:3000/login/atualizarEmpresa/${nome_empresa}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,8 +59,4 @@ const getAlLearnersInEmpresa = async (id) => {
             console.error('Erro ao atualizar empresa');
         }
     });
-
-
-    const responseBody = await resLogin.json();
-
 };

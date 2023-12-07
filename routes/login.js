@@ -108,18 +108,18 @@ router.delete('/deletarEmpresa/:cnpj', (req, res) => {
 
 
 
-router.get('/empresaPesquisa2/:id',(req, res) =>{ // visualizar empresa
-    const {id} = req.params;
-    console.log(id);
-    let get = `SELECT * FROM empresa WHERE id_empresa = ${id}`;
+router.get('/empresaPesquisa2/:nome_empresa', (req, res) => {
+    const { nome_empresa } = req.params;
+    console.log(nome_empresa);
+    let get = `SELECT * FROM empresa WHERE nome_empresa = '${nome_empresa}'`;
 
     sql.query(conexao, get, (error, resultado) => {
         console.log(resultado);
         res.send(resultado);
     });
-
-
 });
+
+
 
 
 router.put('/atualizarEmpresa/:id', (req, res) => {
