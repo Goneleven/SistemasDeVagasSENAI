@@ -2,7 +2,11 @@ var empresaID;
 var empresa;
 
 const exibirAlerta = (mensagem) => {
-    alert(mensagem);
+    Swal.fire({
+    title: "Teste",
+    text: mensagem,
+    icon: "success"
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {

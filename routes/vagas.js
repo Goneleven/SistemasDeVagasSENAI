@@ -30,13 +30,15 @@ router.post('/cadVagas',(req, res) =>{//cadastra vagas arquivo vagas
 });
 
 router.post('/getVagas', (req, res) => {
-    const { enterpriseDataInfo } = req.body;
+    const { enterpriseDataInfo, userData } = req.body;
   
-    // Modifique a lógica de busca com base no enterpriseDataInfo
     let get;
   
     if (enterpriseDataInfo === "1") {
       // Se enterpriseDataInfo for 1, busca todas as vagas
+      get = "SELECT * FROM vaga";
+    } else if (userData) {
+      // Se userData existir, busca todas as vagas para o usuário específico
       get = "SELECT * FROM vaga";
     } else {
       // Caso contrário, busca apenas as vagas relacionadas ao enterpriseData específico

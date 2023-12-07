@@ -1,5 +1,10 @@
+
 const exibirPrompt = (mensagem) => {
-    alert(mensagem);
+    Swal.fire({
+        title: "Teste",
+        text: mensagem,
+        icon: "success"
+      });
   };
 
 function registrarEmpresa(){
