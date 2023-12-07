@@ -170,7 +170,7 @@ function editarPerfil() {
   sendDataP(dadosAtualizados)
 
 
-  //location.reload()
+  location.reload()
 
 
 }
@@ -221,7 +221,7 @@ function salvarEdicao() {
 
   let inputArchive = document.getElementById("imageUpload");
   console.log(inputArchive.value);
-
+  
 }
 
 
