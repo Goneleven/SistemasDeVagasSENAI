@@ -25,7 +25,7 @@ function getCookie(cname) {
     return "";
 }
 
-async function loginAluno() {
+async function loginAluno(matricula, cpf) {
   let matricula = document.getElementById("numeroMatriculaLogin").value;
   let cpf = document.getElementById("cpfLogin").value;
 
